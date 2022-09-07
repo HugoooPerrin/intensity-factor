@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="/home/hugo/Bureau/Garmin/Intensityfactor/manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="1" lineNum="14" parent="globals/Queue" pc="268435456" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="1" lineNum="15" parent="globals/Queue" pc="268435460" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="1" lineNum="16" parent="globals/Queue" pc="268435470" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="2" lineNum="20" parent="globals/Queue" pc="268435482" symbol="add"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="2" lineNum="21" parent="globals/Queue" pc="268435486" symbol="add"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="2" lineNum="22" parent="globals/Queue" pc="268435522" symbol="add"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="2" lineNum="24" parent="globals/Queue" pc="268435563" symbol="add"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="3" lineNum="8" parent="globals/Queue" pc="268435917" symbol="&lt;init&gt;"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="4" lineNum="45" parent="globals/IntensityfactorView" pc="268435580" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="4" lineNum="46" parent="globals/IntensityfactorView" pc="268435584" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="4" lineNum="47" parent="globals/IntensityfactorView" pc="268435602" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="5" lineNum="95" parent="globals/IntensityfactorView" pc="268435616" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="5" lineNum="98" parent="globals/IntensityfactorView" pc="268435620" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="5" lineNum="99" parent="globals/IntensityfactorView" pc="268435646" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="5" lineNum="101" parent="globals/IntensityfactorView" pc="268435672" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="5" lineNum="105" parent="globals/IntensityfactorView" pc="268435698" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="5" lineNum="108" parent="globals/IntensityfactorView" pc="268435753" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="6" lineNum="42" parent="globals/IntensityfactorView" pc="268435918" symbol="&lt;init&gt;"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="6" lineNum="54" parent="globals/IntensityfactorView" pc="268435936" symbol="&lt;init&gt;"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="6" lineNum="55" parent="globals/IntensityfactorView" pc="268435980" symbol="&lt;init&gt;"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorView.mc" id="6" lineNum="42" parent="globals/IntensityfactorView" pc="268435918" symbol="&lt;init&gt;"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorApp.mc" id="8" lineNum="7" parent="globals/IntensityfactorApp" pc="268435763" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorApp.mc" id="8" lineNum="8" parent="globals/IntensityfactorApp" pc="268435767" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorApp.mc" id="9" lineNum="12" parent="globals/IntensityfactorApp" pc="268435786" symbol="onStart"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorApp.mc" id="10" lineNum="16" parent="globals/IntensityfactorApp" pc="268435791" symbol="onStop"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorApp.mc" id="11" lineNum="20" parent="globals/IntensityfactorApp" pc="268435796" symbol="getInitialView"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorApp.mc" id="11" lineNum="21" parent="globals/IntensityfactorApp" pc="268435800" symbol="getInitialView"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorApp.mc" id="12" lineNum="5" parent="globals/IntensityfactorApp" pc="268435898" symbol="&lt;init&gt;"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorApp.mc" id="12" lineNum="5" parent="globals/IntensityfactorApp" pc="268435898" symbol="&lt;init&gt;"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorApp.mc" id="13" lineNum="26" parent="globals" pc="268435838" symbol="getApp"/>
+        <entry filename="/home/hugo/Bureau/Garmin/Intensityfactor/source/IntensityfactorApp.mc" id="13" lineNum="27" parent="globals" pc="268435850" symbol="getApp"/>
+        <entry filename="Rez" id="15" lineNum="2" parent="globals/Rez/Drawables" pc="268435892" symbol="&lt;init&gt;"/>
+        <entry filename="Rez" id="16" lineNum="6" parent="globals/Rez/Fonts" pc="268435894" symbol="&lt;init&gt;"/>
+        <entry filename="Rez" id="17" lineNum="8" parent="globals/Rez/JsonData" pc="268435896" symbol="&lt;init&gt;"/>
+        <entry filename="Rez" id="18" lineNum="10" parent="globals/Rez/Layouts" pc="268435895" symbol="&lt;init&gt;"/>
+        <entry filename="Rez" id="19" lineNum="12" parent="globals/Rez/Menus" pc="268435893" symbol="&lt;init&gt;"/>
+        <entry filename="Rez" id="20" lineNum="14" parent="globals/Rez/Strings" pc="268435897" symbol="&lt;init&gt;"/>
+        <entry filename="Rez" id="21" lineNum="1" parent="globals/Rez" pc="268435868" symbol="&lt;init&gt;"/>
+        <entry filename="Rez" id="21" lineNum="1" parent="globals/Rez" pc="268435868" symbol="&lt;init&gt;"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="12" object="true" symbol="IntensityfactorView"/>
+        <entry field="true" id="19" symbol="val"/>
+        <entry field="true" id="21" symbol="queue_power"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry id="4" module="true" symbol="globals/Rez/Menus"/>
+        <entry field="true" id="18" symbol="queue"/>
+        <entry field="true" id="20" symbol="queue_time"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="17" symbol="AppName"/>
+        <entry id="8" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="8388772" module="true" object="true" symbol="Fonts"/>
+        <entry field="true" id="8388795" method="true" symbol="length"/>
+        <entry field="true" id="8389811" symbol="TIMER_STATE_STOPPED"/>
+        <entry id="8388631" module="true" symbol="Activity"/>
+        <entry id="8388942" method="true" symbol="add"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry id="15" module="true" symbol="Menus"/>
+        <entry id="8389275" method="true" symbol="getApp"/>
+        <entry id="6" module="true" symbol="globals/Rez/Layouts"/>
+        <entry field="true" id="8389810" symbol="TIMER_STATE_OFF"/>
+        <entry id="8389137" method="true" symbol="compute"/>
+        <entry id="7" module="true" symbol="globals/Rez/JsonData"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="8388645" module="true" symbol="Time"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry field="true" id="11" symbol="rolling_duration"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry id="8390088" module="true" object="true" symbol="JsonData"/>
+        <entry field="true" id="16" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry field="true" id="10" symbol="rFTP"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry field="true" id="8389812" symbol="TIMER_STATE_PAUSED"/>
+        <entry id="8388641" module="true" symbol="Math"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry id="9" object="true" symbol="Queue"/>
+        <entry id="14" module="true" symbol="Layouts"/>
+        <entry id="13" object="true" symbol="IntensityfactorApp"/>
+        <entry id="5" module="true" symbol="globals/Rez/Fonts"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+        <entry field="true" id="8389813" symbol="TIMER_STATE_ON"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268435481" name="len" stackId="1" startPc="268435456"/>
+        <entry endPc="268435562" name="i" stackId="2" startPc="268435522"/>
+        <entry arg="true" endPc="268435579" name="member" stackId="1" startPc="268435482"/>
+        <entry arg="true" endPc="268435762" name="info" stackId="1" startPc="268435616"/>
+        <entry arg="true" endPc="268435790" name="state" stackId="1" startPc="268435786"/>
+        <entry arg="true" endPc="268435795" name="state" stackId="1" startPc="268435791"/>
+    </localVars>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="87" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/Rez" offset="214" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/Rez/Drawables" offset="293" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Menus" offset="332" parentId="Rez" symbolId="Menus" type="module"/>
+        <dataEntry label="globals/Rez/Fonts" offset="363" parentId="Rez" symbolId="Fonts" type="module"/>
+        <dataEntry label="globals/Rez/Layouts" offset="394" parentId="Rez" symbolId="Layouts" type="module"/>
+        <dataEntry label="globals/Rez/JsonData" offset="425" parentId="Rez" symbolId="JsonData" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="456" parentId="Rez" symbolId="Strings" type="module"/>
+        <dataEntry label="globals/IntensityfactorApp" offset="495" parentId="globals" symbolId="IntensityfactorApp" type="class"/>
+        <dataEntry label="globals/Queue" offset="566" parentId="globals" symbolId="Queue" type="class"/>
+        <dataEntry label="globals/IntensityfactorView" offset="637" parentId="globals" symbolId="IntensityfactorView" type="class"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" endPc="268435481" name="initialize" parent="Queue" startPc="268435456">
+            <param id="len"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435579" name="add" parent="Queue" startPc="268435482">
+            <param id="member"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268435917" name="&lt;init&gt;" parent="Queue" startPc="268435917">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435615" name="initialize" parent="IntensityfactorView" startPc="268435580">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435762" name="compute" parent="IntensityfactorView" startPc="268435616">
+            <param id="info"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268436024" name="&lt;init&gt;" parent="IntensityfactorView" startPc="268435918">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435785" name="initialize" parent="IntensityfactorApp" startPc="268435763">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435790" name="onStart" parent="IntensityfactorApp" startPc="268435786">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435795" name="onStop" parent="IntensityfactorApp" startPc="268435791">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435837" name="getInitialView" parent="IntensityfactorApp" startPc="268435796">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268435916" name="&lt;init&gt;" parent="IntensityfactorApp" startPc="268435898">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435866" name="getApp" startPc="268435838">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268435892" name="&lt;init&gt;" parent="Drawables" startPc="268435892">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268435894" name="&lt;init&gt;" parent="Fonts" startPc="268435894">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268435896" name="&lt;init&gt;" parent="JsonData" startPc="268435896">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268435895" name="&lt;init&gt;" parent="Layouts" startPc="268435895">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268435893" name="&lt;init&gt;" parent="Menus" startPc="268435893">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268435897" name="&lt;init&gt;" parent="Strings" startPc="268435897">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268435891" name="&lt;init&gt;" parent="Rez" startPc="268435868">
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>

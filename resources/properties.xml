@@ -1,0 +1,68 @@
+<resources>
+
+    <properties>
+        <property id="METRIC_ID" type="number">0</property>
+        <property id="DATAFIELD_ID" type="number">0</property>
+        <property id="RFTP" type="number">420</property>
+        <property id="RFTPa" type="float">4.08</property>
+        <property id="THR" type="number">170</property>
+        <property id="WINDOW" type="number">30</property>
+    </properties>
+
+    <strings>
+        <string id="METRIC_ID_TITLE">Metric to use for computation</string>
+        <string id="DATAFIELD_ID_TITLE">Value to display</string>
+        <string id="RFTP_TITLE">Running FTP (watts)</string>
+        <string id="RFTPa_TITLE">Running FTPa (m/sec)</string>
+        <string id="THR_TITLE">Running threshold heart rate (bpm)</string>
+        <string id="WINDOW_TITLE">Rolling window duration (seconds)</string>
+
+        <string id="metric">Rolling metric (raw)</string>
+        <string id="intensity">Rolling metric intensity (%FTP or %FTPa)</string>
+
+        <string id="pace">Pace</string>
+        <string id="power">Power</string>
+
+        <string id="chart_label">Intensity factor</string>
+        <string id="chart_label_e">Efficiency factor</string>
+        <string id="chart_units">%FTP</string>
+        <string id="chart_units_e">%FTP / %THR</string>
+    </strings>
+
+    <settings>
+        <setting propertyKey="@Properties.METRIC_ID" title="@Strings.METRIC_ID_TITLE">
+            <settingConfig type="list" >
+                <listEntry value="0">@Strings.power</listEntry>
+                <listEntry value="1">@Strings.pace</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.DATAFIELD_ID" title="@Strings.DATAFIELD_ID_TITLE">
+            <settingConfig type="list" >
+                <listEntry value="0">@Strings.intensity</listEntry>
+                <listEntry value="1">@Strings.metric</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.RFTP" title="@Strings.RFTP_TITLE">
+            <settingConfig type="numeric" min="1" />
+        </setting>
+        <setting propertyKey="@Properties.RFTPa" title="@Strings.RFTPa_TITLE">
+            <settingConfig type="numeric" min="1" />
+        </setting>
+        <setting propertyKey="@Properties.THR" title="@Strings.THR_TITLE">
+            <settingConfig type="numeric" min="1" />
+        </setting>
+        <setting propertyKey="@Properties.WINDOW" title="@Strings.WINDOW_TITLE">
+            <settingConfig type="numeric" min="3" max="120" />
+        </setting>
+    </settings>
+
+    <fitContributions>
+        <fitField id="0" displayInActivitySummary="false" displayInChart="true" sortOrder="0" precision="0"
+        chartTitle="@Strings.chart_label" dataLabel="@Strings.chart_label"
+        unitLabel="@Strings.chart_units" fillColor="#E92929" />
+        <fitField id="1" displayInActivitySummary="false" displayInChart="true" sortOrder="0" precision="2"
+        chartTitle="@Strings.chart_label_e" dataLabel="@Strings.chart_label_e"
+        unitLabel="@Strings.chart_units_e" fillColor="#2A22A2" />
+    </fitContributions>
+
+</resources>
