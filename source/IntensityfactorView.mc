@@ -30,6 +30,13 @@ class Queue {
 }
 
 
+// GAP modelling
+// ref : https://www.reddit.com/r/Strava/comments/sdeix0/mind_the_gap_getting_fit_for_the_formula_equation/
+function gap_factor(g) {
+    return 1 + 0.02869556 * g + 0.001520768 * g * g;
+}
+
+
 // MAIN DATA FIELD CLASS
 class IntensityfactorView extends WatchUi.SimpleDataField {
 
@@ -61,9 +68,12 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
         if (metric_id == 0) {
             rFTP = Application.getApp().getProperty("RFTP").toFloat();
             label = "POWER";
-        } else {
+        } else if (metric_id == 1) {
             rFTP = Application.getApp().getProperty("RFTPa").toFloat();
             label = "PACE";
+        } else {
+            rFTP = Application.getApp().getProperty("RFTPa").toFloat();
+            label = "GA-PACE";
         }
 
         // Update label name if IF chosen
@@ -95,6 +105,9 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
     function onTimerStart() {
         metric = new Queue(rolling_duration + 1);
         heart_rate = new Queue(rolling_duration + 1);
+        if (metric_id == 2) {
+            altitude = new Queue(rolling_duration + 1);
+        }
         lag = 0;
         // System.println("started");
     }
@@ -102,6 +115,9 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
     function onTimerResume() {
         metric = new Queue(rolling_duration + 1);
         heart_rate = new Queue(rolling_duration + 1);
+        if (metric_id == 2) {
+            altitude = new Queue(rolling_duration + 1);
+        }
         lag = 0;
         // System.println("restarted");
     }
@@ -122,6 +138,12 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
     var heart_rate;
     var heart_rate_counter;
     var heart_rate_sum;
+    var altitude;
+    var current_altitude;
+    var latest_altitude;
+    var grade;
+    var distance;
+    var n_points;
     var intensity_factor;
     var efficiency_factor;
     var hr;
@@ -146,8 +168,11 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             heart_rate.update(info.currentHeartRate);
             if (metric_id == 0) {
                 metric.update(info.currentPower);
+            } else if (metric_id == 1) {
+                metric.update(info.currentSpeed);
             } else {
                 metric.update(info.currentSpeed);
+                altitude.update(info.altitude);
             }
         
             // Init counters for metric
@@ -198,6 +223,45 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
                 hr /= THR;
             }
 
+            // Compute averaged grade
+            if (metric_id == 2) {
+
+                // Get current altitude
+                current_altitude = altitude.queue[0];
+
+                // Get latest altitude available
+                n_points = altitude.length;
+                for (var i = altitude.length-1; i >= 0; i--) {
+                    if (altitude.queue[i] == null) {
+                        n_points--;
+                        continue;
+                    } else {
+                        latest_altitude = altitude.queue[i];
+                        break;
+                    }
+                }
+
+                // Get distance
+                // Cannot take metric_sum because of special case when the queue is not entirely filled
+                // (at start time or resume for instance)
+                distance = val * n_points;
+
+                // Compute grade (%)
+                if ((latest_altitude == null) | (distance == 0)) {
+                    grade = 0;
+                } else {
+                    grade = 100 * (current_altitude - latest_altitude) / distance;
+                }
+
+                // Compute adjusted pace
+                val *= gap_factor(grade);
+
+                // System.println(metric.queue);
+                // System.println(altitude.queue);
+                // System.println(grade);
+                // System.println(val * 3.6);
+            }
+
             // Saving IF to fit file
             intensity_factor = Math.round(100 * val / rFTP).toNumber();
             intensityFitField.setData(intensity_factor);
@@ -217,7 +281,8 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             } else if (metric_id == 0) {
                 val = Math.round(val).toNumber();
 
-            } else if ((metric_id == 1) & (val != 0)) {
+            // Works for pace or gap
+            } else if (val != 0) {
                 pace = 60.0 / (val * 3.6);
                 mins = Math.floor(pace).toNumber();
                 secs = Math.round((pace - mins) * 60);
@@ -233,6 +298,10 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             // Increase lag counter
             lag++;
             val = 0;
+
+            if (metric_id == 2) {
+                altitude.update(info.altitude);
+            }
 
         } else {
             val = 0;

@@ -1,8 +1,8 @@
 <resources>
 
     <properties>
-        <property id="METRIC_ID" type="number">0</property>
-        <property id="DATAFIELD_ID" type="number">0</property>
+        <property id="METRIC_ID" type="number">2</property>
+        <property id="DATAFIELD_ID" type="number">1</property>
         <property id="RFTP" type="number">420</property>
         <property id="RFTPa" type="float">4.08</property>
         <property id="THR" type="number">170</property>
@@ -20,6 +20,7 @@
         <string id="metric">Rolling metric (raw)</string>
         <string id="intensity">Rolling metric intensity (%FTP or %FTPa)</string>
 
+        <string id="gap">Grade adjusted pace</string>
         <string id="pace">Pace</string>
         <string id="power">Power</string>
 
@@ -34,6 +35,7 @@
             <settingConfig type="list" >
                 <listEntry value="0">@Strings.power</listEntry>
                 <listEntry value="1">@Strings.pace</listEntry>
+                <listEntry value="2">@Strings.gap</listEntry>
             </settingConfig>
         </setting>
         <setting propertyKey="@Properties.DATAFIELD_ID" title="@Strings.DATAFIELD_ID_TITLE">
