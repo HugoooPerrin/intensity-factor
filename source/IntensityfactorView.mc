@@ -13,6 +13,8 @@ class Queue {
     // Init
     var length;
     var queue;
+    var counter;
+    var sum;
 
     // Initialize instance
     function initialize(len) {
@@ -26,6 +28,58 @@ class Queue {
             self.queue[i] = self.queue[i-1];
         }
         self.queue[0] = member;
+    }
+
+    // Compute mean (taking null into account)
+    function mean() {
+        counter = 0;
+        sum = 0.0;
+
+        // Compute rolling sum for metric
+        for (var i = 0; i < self.length; i++) {
+
+            // Ignore null
+            if (self.queue[i] == null) {
+                continue;
+            }
+
+            sum += self.queue[i];
+            counter++;
+        }
+
+        // Return average
+        return (counter != 0) ? sum / counter : 0.0;
+    }
+
+    // Get current
+    function current() {
+        return self.queue[0];
+    }
+
+    // Get last (not null)
+    function last() {
+        for (var i = self.length-1; i >= 0; i--) {
+            if (self.queue[i] != null) {
+                return self.queue[i];
+            } else {
+                continue;
+            }
+        }
+        return null;
+    }
+
+    // Get non-null count
+    function count_not_null() {
+        counter = 0;
+        for (var i = self.length-1; i >= 0; i--) {
+            if (self.queue[i] != null) {
+                return counter;
+            } else {
+                counter++;
+                continue;
+            }
+        }
+        return self.length;
     }
 }
 
@@ -51,7 +105,6 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
     var intensityFitField;
     var efficiencyFitField;
     var rFTP;
-    var THR;
     var rolling_duration;
 
     // Set the label of the data field here.
@@ -62,7 +115,6 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
         metric_id = Application.getApp().getProperty("METRIC_ID").toNumber();
         datafield_id = Application.getApp().getProperty("DATAFIELD_ID").toNumber();
         rolling_duration = Application.getApp().getProperty("WINDOW").toNumber();
-        THR = Application.getApp().getProperty("THR").toNumber();
 
         // Chosen metric
         if (metric_id == 0) {
@@ -73,7 +125,7 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             label = "PACE";
         } else {
             rFTP = Application.getApp().getProperty("RFTPa").toFloat();
-            label = "GA-PACE";
+            label = "GAP";
         }
 
         // Update label name if IF chosen
@@ -86,7 +138,7 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             "Intensity factor",
             0,
             FitContributor.DATA_TYPE_UINT16,
-            {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"%FTP"}
+            {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"%"}
         );
         intensityFitField.setData(0);
 
@@ -95,7 +147,7 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             "Efficiency factor",
             1,
             FitContributor.DATA_TYPE_FLOAT,
-            {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"%FTP / %THR"}
+            {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>""}
         );
         efficiencyFitField.setData(0);
     }
@@ -105,6 +157,8 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
     function onTimerStart() {
         metric = new Queue(rolling_duration + 1);
         heart_rate = new Queue(rolling_duration + 1);
+        distance = new Queue(rolling_duration + 1);
+        time = new Queue(rolling_duration + 1);
         if (metric_id == 2) {
             altitude = new Queue(rolling_duration + 1);
         }
@@ -115,6 +169,8 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
     function onTimerResume() {
         metric = new Queue(rolling_duration + 1);
         heart_rate = new Queue(rolling_duration + 1);
+        distance = new Queue(rolling_duration + 1);
+        time = new Queue(rolling_duration + 1);
         if (metric_id == 2) {
             altitude = new Queue(rolling_duration + 1);
         }
@@ -124,25 +180,31 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
 
     // Reset metric queue when starting a new workout step 
     // to be directly accurate related to targeted effort
-    // (but no need for lag because already in movement)
     function onWorkoutStepComplete() {
         metric = new Queue(rolling_duration + 1);
         heart_rate = new Queue(rolling_duration + 1);
+        distance = new Queue(rolling_duration + 1);
+        time = new Queue(rolling_duration + 1);
+        if (metric_id == 2) {
+            altitude = new Queue(rolling_duration + 1);
+        }
+        lag = 0;
         // System.println("new workout step");
     }
 
     // Computing variable
+    var speed;
+    var distance;
+    var running_distance;
+    var time;
+    var running_time;
     var metric;
-    var metric_counter;
-    var metric_sum;
     var heart_rate;
-    var heart_rate_counter;
-    var heart_rate_sum;
     var altitude;
     var current_altitude;
     var latest_altitude;
     var grade;
-    var distance;
+    var dist;
     var n_points;
     var intensity_factor;
     var efficiency_factor;
@@ -172,106 +234,58 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
                 metric.update(info.currentSpeed);
             } else {
                 metric.update(info.currentSpeed);
+                distance.update(info.elapsedDistance);
+                time.update(info.timerTime);
                 altitude.update(info.altitude);
-            }
-        
-            // Init counters for metric
-            metric_counter = 0;
-            metric_sum = 0.0;
-
-            // Compute rolling sum for metric
-            for (var i = 0; i < metric.length; i++) {
-
-                // Ignore null
-                if (metric.queue[i] == null) {
-                    continue;
-                }
-
-                metric_sum += metric.queue[i];
-                metric_counter++;
             }
 
             // Compute rolling mean for metric
-            if (metric_counter == 0) {
-                val = 0.0;
-            } else {
-                val = metric_sum / metric_counter;
-            }
-
-            // Init counters for heart rate
-            heart_rate_counter = 0;
-            heart_rate_sum = 0.0;
-
-            // Compute rolling sum for heart rate
-            for (var i = 0; i < heart_rate.length; i++) {
-
-                // Ignore null
-                if (heart_rate.queue[i] == null) {
-                    continue;
-                }
-
-                heart_rate_sum += heart_rate.queue[i];
-                heart_rate_counter++;
-            }
+            val = metric.mean();
 
             // Compute rolling mean for heart rate
-            // and convert to %THR
-            if (heart_rate_counter == 0) {
-                hr = 0.0;
-            } else {
-                hr = heart_rate_sum / heart_rate_counter;
-                hr /= THR;
-            }
+            hr = heart_rate.mean();
+
+            // // Compute speed
+            // // Get current distance
+            // running_distance = distance.current() - distance.last();
+            // running_time = time.current() - time.last();
+            // speed = (running_time != 0) ? 1000 * running_distance / running_time : info.currentSpeed;
 
             // Compute averaged grade
             if (metric_id == 2) {
 
                 // Get current altitude
-                current_altitude = altitude.queue[0];
+                current_altitude = altitude.current();
 
                 // Get latest altitude available
-                n_points = altitude.length;
-                for (var i = altitude.length-1; i >= 0; i--) {
-                    if (altitude.queue[i] == null) {
-                        n_points--;
-                        continue;
-                    } else {
-                        latest_altitude = altitude.queue[i];
-                        break;
-                    }
-                }
+                latest_altitude = altitude.last();
+                n_points = altitude.count_not_null();
 
-                // Get distance
+                // Get distance using val which is speed (mps)
                 // Cannot take metric_sum because of special case when the queue is not entirely filled
                 // (at start time or resume for instance)
-                distance = val * n_points;
+                dist = val * n_points;
 
-                // Compute grade (%)
-                if ((latest_altitude == null) | (distance == 0)) {
-                    grade = 0;
-                } else {
-                    grade = 100 * (current_altitude - latest_altitude) / distance;
-                }
+                // Compute grade (%) and clip to 40% to prevent abnormal values
+                grade = ((n_points >= 2) & (dist != 0)) ? 100 * (current_altitude - latest_altitude) / dist : 0;
+                grade = (grade < 40) ? grade : 40;
+                grade = (grade > -40) ? grade : -40;
 
                 // Compute adjusted pace
                 val *= gap_factor(grade);
 
+                // Monitoring
                 // System.println(metric.queue);
                 // System.println(altitude.queue);
-                // System.println(grade);
-                // System.println(val * 3.6);
+                // System.println(dist);
             }
 
             // Saving IF to fit file
             intensity_factor = Math.round(100 * val / rFTP).toNumber();
             intensityFitField.setData(intensity_factor);
 
-            // Saving EF to fit file
-            if (hr == 0) {
-                efficiency_factor = 0;
-            } else {
-                efficiency_factor = (val / rFTP) / hr;
-            }
+            // Saving EF to fit file : unit is mpm / bpm
+            efficiency_factor = (hr != 0) ? 60 * val / hr : 0;
             efficiencyFitField.setData(efficiency_factor);
 
             // Format final value to display
@@ -297,17 +311,13 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
         } else if (info.timerState == 3) {
             // Increase lag counter
             lag++;
-            val = 0;
+            val = "--";
 
             if (metric_id == 2) {
                 altitude.update(info.altitude);
             }
 
         } else {
-            val = 0;
-        }
-
-        if (val == 0) {
             val = "--";
         }
         
