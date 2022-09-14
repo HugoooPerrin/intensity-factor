@@ -1,11 +1,12 @@
 <resources>
 
     <properties>
-        <property id="METRIC_ID" type="number">2</property>
+        <property id="METRIC_ID" type="number">1</property>
         <property id="DATAFIELD_ID" type="number">0</property>
         <property id="RFTP" type="number">420</property>
-        <property id="RFTPa" type="float">4.05</property>
+        <property id="RFTPa" type="float">4.0835</property>
         <property id="WINDOW" type="number">15</property>
+        <property id="GRADE" type="boolean">true</property>
     </properties>
 
     <strings>
@@ -14,6 +15,7 @@
         <string id="RFTP_TITLE">Running FTP (watts)</string>
         <string id="RFTPa_TITLE">Running FTPa (m/sec)</string>
         <string id="WINDOW_TITLE">Rolling window duration (seconds)</string>
+        <string id="GRADE_TITLE">Display grade (works for all except pace and GAP)</string>
 
         <string id="metric">Rolling metric (raw)</string>
         <string id="intensity">Rolling metric intensity (%FTP or %FTPa)</string>
@@ -22,10 +24,20 @@
         <string id="pace">Pace</string>
         <string id="power">Power</string>
 
-        <string id="chart_label">Intensity factor</string>
-        <string id="chart_label_e">Efficiency factor</string>
-        <string id="chart_units">%FTP</string>
-        <string id="chart_units_e">mpm/bpm</string>
+        <string id="chart_label_if">Intensity factor</string>
+        <string id="chart_units_if">%FTP</string>
+
+        <string id="chart_label_ef">Efficiency factor</string>
+        <string id="chart_units_ef">mpm/bpm</string>
+
+        <string id="chart_label_grade">Grade</string>
+        <string id="chart_units_grade">%</string>
+
+        <string id="chart_label_speed">Speed</string>
+        <string id="chart_units_speed">mps</string>
+
+        <string id="chart_label_altitude">Altitude</string>
+        <string id="chart_units_altitude">m</string>
     </strings>
 
     <settings>
@@ -49,17 +61,29 @@
             <settingConfig type="numeric" min="1" />
         </setting>
         <setting propertyKey="@Properties.WINDOW" title="@Strings.WINDOW_TITLE">
-            <settingConfig type="numeric" min="3" max="120" />
+            <settingConfig type="numeric" min="10" max="120" />
+        </setting>
+        <setting propertyKey="@Properties.GRADE" title="@Strings.GRADE_TITLE">
+            <settingConfig type="boolean" />
         </setting>
     </settings>
 
     <fitContributions>
         <fitField id="0" displayInActivitySummary="false" displayInChart="true" sortOrder="0" precision="0"
-        chartTitle="@Strings.chart_label" dataLabel="@Strings.chart_label"
-        unitLabel="@Strings.chart_units" fillColor="#E92929" />
+        chartTitle="@Strings.chart_label_if" dataLabel="@Strings.chart_label_if"
+        unitLabel="@Strings.chart_units_if" fillColor="#E92929" />
         <fitField id="1" displayInActivitySummary="false" displayInChart="true" sortOrder="1" precision="2"
-        chartTitle="@Strings.chart_label_e" dataLabel="@Strings.chart_label_e"
-        unitLabel="@Strings.chart_units_e" fillColor="#2A22A2" />
+        chartTitle="@Strings.chart_label_ef" dataLabel="@Strings.chart_label_ef"
+        unitLabel="@Strings.chart_units_ef" fillColor="#2A22A2" />
+        <fitField id="2" displayInActivitySummary="false" displayInChart="true" sortOrder="2" precision="2"
+        chartTitle="@Strings.chart_label_grade" dataLabel="@Strings.chart_label_grade"
+        unitLabel="@Strings.chart_units_grade" fillColor="#2A22A2" />
+        <fitField id="3" displayInActivitySummary="false" displayInChart="true" sortOrder="3" precision="2"
+        chartTitle="@Strings.chart_label_speed" dataLabel="@Strings.chart_label_speed"
+        unitLabel="@Strings.chart_units_speed" fillColor="#2A22A2" />
+        <fitField id="4" displayInActivitySummary="false" displayInChart="true" sortOrder="4" precision="2"
+        chartTitle="@Strings.chart_label_altitude" dataLabel="@Strings.chart_label_altitude"
+        unitLabel="@Strings.chart_units_altitude" fillColor="#2A22A2" />
     </fitContributions>
 
 </resources>
