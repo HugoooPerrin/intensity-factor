@@ -20,13 +20,13 @@
         <string id="DEBUG_TITLE">Run in debug mode</string>
 
         <string id="metric">Rolling metric (raw)</string>
-        <string id="intensity">Rolling metric intensity (%FTP or %FTPa)</string>
+        <string id="intensity">Rolling metric intensity (%ftp)</string>
 
-        <string id="gap">Grade adjusted pace</string>
+        <string id="gap">GAP</string>
         <string id="pace">Pace</string>
         <string id="power">Power</string>
 
-        <string id="chart_label_gap">Grade adjusted pace</string>
+        <string id="chart_label_gap">GAP</string>
         <string id="chart_units_gap">km/h</string>
 
         <string id="chart_label_if">Intensity factor</string>

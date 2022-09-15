@@ -69,7 +69,7 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
         // GRAPH FIT FIELDS
         // Create the custom GAP FIT data field we want to record
         gapFitField = createField(
-            "Grade adjusted pace",
+            "GAP",
             0,
             FitContributor.DATA_TYPE_FLOAT,
             {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>""}
@@ -103,7 +103,8 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
         );
         gradeFitField.setData(0);
 
-        // LAP FIT FIELDS
+        // LAP FIT FIELDS : TO COME !!
+        // OVERALL FIT FIELDS : TO COME !!
 
         // TO DEBUG GRADE | POWER IF NEEDED
         if (debug_mode) {
