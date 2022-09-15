@@ -7,83 +7,6 @@ using Toybox.Application;
 using Toybox.FitContributor;
 
 
-// ROLLING QUEUE CLASS
-class Queue {
-
-    // Init
-    var length;
-    var queue;
-    var counter;
-    var sum;
-
-    // Initialize instance
-    function initialize(len) {
-        length = len;
-        queue = new [len];
-    }
-
-    // Add a member to queue
-    function update(member) {
-        for (var i = self.length-1; i > 0; i--) {
-            self.queue[i] = self.queue[i-1];
-        }
-        self.queue[0] = member;
-    }
-
-    // Compute mean (taking null into account)
-    function mean() {
-        counter = 0;
-        sum = 0.0;
-
-        // Compute rolling sum for metric
-        for (var i = 0; i < self.length; i++) {
-
-            // Ignore null
-            if (self.queue[i] == null) {
-                continue;
-            }
-
-            sum += self.queue[i];
-            counter++;
-        }
-
-        // Return average
-        return (counter != 0) ? sum / counter : 0.0;
-    }
-
-    // Get current
-    function current(n) {
-        return Math.mean(self.queue.slice(0, n));
-    }
-
-    // Get last (not null)
-    function last(n) {
-        for (var i = self.length-1; i >= n-1; i--) {
-            if (self.queue[i] != null) {
-                return Math.mean(self.queue.slice(i+1-n, i+1));
-            } else {
-                continue;
-            }
-        }
-        return null;
-    }
-
-    // Get non-null count
-    function count_not_null() {
-        counter = self.length;
-        for (var i = self.length-1; i >= 0; i--) {
-            if (self.queue[i] != null) {
-                return counter;
-            } else {
-                counter--;
-                continue;
-            }
-        }
-        return 0;
-    }
-}
-
-
 // GAP modelling
 // ref : https://www.reddit.com/r/Strava/comments/sdeix0/mind_the_gap_getting_fit_for_the_formula_equation/
 function gap_factor(g) {
@@ -105,12 +28,17 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
     var rFTP;
     var rolling_duration;
     var display_grade;
+    var debug_mode;
 
     // Fit fields
+    var gapFitField;
     var intensityFitField;
     var efficiencyFitField;
-    var speedFitField;
     var gradeFitField;
+
+    // Debug fit fields
+    var powerFitField;
+    var speedFitField;
     var altitudeFitField;
 
     // Set the label of the data field here.
@@ -122,6 +50,7 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
         datafield_id = Application.getApp().getProperty("DATAFIELD_ID").toNumber();
         rolling_duration = Application.getApp().getProperty("WINDOW").toNumber()+1;
         display_grade = Application.getApp().getProperty("GRADE");
+        debug_mode = Application.getApp().getProperty("DEBUG");
 
         // Chosen metric
         if (metric_id == 0) {
@@ -137,19 +66,29 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             label += " INTENSITY";
         }
 
+        // GRAPH FIT FIELDS
+        // Create the custom GAP FIT data field we want to record
+        gapFitField = createField(
+            "Grade adjusted pace",
+            0,
+            FitContributor.DATA_TYPE_FLOAT,
+            {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>""}
+        );
+        gapFitField.setData(0);
+
         // Create the custom intensity FIT data field we want to record
         intensityFitField = createField(
             "Intensity factor",
-            0,
+            1,
             FitContributor.DATA_TYPE_UINT16,
-            {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"%"}
+            {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>""}
         );
         intensityFitField.setData(0);
 
         // Create the custom efficiency FIT data field we want to record
         efficiencyFitField = createField(
-            "Efficiency factor",
-            1,
+            "GAP efficiency factor",
+            2,
             FitContributor.DATA_TYPE_FLOAT,
             {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>""}
         );
@@ -158,30 +97,43 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
         // Create the custom grade FIT data field we want to record
         gradeFitField = createField(
             "Grade",
-            2,
+            3,
             FitContributor.DATA_TYPE_FLOAT,
             {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>""}
         );
         gradeFitField.setData(0);
 
-        // TO DEBUG GRADE IF NEEDED
-        // Create the custom speed FIT data field we want to record
-        speedFitField = createField(
-            "Speed",
-            3,
-            FitContributor.DATA_TYPE_FLOAT,
-            {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>""}
-        );
-        speedFitField.setData(0);
+        // LAP FIT FIELDS
 
-        // Create the custom speed FIT data field we want to record
-        altitudeFitField = createField(
-            "Altitude",
-            4,
-            FitContributor.DATA_TYPE_FLOAT,
-            {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>""}
-        );
-        altitudeFitField.setData(0);
+        // TO DEBUG GRADE | POWER IF NEEDED
+        if (debug_mode) {
+            // Create the custom speed FIT data field we want to record
+            powerFitField = createField(
+                "Power API",
+                8,
+                FitContributor.DATA_TYPE_UINT16,
+                {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>""}
+            );
+            powerFitField.setData(0);
+
+            // Create the custom speed FIT data field we want to record
+            speedFitField = createField(
+                "Speed API",
+                9,
+                FitContributor.DATA_TYPE_FLOAT,
+                {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>""}
+            );
+            speedFitField.setData(0);
+
+            // Create the custom speed FIT data field we want to record
+            altitudeFitField = createField(
+                "Altitude API",
+                10,
+                FitContributor.DATA_TYPE_FLOAT,
+                {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>""}
+            );
+            altitudeFitField.setData(0);
+        }
     }
 
     // Reset metric queue & lag when starting or restarting activity
@@ -195,6 +147,7 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
         }
         lag = 0;
     }
+
     function onTimerStart() {
         reset_queues();
         // System.println("started");
@@ -238,18 +191,23 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
     function compute(info as Activity.Info) as Numeric or Duration or String or Null {
 
         // Update rolling queues, compute value & save to fit file
-        // else return 0.0 and reset rolling queue
-        
         if (lag >= ignore_first) {
 
-            // Add new value to rolling queue
-            // (Oldest member is automatically removed)
-            heart_rate.update(info.currentHeartRate);
-            speed.update(info.currentSpeed);
-            altitude.update(info.altitude);
+            // Debug mode
+            if (debug_mode) {
+                powerFitField.setData((info.currentPower != null) ? info.currentPower : 0);
+                speedFitField.setData((info.currentSpeed != null) ? info.currentSpeed : 0);
+                altitudeFitField.setData((info.altitude != null) ? info.altitude : 0);
+            }
+
+            // Add new value to rolling queue (oldest member is automatically removed)
+            heart_rate.update((info.currentHeartRate != null) ? info.currentHeartRate : 0);
+            speed.update((info.currentSpeed != null) ? info.currentSpeed : 0);
+            altitude.update((info.altitude != null) ? info.altitude : 0);
 
             if (metric_id == 0) {
-                power.update(info.currentPower);
+                // Add new value to queue (oldest member is automatically removed)
+                power.update((info.currentPower != null) ? info.currentPower : 0);
 
                 // Compute rolling mean for power
                 pwr = power.mean();
@@ -274,22 +232,15 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             grade = (grade < 40) ? grade : 40;
             grade = (grade > -40) ? grade : -40;
 
-            // Compute adjusted pace
+            // Saving grade to fit file
+            gradeFitField.setData(grade);
+
+            // Compute grade adjusted pace
             gap = spd * gap_factor(grade);
             spd = (metric_id == 2) ? gap : spd;
 
-            // Saving grade to fit file
-            gradeFitField.setData(grade);
-            altitudeFitField.setData(info.altitude);
-            speedFitField.setData(info.currentSpeed);
-
-            // // Monitoring
-            // System.println(metric.queue);
-            // System.println(altitude.queue);
-            // if (n_seconds >= 5) {
-            //     System.println(altitude.current(2));
-            //     System.println(altitude.last(2));
-            // }
+            // Saving GAP to fit file
+            gapFitField.setData(gap * 3.6);
 
             // Saving IF to fit file
             intensity_factor = (metric_id == 0) ? 100 * pwr / rFTP : 100 * spd / rFTP;
