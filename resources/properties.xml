@@ -1,6 +1,7 @@
 <resources>
 
     <properties>
+        <property id="VERSION_ID" type="number">0</property>
         <property id="METRIC_ID" type="number">2</property>
         <property id="DATAFIELD_ID" type="number">0</property>
         <property id="RFTP" type="number">420</property>
@@ -11,6 +12,7 @@
     </properties>
 
     <strings>
+        <string id="VERSION_ID_TITLE">App version</string>
         <string id="METRIC_ID_TITLE">Metric to use for computation</string>
         <string id="DATAFIELD_ID_TITLE">Value to display</string>
         <string id="RFTP_TITLE">Running FTP (watts)</string>
@@ -18,6 +20,8 @@
         <string id="WINDOW_TITLE">Rolling window duration (seconds)</string>
         <string id="GRADE_TITLE">Display grade (works for all except pace and GAP)</string>
         <string id="DEBUG_TITLE">Run in debug mode</string>
+
+        <string id="version">1.4.4</string>
 
         <string id="metric">Rolling metric (raw)</string>
         <string id="intensity">Rolling metric intensity (%ftp)</string>
@@ -49,6 +53,11 @@
     </strings>
 
     <settings>
+        <setting propertyKey="@Properties.VERSION_ID" title="@Strings.VERSION_ID_TITLE">
+            <settingConfig type="list" >
+                <listEntry value="0">@Strings.version</listEntry>
+            </settingConfig>
+        </setting>
         <setting propertyKey="@Properties.METRIC_ID" title="@Strings.METRIC_ID_TITLE">
             <settingConfig type="list" >
                 <listEntry value="0">@Strings.power</listEntry>

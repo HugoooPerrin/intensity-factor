@@ -147,29 +147,29 @@
         <entry filename="Rez" id="31" lineNum="1" parent="globals/Rez" pc="268439258" symbol="&lt;init&gt;"/>
     </pcToLineNum>
     <symbolTable>
-        <entry field="true" id="35" symbol="chart_units_power"/>
-        <entry field="true" id="68" symbol="dist"/>
+        <entry field="true" id="37" symbol="chart_units_power"/>
+        <entry field="true" id="70" symbol="dist"/>
         <entry id="10" object="true" symbol="IntensityfactorView"/>
-        <entry field="true" id="72" symbol="val"/>
-        <entry field="true" id="49" symbol="metric_id"/>
+        <entry field="true" id="74" symbol="val"/>
+        <entry field="true" id="51" symbol="metric_id"/>
         <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
-        <entry field="true" id="40" symbol="METRIC_ID_TITLE"/>
+        <entry field="true" id="42" symbol="METRIC_ID_TITLE"/>
         <entry id="4" module="true" symbol="globals/Rez/Menus"/>
         <entry id="8389849" symbol="units"/>
-        <entry field="true" id="58" symbol="gradeFitField"/>
-        <entry field="true" id="38" symbol="metric"/>
+        <entry field="true" id="60" symbol="gradeFitField"/>
+        <entry field="true" id="40" symbol="metric"/>
         <entry id="8391212" method="true" symbol="mean"/>
-        <entry field="true" id="41" symbol="queue"/>
-        <entry field="true" id="64" symbol="heart_rate"/>
-        <entry field="true" id="55" symbol="gapFitField"/>
-        <entry field="true" id="29" symbol="chart_units_altitude"/>
-        <entry field="true" id="33" symbol="pace"/>
-        <entry field="true" id="70" symbol="intensity_factor"/>
-        <entry field="true" id="57" symbol="efficiencyFitField"/>
-        <entry field="true" id="30" symbol="GRADE_TITLE"/>
-        <entry field="true" id="32" symbol="chart_units_gap"/>
+        <entry field="true" id="43" symbol="queue"/>
+        <entry field="true" id="66" symbol="heart_rate"/>
+        <entry field="true" id="57" symbol="gapFitField"/>
+        <entry field="true" id="30" symbol="chart_units_altitude"/>
+        <entry field="true" id="34" symbol="pace"/>
+        <entry field="true" id="72" symbol="intensity_factor"/>
+        <entry field="true" id="59" symbol="efficiencyFitField"/>
+        <entry field="true" id="31" symbol="GRADE_TITLE"/>
+        <entry field="true" id="33" symbol="chart_units_gap"/>
         <entry field="true" id="8388611" module="true" symbol="Toybox"/>
-        <entry field="true" id="69" symbol="n_seconds"/>
+        <entry field="true" id="71" symbol="n_seconds"/>
         <entry id="8389747" method="true" symbol="onTimerStart"/>
         <entry field="true" id="22" symbol="AppName"/>
         <entry field="true" id="8388963" symbol="altitude"/>
@@ -177,82 +177,84 @@
         <entry id="8388772" module="true" object="true" symbol="Fonts"/>
         <entry field="true" id="8388795" method="true" symbol="length"/>
         <entry id="8388631" module="true" symbol="Activity"/>
-        <entry field="true" id="31" symbol="DATAFIELD_ID_TITLE"/>
+        <entry field="true" id="32" symbol="DATAFIELD_ID_TITLE"/>
         <entry id="8388648" module="true" symbol="WatchUi"/>
-        <entry field="true" id="39" symbol="chart_label_altitude"/>
+        <entry field="true" id="41" symbol="chart_label_altitude"/>
         <entry id="2" module="true" symbol="globals/Rez"/>
-        <entry field="true" id="71" symbol="efficiency_factor"/>
+        <entry field="true" id="73" symbol="efficiency_factor"/>
         <entry field="true" id="18" symbol="chart_units_if"/>
-        <entry field="true" id="27" symbol="chart_units_ef"/>
+        <entry field="true" id="28" symbol="chart_units_ef"/>
         <entry field="true" id="24" symbol="gap"/>
-        <entry field="true" id="56" symbol="intensityFitField"/>
-        <entry field="true" id="73" symbol="mins"/>
-        <entry field="true" id="43" symbol="sum"/>
+        <entry field="true" id="58" symbol="intensityFitField"/>
+        <entry field="true" id="75" symbol="mins"/>
+        <entry field="true" id="45" symbol="sum"/>
         <entry id="8388771" module="true" object="true" symbol="Drawables"/>
         <entry id="14" module="true" symbol="Menus"/>
         <entry id="8389275" method="true" symbol="getApp"/>
         <entry id="6" module="true" symbol="globals/Rez/Layouts"/>
-        <entry field="true" id="66" symbol="spd"/>
+        <entry field="true" id="68" symbol="spd"/>
         <entry field="true" id="8391580" symbol="intensity"/>
-        <entry field="true" id="60" symbol="speedFitField"/>
-        <entry field="true" id="65" symbol="hr"/>
-        <entry id="45" method="true" symbol="last"/>
+        <entry field="true" id="62" symbol="speedFitField"/>
+        <entry field="true" id="67" symbol="hr"/>
+        <entry id="47" method="true" symbol="last"/>
         <entry id="8389137" method="true" symbol="compute"/>
-        <entry field="true" id="53" symbol="display_grade"/>
+        <entry field="true" id="55" symbol="display_grade"/>
         <entry id="7" module="true" symbol="globals/Rez/JsonData"/>
         <entry id="8390685" method="true" symbol="onWorkoutStepComplete"/>
         <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
-        <entry field="true" id="36" symbol="chart_label_grade"/>
-        <entry field="true" id="28" symbol="chart_label_speed"/>
-        <entry field="true" id="48" symbol="lag"/>
+        <entry field="true" id="38" symbol="chart_label_grade"/>
+        <entry field="true" id="29" symbol="chart_label_speed"/>
+        <entry field="true" id="50" symbol="lag"/>
         <entry field="true" id="23" symbol="WINDOW_TITLE"/>
         <entry field="true" id="17" symbol="chart_label_power"/>
         <entry id="8388645" module="true" symbol="Time"/>
         <entry id="8388769" module="true" object="true" symbol="Rez"/>
-        <entry field="true" id="50" symbol="datafield_id"/>
-        <entry field="true" id="52" symbol="rolling_duration"/>
+        <entry field="true" id="52" symbol="datafield_id"/>
+        <entry field="true" id="54" symbol="rolling_duration"/>
         <entry id="8388640" module="true" symbol="Lang"/>
         <entry field="true" id="19" symbol="chart_label_if"/>
         <entry id="8390088" module="true" object="true" symbol="JsonData"/>
-        <entry field="true" id="42" symbol="counter"/>
+        <entry field="true" id="44" symbol="counter"/>
         <entry field="true" id="15" symbol="LauncherIcon"/>
         <entry id="8388610" symbol="statics"/>
         <entry field="true" id="20" symbol="chart_label_ef"/>
         <entry field="true" id="21" symbol="chart_label_gap"/>
-        <entry field="true" id="67" symbol="grade"/>
+        <entry field="true" id="69" symbol="grade"/>
         <entry id="8389350" module="true" symbol="globals"/>
         <entry field="true" id="8388958" symbol="speed"/>
         <entry field="true" id="16" symbol="DEBUG_TITLE"/>
         <entry id="8388770" module="true" object="true" symbol="Strings"/>
-        <entry field="true" id="51" symbol="rFTP"/>
+        <entry field="true" id="53" symbol="rFTP"/>
         <entry id="8388702" method="true" symbol="initialize"/>
-        <entry id="46" method="true" symbol="count_not_null"/>
+        <entry id="48" method="true" symbol="count_not_null"/>
         <entry id="8389279" method="true" symbol="onStart"/>
         <entry id="8389780" module="true" symbol="FitContributor"/>
         <entry field="true" id="8388961" symbol="power"/>
-        <entry field="true" id="47" symbol="ignore_first"/>
+        <entry field="true" id="49" symbol="ignore_first"/>
+        <entry field="true" id="27" symbol="VERSION_ID_TITLE"/>
         <entry id="8388641" module="true" symbol="Math"/>
+        <entry field="true" id="36" symbol="version"/>
         <entry id="8389280" method="true" symbol="getInitialView"/>
         <entry id="8389281" method="true" symbol="onStop"/>
         <entry id="8389847" symbol="mesgType"/>
-        <entry field="true" id="59" symbol="powerFitField"/>
-        <entry field="true" id="63" symbol="pwr"/>
-        <entry field="true" id="54" symbol="debug_mode"/>
+        <entry field="true" id="61" symbol="powerFitField"/>
+        <entry field="true" id="65" symbol="pwr"/>
+        <entry field="true" id="56" symbol="debug_mode"/>
         <entry id="9" method="true" symbol="gap_factor"/>
         <entry id="11" object="true" symbol="Queue"/>
-        <entry id="62" method="true" symbol="reset_queues"/>
+        <entry id="64" method="true" symbol="reset_queues"/>
         <entry id="13" module="true" symbol="Layouts"/>
         <entry id="12" object="true" symbol="IntensityfactorApp"/>
-        <entry id="44" method="true" symbol="current"/>
-        <entry field="true" id="61" symbol="altitudeFitField"/>
+        <entry id="46" method="true" symbol="current"/>
+        <entry field="true" id="63" symbol="altitudeFitField"/>
         <entry id="8389750" method="true" symbol="onTimerResume"/>
         <entry field="true" id="26" symbol="chart_units_grade"/>
         <entry id="5" module="true" symbol="globals/Rez/Fonts"/>
         <entry id="8390514" method="true" symbol="update"/>
-        <entry field="true" id="37" symbol="chart_units_speed"/>
-        <entry field="true" id="34" symbol="RFTPa_TITLE"/>
+        <entry field="true" id="39" symbol="chart_units_speed"/>
+        <entry field="true" id="35" symbol="RFTPa_TITLE"/>
         <entry id="8388635" module="true" symbol="Application"/>
-        <entry field="true" id="74" symbol="secs"/>
+        <entry field="true" id="76" symbol="secs"/>
         <entry field="true" id="25" symbol="RFTP_TITLE"/>
     </symbolTable>
     <localVars>
@@ -283,6 +285,7 @@
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="RFTP_TITLE"/>
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="power"/>
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_grade"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="VERSION_ID_TITLE"/>
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_ef"/>
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_label_speed"/>
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_altitude"/>
@@ -291,6 +294,7 @@
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_gap"/>
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="pace"/>
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="RFTPa_TITLE"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="version"/>
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_power"/>
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="intensity"/>
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_label_grade"/>
@@ -308,9 +312,9 @@
         <dataEntry label="globals/Rez/Layouts" offset="354" parentId="Rez" symbolId="Layouts" type="module"/>
         <dataEntry label="globals/Rez/JsonData" offset="385" parentId="Rez" symbolId="JsonData" type="module"/>
         <dataEntry label="globals/Rez/Strings" offset="416" parentId="Rez" symbolId="Strings" type="module"/>
-        <dataEntry label="globals/IntensityfactorApp" offset="663" parentId="globals" symbolId="IntensityfactorApp" type="class"/>
-        <dataEntry label="globals/Queue" offset="734" parentId="globals" symbolId="Queue" type="class"/>
-        <dataEntry label="globals/IntensityfactorView" offset="853" parentId="globals" symbolId="IntensityfactorView" type="class"/>
+        <dataEntry label="globals/IntensityfactorApp" offset="679" parentId="globals" symbolId="IntensityfactorApp" type="class"/>
+        <dataEntry label="globals/Queue" offset="750" parentId="globals" symbolId="Queue" type="class"/>
+        <dataEntry label="globals/IntensityfactorView" offset="869" parentId="globals" symbolId="IntensityfactorView" type="class"/>
     </dataEntryOffsetMappings>
     <functions>
         <functionEntry accessMode="public" endPc="268435495" name="gap_factor" startPc="268435456">
