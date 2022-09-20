@@ -9,7 +9,7 @@ using Toybox.FitContributor;
 
 // GAP modelling
 // ref : https://www.reddit.com/r/Strava/comments/sdeix0/mind_the_gap_getting_fit_for_the_formula_equation/
-function gap_factor(g) {
+function grade_factor(g) {
     return 1 + 0.02869556 * g + 0.001520768 * g * g;
 }
 
@@ -21,6 +21,7 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
     // const heart_rate_lag = 15;
     const ignore_first = 5;
     var lag = 0;
+    const rolling_duration_grade = 15;
 
     // Application settings
     var metric_id;
@@ -29,6 +30,7 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
     var rolling_duration;
     var display_grade;
     var debug_mode;
+    var zones = new [7];
 
     // Fit fields
     var gapFitField;
@@ -52,6 +54,13 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
         display_grade = Application.getApp().getProperty("GRADE");
         debug_mode = Application.getApp().getProperty("DEBUG");
 
+        // Intensity zones
+        zones[0] = 0;
+        for (var i = 1; i <= 5; i++) {
+            zones[i] = Application.getApp().getProperty("ZONE"+i.toString()).toNumber();
+        }
+        zones[6] = 150;
+
         // Chosen metric
         if (metric_id == 0) {
             rFTP = Application.getApp().getProperty("RFTP").toFloat();
@@ -62,8 +71,10 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
         }
 
         // Update label name if IF chosen
-        if (datafield_id == 0) {
+        if (datafield_id == 1) {
             label += " INTENSITY";
+        } else if (datafield_id == 2) {
+            label += " ZONE";
         }
 
         // GRAPH FIT FIELDS
@@ -142,7 +153,9 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
     function reset_queues() {
         heart_rate = new Queue(rolling_duration);
         speed = new Queue(rolling_duration);
-        altitude = new Queue(rolling_duration);
+        gap = new Queue(rolling_duration);
+
+        altitude = new Queue(rolling_duration_grade);
         if (metric_id == 0) {
             power = new Queue(rolling_duration);
         }
@@ -151,35 +164,36 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
 
     function onTimerStart() {
         reset_queues();
-        // System.println("started");
     }
 
     function onTimerResume() {
         reset_queues();
-        // System.println("restarted");
     }
 
     // Reset metric queue when starting a new workout step (NOT A SIMPLE LAP)
     // to be directly accurate related to targeted effort
     function onWorkoutStepComplete() {
         reset_queues();
-        // System.println("new workout step");
     }
 
     // Computing variable
     var power;
-    var pwr;
+    var rolling_pwr;
     var heart_rate;
-    var hr;
+    var rolling_hr;
     var speed;
-    var spd;
+    var rolling_spd;
     var altitude;
     var grade;
     var gap;
+    var rolling_gp;
+    var instant_gap;
     var dist;
     var n_seconds;
     var intensity_factor;
     var efficiency_factor;
+    var zone_num;
+    var zone_prct;
     var val;
     var pace;
     var mins;
@@ -206,29 +220,29 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             speed.update((info.currentSpeed != null) ? info.currentSpeed : 0);
             altitude.update((info.altitude != null) ? info.altitude : 0);
 
+            // Compute rolling mean for speed
+            rolling_spd = speed.mean();
+
+            // Compute rolling mean for heart rate
+            rolling_hr = heart_rate.mean();
+
             if (metric_id == 0) {
                 // Add new value to queue (oldest member is automatically removed)
                 power.update((info.currentPower != null) ? info.currentPower : 0);
 
                 // Compute rolling mean for power
-                pwr = power.mean();
+                rolling_pwr = power.mean();
             }
 
-            // Compute rolling mean for speed
-            spd = speed.mean();
-
-            // Compute rolling mean for heart rate
-            hr = heart_rate.mean();
-
-            // Compute rolling grade
-            // Count how many values are stored in queues
+            // INSTANT GRADE AND GAP
+            // Count how many values are stored in altitude queue 
+            // (potentially shorter than other : rolling_duration_grade <= rolling_duration)
             n_seconds = altitude.count_not_null();
 
-            // Get distance using val which is speed (mps)
-            dist = spd * n_seconds;
+            // Get distance estimate using enhanced speed (mps)
+            dist = speed.current(n_seconds) * n_seconds;
 
-            // Compute grade (%) and clip to 40% to prevent abnormal values
-            // (n_seconds >= 2) would be enough but 5 is more robust when starting
+            // Compute instant grade (%) and clip to 40% to prevent abnormal values
             grade = ((n_seconds >= 5) & (dist > 1)) ? 100 * (altitude.current(2) - altitude.last(2)) / dist : 0;
             grade = (grade < 40) ? grade : 40;
             grade = (grade > -40) ? grade : -40;
@@ -236,32 +250,60 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             // Saving grade to fit file
             gradeFitField.setData(grade);
 
-            // Compute grade adjusted pace
-            gap = spd * gap_factor(grade);
-            spd = (metric_id == 2) ? gap : spd;
+            // Compute grade adjusted pace (instant)
+            // (makes sense because current speed is enhanced by Garmin, therefore also has a little lag)
+            instant_gap = speed.current(1) * grade_factor(grade);
+            gap.update(instant_gap);
 
-            // Saving GAP to fit file
-            gapFitField.setData(gap * 3.6);
+            // Compute rolling mean for grade adjusted pace
+            // (Smoother than rolling_gp = rolling_speed * grade_factor(grade) ?)
+            rolling_gp = gap.mean();
 
-            // Saving IF to fit file
-            intensity_factor = (metric_id == 0) ? 100 * pwr / rFTP : 100 * spd / rFTP;
-            intensity_factor = Math.round(intensity_factor).toNumber();
-            intensityFitField.setData(intensity_factor);
+            // Replace according to user settings
+            rolling_spd = (metric_id == 2) ? rolling_gp : rolling_spd;
 
-            // Saving EF to fit file : always based on GAP for comparison and unit is mpm/bpm
-            efficiency_factor = (hr != 0) ? 60 * gap / hr : 0;
+            // Saving instant GAP to fit file
+            gapFitField.setData(instant_gap * 3.6);
+
+            // Saving rolling IF to fit file
+            intensity_factor = (metric_id == 0) ? 100 * rolling_pwr / rFTP : 100 * rolling_spd / rFTP;
+            intensityFitField.setData(Math.round(intensity_factor).toNumber());
+
+            // Saving EF to fit file : always based on rolling GAP for comparison and unit is mpm/bpm
+            efficiency_factor = (rolling_hr != 0) ? 60 * rolling_gp / rolling_hr : 0;
             efficiencyFitField.setData(efficiency_factor);
 
             // Format final value to display
-            if (datafield_id == 0) {
-                val = intensity_factor;
+            if (datafield_id == 1) {
+                // Show grade next to intensity
+                val = Math.round(intensity_factor).toNumber();
+                val = (display_grade) ? Lang.format("$1$:$2$", [val, Math.round(grade).format("%d")]) : val;
+
+            } else if (datafield_id == 2) {
+                // Computing zone
+                for (var i = 1; i <= 6; i++) {
+                    if (intensity_factor < zones[i]) {
+                        zone_num = i-1;
+                        zone_prct = (intensity_factor - zones[i-1]) / (zones[i] - zones[i-1]);
+                        zone_prct = Math.round(10 * zone_prct).toNumber();
+                        break;
+                    }
+                    zone_num = 6;
+                    zone_prct = 0;
+                }
+                // handling one special case
+                if (zone_prct == 10) {
+                    zone_num += 1;
+                    zone_prct = 0;
+                }
+                val = Lang.format("$1$.$2$", [zone_num.format("%d"), zone_prct.format("%d")]);
 
             } else if (metric_id == 0) {
-                val = Math.round(pwr).toNumber();
+                val = Math.round(rolling_pwr).toNumber();
 
             // Works for pace or gap
-            } else if (spd != 0) {
-                pace = 60.0 / (spd * 3.6);
+            } else if (rolling_spd != 0) {
+                pace = 60.0 / (rolling_spd * 3.6);
                 mins = Math.floor(pace).toNumber();
                 secs = Math.round((pace - mins) * 60);
                 // handling one special case
@@ -272,9 +314,6 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
                 val = Lang.format("$1$:$2$", [mins.format("%d"), secs.format("%02d")]);
             }
 
-            // Show grade next to value
-            val = (display_grade & ((datafield_id == 0) | (metric_id == 0))) ? Lang.format("$1$:$2$", [val, Math.round(grade).format("%d")]) : val;
-        
         } else if (info.timerState == 3) {
             // Increase lag counter
             lag++;
@@ -284,11 +323,6 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             val = "--";
         }
         
-        // // Monitoring & debugging
-        // if (metric != null) {
-        //     System.println(metric.queue);
-        // }
-
         return val;
     }
 }

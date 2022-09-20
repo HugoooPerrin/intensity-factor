@@ -1,30 +1,47 @@
 <resources>
 
     <properties>
-        <property id="VERSION_ID" type="number">0</property>
-        <property id="METRIC_ID" type="number">2</property>
+        <property id="VERSION_ID" type="string">1.5.0</property>
+        
+        <property id="METRIC_ID" type="number">0</property>
         <property id="DATAFIELD_ID" type="number">0</property>
+        
         <property id="RFTP" type="number">420</property>
         <property id="RFTPa" type="float">4.0835</property>
-        <property id="WINDOW" type="number">15</property>
-        <property id="GRADE" type="boolean">true</property>
-        <property id="DEBUG" type="boolean">true</property>
+        <property id="WINDOW" type="number">30</property>
+        
+        <property id="ZONE1" type="number">65</property>
+        <property id="ZONE2" type="number">80</property>
+        <property id="ZONE3" type="number">95</property>
+        <property id="ZONE4" type="number">105</property>
+        <property id="ZONE5" type="number">120</property>
+        
+        <property id="GRADE" type="boolean">false</property>
+        <property id="DEBUG" type="boolean">false</property>
+
     </properties>
 
     <strings>
         <string id="VERSION_ID_TITLE">App version</string>
-        <string id="METRIC_ID_TITLE">Metric to use for computation</string>
-        <string id="DATAFIELD_ID_TITLE">Value to display</string>
+        <string id="METRIC_ID_TITLE">Base metric</string>
+        <string id="DATAFIELD_ID_TITLE">Value to display in datafield</string>
+
         <string id="RFTP_TITLE">Running FTP (watts)</string>
         <string id="RFTPa_TITLE">Running FTPa (m/sec)</string>
         <string id="WINDOW_TITLE">Rolling window duration (seconds)</string>
-        <string id="GRADE_TITLE">Display grade (works for all except pace and GAP)</string>
-        <string id="DEBUG_TITLE">Run in debug mode</string>
 
-        <string id="version">1.4.4</string>
+        <string id="ZONE1_TITLE">Zone 1 (%ftp)</string>
+        <string id="ZONE2_TITLE">Zone 2 (%ftp)</string>
+        <string id="ZONE3_TITLE">Zone 3 (%ftp)</string>
+        <string id="ZONE4_TITLE">Zone 4 (%ftp)</string>
+        <string id="ZONE5_TITLE">Zone 5 (%ftp)</string>
 
-        <string id="metric">Rolling metric (raw)</string>
-        <string id="intensity">Rolling metric intensity (%ftp)</string>
+        <string id="GRADE_TITLE">Display grade (for intensity only)</string>
+        <string id="DEBUG_TITLE">Run in debug mode (garmin API saved in Fit for analysis)</string>
+
+        <string id="metric">Metric</string>
+        <string id="intensity">Metric intensity (%ftp)</string>
+        <string id="zone">Metric zone</string>
 
         <string id="gap">GAP</string>
         <string id="pace">Pace</string>
@@ -50,13 +67,12 @@
 
         <string id="chart_label_altitude">Altitude API</string>
         <string id="chart_units_altitude">m</string>
+
     </strings>
 
     <settings>
         <setting propertyKey="@Properties.VERSION_ID" title="@Strings.VERSION_ID_TITLE">
-            <settingConfig type="list" >
-                <listEntry value="0">@Strings.version</listEntry>
-            </settingConfig>
+            <settingConfig type="alphaNumeric" readonly="true" />
         </setting>
         <setting propertyKey="@Properties.METRIC_ID" title="@Strings.METRIC_ID_TITLE">
             <settingConfig type="list" >
@@ -67,10 +83,12 @@
         </setting>
         <setting propertyKey="@Properties.DATAFIELD_ID" title="@Strings.DATAFIELD_ID_TITLE">
             <settingConfig type="list" >
-                <listEntry value="0">@Strings.intensity</listEntry>
-                <listEntry value="1">@Strings.metric</listEntry>
+                <listEntry value="0">@Strings.metric</listEntry>
+                <listEntry value="1">@Strings.intensity</listEntry>
+                <listEntry value="2">@Strings.zone</listEntry>
             </settingConfig>
         </setting>
+
         <setting propertyKey="@Properties.RFTP" title="@Strings.RFTP_TITLE">
             <settingConfig type="numeric" min="1" />
         </setting>
@@ -78,42 +96,61 @@
             <settingConfig type="numeric" min="1" />
         </setting>
         <setting propertyKey="@Properties.WINDOW" title="@Strings.WINDOW_TITLE">
-            <settingConfig type="numeric" min="10" max="120" />
+            <settingConfig type="numeric" min="15" max="120" />
         </setting>
+
+        <setting propertyKey="@Properties.ZONE1" title="@Strings.ZONE1_TITLE">
+            <settingConfig type="numeric" min="0" max="150" />
+        </setting>
+        <setting propertyKey="@Properties.ZONE2" title="@Strings.ZONE2_TITLE">
+            <settingConfig type="numeric" min="0" max="150" />
+        </setting>
+        <setting propertyKey="@Properties.ZONE3" title="@Strings.ZONE3_TITLE">
+            <settingConfig type="numeric" min="0" max="150" />
+        </setting>
+        <setting propertyKey="@Properties.ZONE4" title="@Strings.ZONE4_TITLE">
+            <settingConfig type="numeric" min="0" max="150" />
+        </setting>
+        <setting propertyKey="@Properties.ZONE5" title="@Strings.ZONE5_TITLE">
+            <settingConfig type="numeric" min="0" max="150" />
+        </setting>
+
         <setting propertyKey="@Properties.GRADE" title="@Strings.GRADE_TITLE">
             <settingConfig type="boolean" />
         </setting>
         <setting propertyKey="@Properties.DEBUG" title="@Strings.DEBUG_TITLE">
             <settingConfig type="boolean" />
         </setting>
+
     </settings>
 
     <fitContributions>
         <fitField id="0" displayInActivitySummary="false" displayInChart="true" sortOrder="0" precision="1"
         chartTitle="@Strings.chart_label_gap" dataLabel="@Strings.chart_label_gap"
-        unitLabel="@Strings.chart_units_gap" fillColor="#E92929" />
+        unitLabel="@Strings.chart_units_gap" fillColor="#34b5ef" />
 
         <fitField id="1" displayInActivitySummary="false" displayInChart="true" sortOrder="1" precision="0"
         chartTitle="@Strings.chart_label_if" dataLabel="@Strings.chart_label_if"
-        unitLabel="@Strings.chart_units_if" fillColor="#E92929" />
+        unitLabel="@Strings.chart_units_if" fillColor="d33abf" />
 
         <fitField id="2" displayInActivitySummary="false" displayInChart="true" sortOrder="2" precision="2"
         chartTitle="@Strings.chart_label_ef" dataLabel="@Strings.chart_label_ef"
-        unitLabel="@Strings.chart_units_ef" fillColor="#E92929" />
+        unitLabel="@Strings.chart_units_ef" fillColor="#ff2653" />
 
         <fitField id="3" displayInActivitySummary="false" displayInChart="true" sortOrder="3" precision="1"
         chartTitle="@Strings.chart_label_grade" dataLabel="@Strings.chart_label_grade"
-        unitLabel="@Strings.chart_units_grade" fillColor="#2A22A2" />
+        unitLabel="@Strings.chart_units_grade" fillColor="#6abb35" />
 
         <fitField id="8" displayInActivitySummary="false" displayInChart="true" sortOrder="4" precision="0"
         chartTitle="@Strings.chart_label_power" dataLabel="@Strings.chart_label_power"
-        unitLabel="@Strings.chart_units_power" fillColor="#2A22A2" />
+        unitLabel="@Strings.chart_units_power" fillColor="#d33abf" />
         <fitField id="9" displayInActivitySummary="false" displayInChart="true" sortOrder="5" precision="2"
         chartTitle="@Strings.chart_label_speed" dataLabel="@Strings.chart_label_speed"
-        unitLabel="@Strings.chart_units_speed" fillColor="#2A22A2" />
+        unitLabel="@Strings.chart_units_speed" fillColor="#34b5ef" />
         <fitField id="10" displayInActivitySummary="false" displayInChart="true" sortOrder="6" precision="0"
         chartTitle="@Strings.chart_label_altitude" dataLabel="@Strings.chart_label_altitude"
-        unitLabel="@Strings.chart_units_altitude" fillColor="#2A22A2" />
+        unitLabel="@Strings.chart_units_altitude" fillColor="#6abb35" />
+    
     </fitContributions>
 
 </resources>
