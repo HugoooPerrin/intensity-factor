@@ -18,16 +18,15 @@ function grade_factor(g) {
 class IntensityfactorView extends WatchUi.SimpleDataField {
 
     // General settings
-    // const heart_rate_lag = 15;
     const ignore_first = 5;
     var lag = 0;
-    const rolling_duration_grade = 15;
 
     // Application settings
     var metric_id;
     var datafield_id;
     var rFTP;
     var rolling_duration;
+    var rolling_duration_grade;
     var display_grade;
     var debug_mode;
     var zones = new [7];
@@ -51,8 +50,12 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
         metric_id = Application.getApp().getProperty("METRIC_ID").toNumber();
         datafield_id = Application.getApp().getProperty("DATAFIELD_ID").toNumber();
         rolling_duration = Application.getApp().getProperty("WINDOW").toNumber()+1;
+        rolling_duration_grade = Application.getApp().getProperty("WINDOW_GRADE").toNumber()+1;
         display_grade = Application.getApp().getProperty("GRADE");
         debug_mode = Application.getApp().getProperty("DEBUG");
+
+        // Rolling windows security net
+        rolling_duration_grade = (rolling_duration < rolling_duration_grade) ? rolling_duration : rolling_duration_grade;
 
         // Intensity zones
         zones[0] = 0;
@@ -211,7 +214,7 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             // Debug mode
             if (debug_mode) {
                 powerFitField.setData((info.currentPower != null) ? info.currentPower : 0);
-                speedFitField.setData((info.currentSpeed != null) ? info.currentSpeed : 0);
+                speedFitField.setData((info.currentSpeed != null) ? info.currentSpeed * 3.6 : 0);
                 altitudeFitField.setData((info.altitude != null) ? info.altitude : 0);
             }
 

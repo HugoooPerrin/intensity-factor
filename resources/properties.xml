@@ -1,14 +1,15 @@
 <resources>
 
     <properties>
-        <property id="VERSION_ID" type="string">1.5.0</property>
+        <property id="VERSION_ID" type="string">1.5.1</property>
         
         <property id="METRIC_ID" type="number">0</property>
         <property id="DATAFIELD_ID" type="number">0</property>
         
-        <property id="RFTP" type="number">420</property>
-        <property id="RFTPa" type="float">4.0835</property>
+        <property id="RFTP" type="number">435</property>
+        <property id="RFTPa" type="float">4.2</property>
         <property id="WINDOW" type="number">30</property>
+        <property id="WINDOW_GRADE" type="number">15</property>
         
         <property id="ZONE1" type="number">65</property>
         <property id="ZONE2" type="number">80</property>
@@ -29,6 +30,7 @@
         <string id="RFTP_TITLE">Running FTP (watts)</string>
         <string id="RFTPa_TITLE">Running FTPa (m/sec)</string>
         <string id="WINDOW_TITLE">Rolling window duration (seconds)</string>
+        <string id="WINDOW_GRADE_TITLE">Rolling window duration for grade computation only (must be less than rolling duration)</string>
 
         <string id="ZONE1_TITLE">Zone 1 (%ftp)</string>
         <string id="ZONE2_TITLE">Zone 2 (%ftp)</string>
@@ -63,7 +65,7 @@
         <string id="chart_units_power">w</string>
 
         <string id="chart_label_speed">Speed API</string>
-        <string id="chart_units_speed">mps</string>
+        <string id="chart_units_speed">km/h</string>
 
         <string id="chart_label_altitude">Altitude API</string>
         <string id="chart_units_altitude">m</string>
@@ -96,6 +98,9 @@
             <settingConfig type="numeric" min="1" />
         </setting>
         <setting propertyKey="@Properties.WINDOW" title="@Strings.WINDOW_TITLE">
+            <settingConfig type="numeric" min="15" max="120" />
+        </setting>
+        <setting propertyKey="@Properties.WINDOW_GRADE" title="@Strings.WINDOW_GRADE_TITLE">
             <settingConfig type="numeric" min="15" max="120" />
         </setting>
 
