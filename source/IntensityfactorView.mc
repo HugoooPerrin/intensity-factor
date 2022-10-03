@@ -99,15 +99,6 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
         );
         intensityFitField.setData(0);
 
-        // Create the custom efficiency FIT data field we want to record
-        efficiencyFitField = createField(
-            "GAP efficiency factor",
-            2,
-            FitContributor.DATA_TYPE_FLOAT,
-            {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>""}
-        );
-        efficiencyFitField.setData(0);
-
         // Create the custom grade FIT data field we want to record
         gradeFitField = createField(
             "Grade",
@@ -154,7 +145,6 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
     // Reset metric queue & lag when starting or restarting activity
     // (to prevent from decreasing value while effort is increasing since resuming activity)
     function reset_queues() {
-        heart_rate = new Queue(rolling_duration);
         speed = new Queue(rolling_duration);
         gap = new Queue(rolling_duration);
 
@@ -182,8 +172,6 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
     // Computing variable
     var power;
     var rolling_pwr;
-    var heart_rate;
-    var rolling_hr;
     var speed;
     var rolling_spd;
     var altitude;
@@ -194,7 +182,6 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
     var dist;
     var n_seconds;
     var intensity_factor;
-    var efficiency_factor;
     var zone_num;
     var zone_prct;
     var val;
@@ -219,15 +206,11 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             }
 
             // Add new value to rolling queue (oldest member is automatically removed)
-            heart_rate.update((info.currentHeartRate != null) ? info.currentHeartRate : 0);
             speed.update((info.currentSpeed != null) ? info.currentSpeed : 0);
             altitude.update((info.altitude != null) ? info.altitude : 0);
 
             // Compute rolling mean for speed
             rolling_spd = speed.mean();
-
-            // Compute rolling mean for heart rate
-            rolling_hr = heart_rate.mean();
 
             if (metric_id == 0) {
                 // Add new value to queue (oldest member is automatically removed)
@@ -272,15 +255,11 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             intensity_factor = (metric_id == 0) ? 100 * rolling_pwr / rFTP : 100 * rolling_spd / rFTP;
             intensityFitField.setData(Math.round(intensity_factor).toNumber());
 
-            // Saving EF to fit file : always based on rolling GAP for comparison and unit is mpm/bpm
-            efficiency_factor = (rolling_hr != 0) ? 60 * rolling_gp / rolling_hr : 0;
-            efficiencyFitField.setData(efficiency_factor);
-
             // Format final value to display
             if (datafield_id == 1) {
                 // Show grade next to intensity
                 val = Math.round(intensity_factor).toNumber();
-                val = (display_grade) ? Lang.format("$1$:$2$", [val, Math.round(grade).format("%d")]) : val;
+                val = (display_grade) ? Lang.format("$1$:$2$", [val, Math.round(grade).format("%d")]) : val.format("%.0f") + "%";
 
             } else if (datafield_id == 2) {
                 // Computing zone

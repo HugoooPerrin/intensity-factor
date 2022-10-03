@@ -1,13 +1,14 @@
 <resources>
 
     <properties>
-        <property id="VERSION_ID" type="string">1.5.1</property>
+        <property id="VERSION_ID" type="string">1.5.2</property>
         
         <property id="METRIC_ID" type="number">0</property>
         <property id="DATAFIELD_ID" type="number">0</property>
         
         <property id="RFTP" type="number">435</property>
-        <property id="RFTPa" type="float">4.2</property>
+        <property id="RFTPa" type="float">4.17</property>
+
         <property id="WINDOW" type="number">30</property>
         <property id="WINDOW_GRADE" type="number">15</property>
         
@@ -29,6 +30,7 @@
 
         <string id="RFTP_TITLE">Running FTP (watts)</string>
         <string id="RFTPa_TITLE">Running FTPa (m/sec)</string>
+
         <string id="WINDOW_TITLE">Rolling window duration (seconds)</string>
         <string id="WINDOW_GRADE_TITLE">Rolling window duration for grade computation only (must be less than rolling duration)</string>
 
@@ -54,9 +56,6 @@
 
         <string id="chart_label_if">Intensity factor</string>
         <string id="chart_units_if">%ftp</string>
-
-        <string id="chart_label_ef">GAP efficiency factor</string>
-        <string id="chart_units_ef">mpm/bpm</string>
 
         <string id="chart_label_grade">Grade</string>
         <string id="chart_units_grade">%</string>
@@ -97,6 +96,7 @@
         <setting propertyKey="@Properties.RFTPa" title="@Strings.RFTPa_TITLE">
             <settingConfig type="numeric" min="1" />
         </setting>
+
         <setting propertyKey="@Properties.WINDOW" title="@Strings.WINDOW_TITLE">
             <settingConfig type="numeric" min="15" max="120" />
         </setting>
@@ -138,21 +138,17 @@
         chartTitle="@Strings.chart_label_if" dataLabel="@Strings.chart_label_if"
         unitLabel="@Strings.chart_units_if" fillColor="d33abf" />
 
-        <fitField id="2" displayInActivitySummary="false" displayInChart="true" sortOrder="2" precision="2"
-        chartTitle="@Strings.chart_label_ef" dataLabel="@Strings.chart_label_ef"
-        unitLabel="@Strings.chart_units_ef" fillColor="#ff2653" />
-
-        <fitField id="3" displayInActivitySummary="false" displayInChart="true" sortOrder="3" precision="1"
+        <fitField id="3" displayInActivitySummary="false" displayInChart="true" sortOrder="2" precision="1"
         chartTitle="@Strings.chart_label_grade" dataLabel="@Strings.chart_label_grade"
         unitLabel="@Strings.chart_units_grade" fillColor="#6abb35" />
 
-        <fitField id="8" displayInActivitySummary="false" displayInChart="true" sortOrder="4" precision="0"
+        <fitField id="8" displayInActivitySummary="false" displayInChart="true" sortOrder="3" precision="0"
         chartTitle="@Strings.chart_label_power" dataLabel="@Strings.chart_label_power"
         unitLabel="@Strings.chart_units_power" fillColor="#d33abf" />
-        <fitField id="9" displayInActivitySummary="false" displayInChart="true" sortOrder="5" precision="2"
+        <fitField id="9" displayInActivitySummary="false" displayInChart="true" sortOrder="4" precision="2"
         chartTitle="@Strings.chart_label_speed" dataLabel="@Strings.chart_label_speed"
         unitLabel="@Strings.chart_units_speed" fillColor="#34b5ef" />
-        <fitField id="10" displayInActivitySummary="false" displayInChart="true" sortOrder="6" precision="0"
+        <fitField id="10" displayInActivitySummary="false" displayInChart="true" sortOrder="5" precision="0"
         chartTitle="@Strings.chart_label_altitude" dataLabel="@Strings.chart_label_altitude"
         unitLabel="@Strings.chart_units_altitude" fillColor="#6abb35" />
     
