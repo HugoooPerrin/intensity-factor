@@ -81,19 +81,26 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
         // Set label name based on chosen datafield and metric
         if (datafield_id == 0) {
             label = "POWER";
+
         } else if (datafield_id == 1) {
             label = "PACE";
-        } else if (metric_id == 0) {
-            label = "POWER";
-        } else if (metric_id == 1) {
-            label = "PACE";
-        } else if (metric_id == 2) {
+
+        } else if (datafield_id == 2) {
             label = "GAP";
+
+        } else if (datafield_id >= 3) {
+            if (metric_id == 0) {
+                label = "POWER";
+            } else if (metric_id == 1) {
+                label = "PACE";
+            } else if (metric_id == 2) {
+                label = "GAP";
+            }
         }
         
-        if (datafield_id == 2) {
+        if (datafield_id == 3) {
             label += " INTENSITY";
-        } else if (datafield_id == 3) {
+        } else if (datafield_id == 4) {
             label += " ZONES";
         }
 
@@ -140,7 +147,7 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             "Lap GAP",
             4,
             FitContributor.DATA_TYPE_STRING,
-            {:mesgType=>FitContributor.MESG_TYPE_LAP, :units=>"", :count=>7}
+            {:mesgType=>FitContributor.MESG_TYPE_LAP, :units=>"", :count=>8}
         );
         LapGapFitField.setData("");
 
@@ -168,7 +175,7 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             "Overall GAP",
             11,
             FitContributor.DATA_TYPE_STRING,
-            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"", :count=>7}
+            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"", :count=>8}
         );
         OverallGapFitField.setData("");
 
@@ -380,16 +387,21 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
                 val = Math.round(rolling_pwr).toNumber();
 
             // Pace
-            } else if ((datafield_id == 1) & (rolling_spd != 0)) {
+            } else if (datafield_id == 1) {
                 pace = to_pace(rolling_spd);
                 val = Lang.format("$1$:$2$", [pace[0].format("%d"), pace[1].format("%02d")]);
 
-            // Intensity
+            // GAP
             } else if (datafield_id == 2) {
+                pace = to_pace(rolling_gp);
+                val = Lang.format("$1$:$2$", [pace[0].format("%d"), pace[1].format("%02d")]);
+
+            // Intensity
+            } else if (datafield_id == 3) {
                 val = Math.round(intensity_factor).toNumber().format("%d") + "%";
 
             // Zones
-            } else if (datafield_id == 3) {
+            } else if (datafield_id == 4) {
                 // Computing zone
                 for (var i = 1; i <= 6; i++) {
                     if (intensity_factor < zones[i]) {

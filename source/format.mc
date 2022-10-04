@@ -6,7 +6,8 @@ var secs;
 
 function to_pace(speed) {
 
-    if (speed != 0) {
+    // If slower than 0.25km/h then 0 !
+    if (speed > 0.07) {
 
         // Convert to pace
         pace = 60.0 / (speed * 3.6);

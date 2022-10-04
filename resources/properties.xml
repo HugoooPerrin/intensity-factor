@@ -1,10 +1,10 @@
 <resources>
 
     <properties>
-        <property id="VERSION_ID" type="string">2.0.1</property>
+        <property id="VERSION_ID" type="string">2.1.0</property>
         
-        <property id="METRIC_ID" type="number">0</property>
-        <property id="DATAFIELD_ID" type="number">2</property>
+        <property id="METRIC_ID" type="number">2</property>
+        <property id="DATAFIELD_ID" type="number">3</property>
         
         <property id="RFTP" type="number">435</property>
         <property id="RFTPa" type="float">4.17</property>
@@ -89,8 +89,9 @@
             <settingConfig type="list" >
                 <listEntry value="0">@Strings.power</listEntry>
                 <listEntry value="1">@Strings.pace</listEntry>
-                <listEntry value="2">@Strings.intensity</listEntry>
-                <listEntry value="3">@Strings.zones</listEntry>
+                <listEntry value="2">@Strings.gap</listEntry>
+                <listEntry value="3">@Strings.intensity</listEntry>
+                <listEntry value="4">@Strings.zones</listEntry>
             </settingConfig>
         </setting>
 
