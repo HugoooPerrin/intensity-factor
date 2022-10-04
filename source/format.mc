@@ -24,6 +24,5 @@ function to_pace(speed) {
     } else {
         return [0, 0];
     }
-
     
 }

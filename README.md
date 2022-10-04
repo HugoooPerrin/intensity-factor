@@ -1,17 +1,18 @@
 # intensity-factor
 
-This data field compute intensity & efficiency factor for either pace or power. Both are averaged over the last 3-120 seconds.
+This data field computes intensity factor and zones for either pace, grade-adjusted pace (GAP) or power. All values can be averaged over the last 15-120 seconds.
 
-- The intensity factor (IF) is the ratio between current power (resp. pace) and the FTP (resp. FTPa). 
+- The intensity factor (IF) is the ratio between current power (resp. pace or GAP) and the FTP (resp. FTPa).
+- The intensity zones can be customized in the app settings.
+- You can also choose to display a "raw" value (power, pace or GAP). It will also be averaged over the last 15-120 seconds.
 
-- The efficiency factor (EF) is the ratio between current IF and percentage of threshold heart rate (%THR). 
+- rFTP (resp rFTPa) is the maximum power (resp pace) that you can, when rested, sustain during a one hour race
+- LTHR is the lactacte threshold heart rate. Same than above. It generally is between 85-95% of heart rate reserve.
 
-It is not the usual EF formula, but I designed it so EF can be compared between sessions whether it has been based on power or pace (provided that sessions when it was based on pace have been ran on a rather flat terrain!).
+Running efficiency is saved in lap, session and charts. It is computed as the ratio between %LTHR and %FTP. It represents a proxy for cardio drift (during steady aerobic effort) as shown by Stephen Seiler (see https://www.youtube.com/watch?v=3GXc474Hu5U). Though it is not exactly the same formula, it has the same dynamic and values should be similar !
 
-As an example, if you are running at your FTPa or FTP, you should be at your THR, thus resulting in EF = 1. If it is lower, it may be that it is a hot day, or that you are more tired than usual (assuming that the FTP, FTPa and THR declared in the application settings are accurate).
-
-EF generally decreases during session, enabling to assess aerobic decoupling (not provided by this data field).
+GAP is computed by relying on Strava model :
+- https://www.reddit.com/r/Strava/comments/sdeix0/mind_the_gap_getting_fit_for_the_formula_equation/
 
 Notes :
-- even if you choose to display power or pace (averaged over the last 3-120 seconds), only IF and EF will be recorded in the Fit file.
-- this works best with Garmin device data recording parameter set to "every second" !
+- this datafield works only with Garmin device data recording parameter set to "every second" !
