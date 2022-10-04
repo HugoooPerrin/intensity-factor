@@ -1,7 +1,7 @@
 <resources>
 
     <properties>
-        <property id="VERSION_ID" type="string">2.1.0</property>
+        <property id="VERSION_ID" type="string">2.1.1</property>
         
         <property id="METRIC_ID" type="number">2</property>
         <property id="DATAFIELD_ID" type="number">3</property>
@@ -25,7 +25,7 @@
 
     <strings>
         <string id="VERSION_ID_TITLE">App version</string>
-        <string id="METRIC_ID_TITLE">Base metric for IF and RE</string>
+        <string id="METRIC_ID_TITLE">Base metric for intensity factor and running economy</string>
         <string id="DATAFIELD_ID_TITLE">Value to display in datafield</string>
 
         <string id="RFTP_TITLE">Running FTP (watts)</string>

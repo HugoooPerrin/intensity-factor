@@ -18,7 +18,7 @@ function grade_factor(g) {
 class IntensityfactorView extends WatchUi.SimpleDataField {
 
     // General settings
-    const ignore_first = 5;
+    const ignore_first = 10;
     var lag = 0;
 
     // Application settings
