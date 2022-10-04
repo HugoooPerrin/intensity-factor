@@ -1,10 +1,10 @@
 <resources>
 
     <properties>
-        <property id="VERSION_ID" type="string">2.0.0</property>
+        <property id="VERSION_ID" type="string">2.0.1</property>
         
-        <property id="METRIC_ID" type="number">2</property>
-        <property id="DATAFIELD_ID" type="number">1</property>
+        <property id="METRIC_ID" type="number">0</property>
+        <property id="DATAFIELD_ID" type="number">2</property>
         
         <property id="RFTP" type="number">435</property>
         <property id="RFTPa" type="float">4.17</property>

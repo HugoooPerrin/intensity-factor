@@ -140,7 +140,7 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             "Lap GAP",
             4,
             FitContributor.DATA_TYPE_STRING,
-            {:mesgType=>FitContributor.MESG_TYPE_LAP, :units=>"", :count=>5}
+            {:mesgType=>FitContributor.MESG_TYPE_LAP, :units=>"", :count=>7}
         );
         LapGapFitField.setData("");
 
@@ -168,7 +168,7 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             "Overall GAP",
             11,
             FitContributor.DATA_TYPE_STRING,
-            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"", :count=>5}
+            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"", :count=>7}
         );
         OverallGapFitField.setData("");
 
@@ -224,7 +224,6 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
     // Reset metric queue & lag when starting or restarting activity
     // (to prevent from decreasing value while effort is increasing since resuming activity)
     function reset_queues() {
-        intensity = new Queue(rolling_duration);
         heart_rate = new Queue(rolling_duration);
 
         power = new Queue(rolling_duration);
@@ -286,7 +285,6 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
     var dist;
     var n_seconds;
     var heart_rate;
-    var intensity;
     var intensity_factor;
     var efficiency;
     var zone_num;
@@ -372,9 +370,8 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             }
             intensityFitField.setData(Math.round(intensity_factor).toNumber());
 
-            // Computing running efficiency (different queue size than others) and saving to fit file
-            intensity.update(intensity_factor);
-            efficiency = (heart_rate.mean() / LTHR) / intensity.mean();
+            // Computing running efficiency (intensity_factor is already a rolling avg)
+            efficiency = (intensity_factor != 0) ? (heart_rate.mean() / LTHR) / intensity_factor : 0;
             efficiencyFitField.setData(efficiency);
 
             // DISPLAY VALUE
@@ -416,9 +413,8 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             lap_counter++;
 
             lap_gap_acc += instant_gap; // instant value
-            lap_gap_pace = (lap_gap_acc != 0) ? to_pace(lap_gap_acc / lap_counter) : "--";
-            lap_gap_pace = (lap_gap_acc != 0) ? Lang.format("$1$:$2$", [lap_gap_pace[0].format("%d"), lap_gap_pace[1].format("%02d")]) : lap_gap_pace;
-            LapGapFitField.setData(lap_gap_pace);
+            lap_gap_pace = to_pace(lap_gap_acc / lap_counter);
+            LapGapFitField.setData(Lang.format("$1$:$2$", [lap_gap_pace[0].format("%d"), lap_gap_pace[1].format("%02d")]));
 
             lap_if_acc += intensity_factor; // rolling value
             LapIntensityFitField.setData(lap_if_acc / lap_counter);
@@ -430,9 +426,8 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             overall_counter++;
 
             overall_gap_acc += instant_gap; // instant value
-            overall_gap_pace = (overall_gap_acc != 0) ? to_pace(overall_gap_acc / overall_counter) : "--";
-            overall_gap_pace = (overall_gap_acc != 0) ? Lang.format("$1$:$2$", [overall_gap_pace[0].format("%d"), overall_gap_pace[1].format("%02d")]) : overall_gap_pace;
-            OverallGapFitField.setData(overall_gap_pace);
+            overall_gap_pace = to_pace(overall_gap_acc / overall_counter);
+            OverallGapFitField.setData(Lang.format("$1$:$2$", [overall_gap_pace[0].format("%d"), overall_gap_pace[1].format("%02d")]));
 
             overall_if_acc += intensity_factor; // rolling value
             OverallIntensityFitField.setData(overall_if_acc / overall_counter);
