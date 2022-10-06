@@ -378,7 +378,7 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             intensityFitField.setData(Math.round(intensity_factor).toNumber());
 
             // Computing running efficiency (intensity_factor is already a rolling avg)
-            efficiency = (intensity_factor != 0) ? (heart_rate.mean() / LTHR) / intensity_factor : 0;
+            efficiency = (intensity_factor != 0) ? (heart_rate.mean() / LTHR) / (intensity_factor / 100) : 0;
             efficiencyFitField.setData(efficiency);
 
             // DISPLAY VALUE

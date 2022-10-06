@@ -1,7 +1,7 @@
 <resources>
 
     <properties>
-        <property id="VERSION_ID" type="string">2.1.1</property>
+        <property id="VERSION_ID" type="string">2.1.2</property>
         
         <property id="METRIC_ID" type="number">2</property>
         <property id="DATAFIELD_ID" type="number">3</property>
@@ -55,10 +55,10 @@
         <string id="chart_units_gap_p">min/km</string>
 
         <string id="chart_label_if">Intensity factor</string>
-        <string id="chart_units_if">%ftp</string>
+        <string id="chart_units_if">%FTP</string>
 
         <string id="chart_label_re">Running efficiency</string>
-        <string id="chart_units_re">%thr/%ftp</string>
+        <string id="chart_units_re">%THR/%FTP</string>
 
         <string id="chart_label_grade">Grade</string>
         <string id="chart_units_grade">%</string>
