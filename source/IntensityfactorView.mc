@@ -88,20 +88,11 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
         } else if (datafield_id == 2) {
             label = "GAP";
 
-        } else if (datafield_id >= 3) {
-            if (metric_id == 0) {
-                label = "POWER";
-            } else if (metric_id == 1) {
-                label = "PACE";
-            } else if (metric_id == 2) {
-                label = "GAP";
-            }
-        }
-        
-        if (datafield_id == 3) {
-            label += " INTENSITY";
+        } else if (datafield_id == 3) {
+            label = "INTENSITY";
+            
         } else if (datafield_id == 4) {
-            label += " ZONES";
+            label = "ZONES";
         }
 
         // GRAPH FIT FIELDS
