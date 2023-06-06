@@ -2,549 +2,516 @@
 <debugInfo>
     <manifest filename="/home/hugo/Bureau/Garmin/intensity-factor/manifest.xml"/>
     <pcToLineNum>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="1" lineNum="12" parent="globals" pc="268435456" symbol="grade_factor"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="1" lineNum="13" parent="globals" pc="268435468" symbol="grade_factor"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="56" parent="globals/IntensityfactorView" pc="268435496" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="57" parent="globals/IntensityfactorView" pc="268435500" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="60" parent="globals/IntensityfactorView" pc="268435518" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="61" parent="globals/IntensityfactorView" pc="268435564" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="62" parent="globals/IntensityfactorView" pc="268435610" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="63" parent="globals/IntensityfactorView" pc="268435662" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="64" parent="globals/IntensityfactorView" pc="268435714" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="67" parent="globals/IntensityfactorView" pc="268435751" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="70" parent="globals/IntensityfactorView" pc="268435798" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="71" parent="globals/IntensityfactorView" pc="268435817" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="72" parent="globals/IntensityfactorView" pc="268435835" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="74" parent="globals/IntensityfactorView" pc="268435909" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="77" parent="globals/IntensityfactorView" pc="268435928" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="78" parent="globals/IntensityfactorView" pc="268435974" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="79" parent="globals/IntensityfactorView" pc="268436060" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="82" parent="globals/IntensityfactorView" pc="268436085" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="83" parent="globals/IntensityfactorView" pc="268436102" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="85" parent="globals/IntensityfactorView" pc="268436118" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="86" parent="globals/IntensityfactorView" pc="268436135" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="88" parent="globals/IntensityfactorView" pc="268436151" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="89" parent="globals/IntensityfactorView" pc="268436168" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="91" parent="globals/IntensityfactorView" pc="268436184" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="92" parent="globals/IntensityfactorView" pc="268436201" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="93" parent="globals/IntensityfactorView" pc="268436218" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="94" parent="globals/IntensityfactorView" pc="268436234" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="95" parent="globals/IntensityfactorView" pc="268436251" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="96" parent="globals/IntensityfactorView" pc="268436267" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="97" parent="globals/IntensityfactorView" pc="268436284" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="101" parent="globals/IntensityfactorView" pc="268436303" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="102" parent="globals/IntensityfactorView" pc="268436320" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="103" parent="globals/IntensityfactorView" pc="268436342" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="104" parent="globals/IntensityfactorView" pc="268436359" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="109" parent="globals/IntensityfactorView" pc="268436381" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="115" parent="globals/IntensityfactorView" pc="268436461" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="118" parent="globals/IntensityfactorView" pc="268436484" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="124" parent="globals/IntensityfactorView" pc="268436564" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="127" parent="globals/IntensityfactorView" pc="268436587" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="133" parent="globals/IntensityfactorView" pc="268436667" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="136" parent="globals/IntensityfactorView" pc="268436690" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="142" parent="globals/IntensityfactorView" pc="268436770" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="146" parent="globals/IntensityfactorView" pc="268436793" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="152" parent="globals/IntensityfactorView" pc="268436886" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="155" parent="globals/IntensityfactorView" pc="268436909" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="161" parent="globals/IntensityfactorView" pc="268436989" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="164" parent="globals/IntensityfactorView" pc="268437012" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="170" parent="globals/IntensityfactorView" pc="268437092" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="174" parent="globals/IntensityfactorView" pc="268437115" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="180" parent="globals/IntensityfactorView" pc="268437208" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="183" parent="globals/IntensityfactorView" pc="268437231" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="189" parent="globals/IntensityfactorView" pc="268437311" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="192" parent="globals/IntensityfactorView" pc="268437334" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="198" parent="globals/IntensityfactorView" pc="268437414" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="201" parent="globals/IntensityfactorView" pc="268437437" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="203" parent="globals/IntensityfactorView" pc="268437448" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="209" parent="globals/IntensityfactorView" pc="268437528" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="212" parent="globals/IntensityfactorView" pc="268437551" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="218" parent="globals/IntensityfactorView" pc="268437631" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="221" parent="globals/IntensityfactorView" pc="268437654" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="2" lineNum="227" parent="globals/IntensityfactorView" pc="268437734" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="3" lineNum="233" parent="globals/IntensityfactorView" pc="268437761" symbol="reset_queues"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="3" lineNum="234" parent="globals/IntensityfactorView" pc="268437765" symbol="reset_queues"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="3" lineNum="236" parent="globals/IntensityfactorView" pc="268437803" symbol="reset_queues"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="3" lineNum="237" parent="globals/IntensityfactorView" pc="268437841" symbol="reset_queues"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="3" lineNum="239" parent="globals/IntensityfactorView" pc="268437879" symbol="reset_queues"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="3" lineNum="240" parent="globals/IntensityfactorView" pc="268437917" symbol="reset_queues"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="3" lineNum="242" parent="globals/IntensityfactorView" pc="268437955" symbol="reset_queues"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="4" lineNum="245" parent="globals/IntensityfactorView" pc="268437969" symbol="reset_lap_data"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="4" lineNum="246" parent="globals/IntensityfactorView" pc="268437973" symbol="reset_lap_data"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="4" lineNum="248" parent="globals/IntensityfactorView" pc="268437986" symbol="reset_lap_data"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="4" lineNum="249" parent="globals/IntensityfactorView" pc="268437999" symbol="reset_lap_data"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="4" lineNum="250" parent="globals/IntensityfactorView" pc="268438012" symbol="reset_lap_data"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="5" lineNum="253" parent="globals/IntensityfactorView" pc="268438026" symbol="reset_overall_data"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="5" lineNum="254" parent="globals/IntensityfactorView" pc="268438030" symbol="reset_overall_data"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="5" lineNum="256" parent="globals/IntensityfactorView" pc="268438043" symbol="reset_overall_data"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="5" lineNum="257" parent="globals/IntensityfactorView" pc="268438056" symbol="reset_overall_data"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="5" lineNum="258" parent="globals/IntensityfactorView" pc="268438069" symbol="reset_overall_data"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="6" lineNum="261" parent="globals/IntensityfactorView" pc="268438083" symbol="onTimerStart"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="6" lineNum="262" parent="globals/IntensityfactorView" pc="268438087" symbol="onTimerStart"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="6" lineNum="263" parent="globals/IntensityfactorView" pc="268438099" symbol="onTimerStart"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="6" lineNum="264" parent="globals/IntensityfactorView" pc="268438111" symbol="onTimerStart"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="7" lineNum="267" parent="globals/IntensityfactorView" pc="268438124" symbol="onTimerResume"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="7" lineNum="268" parent="globals/IntensityfactorView" pc="268438128" symbol="onTimerResume"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="8" lineNum="273" parent="globals/IntensityfactorView" pc="268438141" symbol="onWorkoutStepComplete"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="8" lineNum="274" parent="globals/IntensityfactorView" pc="268438145" symbol="onWorkoutStepComplete"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="8" lineNum="275" parent="globals/IntensityfactorView" pc="268438157" symbol="onWorkoutStepComplete"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="9" lineNum="278" parent="globals/IntensityfactorView" pc="268438170" symbol="onTimerLap"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="9" lineNum="279" parent="globals/IntensityfactorView" pc="268438174" symbol="onTimerLap"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="320" parent="globals/IntensityfactorView" pc="268438187" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="323" parent="globals/IntensityfactorView" pc="268438191" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="326" parent="globals/IntensityfactorView" pc="268438211" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="327" parent="globals/IntensityfactorView" pc="268438222" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="328" parent="globals/IntensityfactorView" pc="268438269" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="329" parent="globals/IntensityfactorView" pc="268438322" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="334" parent="globals/IntensityfactorView" pc="268438372" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="335" parent="globals/IntensityfactorView" pc="268438419" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="336" parent="globals/IntensityfactorView" pc="268438466" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="337" parent="globals/IntensityfactorView" pc="268438513" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="340" parent="globals/IntensityfactorView" pc="268438560" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="341" parent="globals/IntensityfactorView" pc="268438585" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="346" parent="globals/IntensityfactorView" pc="268438610" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="349" parent="globals/IntensityfactorView" pc="268438635" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="352" parent="globals/IntensityfactorView" pc="268438677" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="353" parent="globals/IntensityfactorView" pc="268438785" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="354" parent="globals/IntensityfactorView" pc="268438826" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="357" parent="globals/IntensityfactorView" pc="268438867" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="361" parent="globals/IntensityfactorView" pc="268438893" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="362" parent="globals/IntensityfactorView" pc="268438943" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="365" parent="globals/IntensityfactorView" pc="268438969" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="368" parent="globals/IntensityfactorView" pc="268438994" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="371" parent="globals/IntensityfactorView" pc="268439026" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="372" parent="globals/IntensityfactorView" pc="268439043" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="373" parent="globals/IntensityfactorView" pc="268439077" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="374" parent="globals/IntensityfactorView" pc="268439094" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="375" parent="globals/IntensityfactorView" pc="268439128" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="376" parent="globals/IntensityfactorView" pc="268439145" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="378" parent="globals/IntensityfactorView" pc="268439179" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="381" parent="globals/IntensityfactorView" pc="268439229" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="382" parent="globals/IntensityfactorView" pc="268439303" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="386" parent="globals/IntensityfactorView" pc="268439329" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="387" parent="globals/IntensityfactorView" pc="268439346" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="390" parent="globals/IntensityfactorView" pc="268439389" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="391" parent="globals/IntensityfactorView" pc="268439406" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="392" parent="globals/IntensityfactorView" pc="268439433" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="395" parent="globals/IntensityfactorView" pc="268439542" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="396" parent="globals/IntensityfactorView" pc="268439559" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="397" parent="globals/IntensityfactorView" pc="268439586" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="400" parent="globals/IntensityfactorView" pc="268439695" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="401" parent="globals/IntensityfactorView" pc="268439712" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="404" parent="globals/IntensityfactorView" pc="268439775" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="406" parent="globals/IntensityfactorView" pc="268439792" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="407" parent="globals/IntensityfactorView" pc="268439810" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="408" parent="globals/IntensityfactorView" pc="268439833" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="409" parent="globals/IntensityfactorView" pc="268439849" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="410" parent="globals/IntensityfactorView" pc="268439913" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="411" parent="globals/IntensityfactorView" pc="268439959" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="413" parent="globals/IntensityfactorView" pc="268439965" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="414" parent="globals/IntensityfactorView" pc="268439978" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="417" parent="globals/IntensityfactorView" pc="268440004" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="418" parent="globals/IntensityfactorView" pc="268440021" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="419" parent="globals/IntensityfactorView" pc="268440040" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="421" parent="globals/IntensityfactorView" pc="268440056" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="425" parent="globals/IntensityfactorView" pc="268440153" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="427" parent="globals/IntensityfactorView" pc="268440172" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="428" parent="globals/IntensityfactorView" pc="268440194" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="429" parent="globals/IntensityfactorView" pc="268440230" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="431" parent="globals/IntensityfactorView" pc="268440346" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="432" parent="globals/IntensityfactorView" pc="268440368" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="434" parent="globals/IntensityfactorView" pc="268440403" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="435" parent="globals/IntensityfactorView" pc="268440425" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="438" parent="globals/IntensityfactorView" pc="268440460" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="440" parent="globals/IntensityfactorView" pc="268440479" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="441" parent="globals/IntensityfactorView" pc="268440501" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="442" parent="globals/IntensityfactorView" pc="268440537" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="444" parent="globals/IntensityfactorView" pc="268440653" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="445" parent="globals/IntensityfactorView" pc="268440675" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="447" parent="globals/IntensityfactorView" pc="268440710" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="448" parent="globals/IntensityfactorView" pc="268440732" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="450" parent="globals/IntensityfactorView" pc="268440770" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="452" parent="globals/IntensityfactorView" pc="268440787" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="453" parent="globals/IntensityfactorView" pc="268440806" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="456" parent="globals/IntensityfactorView" pc="268440822" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="10" lineNum="459" parent="globals/IntensityfactorView" pc="268440835" symbol="compute"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="11" lineNum="18" parent="globals/IntensityfactorView" pc="268441834" symbol="&lt;init&gt;"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="11" lineNum="32" parent="globals/IntensityfactorView" pc="268441852" symbol="&lt;init&gt;"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="11" lineNum="18" parent="globals/IntensityfactorView" pc="268441834" symbol="&lt;init&gt;"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="13" lineNum="13" parent="globals/Queue" pc="268440845" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="13" lineNum="14" parent="globals/Queue" pc="268440849" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="13" lineNum="15" parent="globals/Queue" pc="268440859" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="14" lineNum="19" parent="globals/Queue" pc="268440871" symbol="update"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="14" lineNum="20" parent="globals/Queue" pc="268440875" symbol="update"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="14" lineNum="21" parent="globals/Queue" pc="268440902" symbol="update"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="14" lineNum="23" parent="globals/Queue" pc="268440943" symbol="update"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="15" lineNum="27" parent="globals/Queue" pc="268440960" symbol="mean"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="15" lineNum="28" parent="globals/Queue" pc="268440964" symbol="mean"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="15" lineNum="29" parent="globals/Queue" pc="268440977" symbol="mean"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="15" lineNum="32" parent="globals/Queue" pc="268440990" symbol="mean"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="15" lineNum="35" parent="globals/Queue" pc="268441011" symbol="mean"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="15" lineNum="36" parent="globals/Queue" pc="268441027" symbol="mean"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="15" lineNum="39" parent="globals/Queue" pc="268441033" symbol="mean"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="15" lineNum="40" parent="globals/Queue" pc="268441058" symbol="mean"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="15" lineNum="44" parent="globals/Queue" pc="268441090" symbol="mean"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="16" lineNum="48" parent="globals/Queue" pc="268441134" symbol="current"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="16" lineNum="49" parent="globals/Queue" pc="268441138" symbol="current"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="17" lineNum="53" parent="globals/Queue" pc="268441179" symbol="last"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="17" lineNum="54" parent="globals/Queue" pc="268441183" symbol="last"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="17" lineNum="55" parent="globals/Queue" pc="268441213" symbol="last"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="17" lineNum="56" parent="globals/Queue" pc="268441229" symbol="last"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="17" lineNum="58" parent="globals/Queue" pc="268441284" symbol="last"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="17" lineNum="61" parent="globals/Queue" pc="268441300" symbol="last"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="18" lineNum="65" parent="globals/Queue" pc="268441303" symbol="count_not_null"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="18" lineNum="66" parent="globals/Queue" pc="268441307" symbol="count_not_null"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="18" lineNum="67" parent="globals/Queue" pc="268441323" symbol="count_not_null"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="18" lineNum="68" parent="globals/Queue" pc="268441350" symbol="count_not_null"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="18" lineNum="69" parent="globals/Queue" pc="268441366" symbol="count_not_null"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="18" lineNum="71" parent="globals/Queue" pc="268441378" symbol="count_not_null"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="18" lineNum="72" parent="globals/Queue" pc="268441397" symbol="count_not_null"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="18" lineNum="75" parent="globals/Queue" pc="268441413" symbol="count_not_null"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="19" lineNum="4" parent="globals/Queue" pc="268441833" symbol="&lt;init&gt;"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorApp.mc" id="21" lineNum="7" parent="globals/IntensityfactorApp" pc="268441420" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorApp.mc" id="21" lineNum="8" parent="globals/IntensityfactorApp" pc="268441424" symbol="initialize"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorApp.mc" id="22" lineNum="12" parent="globals/IntensityfactorApp" pc="268441443" symbol="onStart"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorApp.mc" id="23" lineNum="16" parent="globals/IntensityfactorApp" pc="268441448" symbol="onStop"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorApp.mc" id="24" lineNum="20" parent="globals/IntensityfactorApp" pc="268441453" symbol="getInitialView"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorApp.mc" id="24" lineNum="21" parent="globals/IntensityfactorApp" pc="268441457" symbol="getInitialView"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorApp.mc" id="25" lineNum="5" parent="globals/IntensityfactorApp" pc="268441814" symbol="&lt;init&gt;"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorApp.mc" id="25" lineNum="5" parent="globals/IntensityfactorApp" pc="268441814" symbol="&lt;init&gt;"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorApp.mc" id="26" lineNum="26" parent="globals" pc="268441495" symbol="getApp"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorApp.mc" id="26" lineNum="27" parent="globals" pc="268441507" symbol="getApp"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="28" lineNum="7" parent="globals" pc="268441524" symbol="to_pace"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="28" lineNum="10" parent="globals" pc="268441536" symbol="to_pace"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="28" lineNum="13" parent="globals" pc="268441547" symbol="to_pace"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="28" lineNum="14" parent="globals" pc="268441569" symbol="to_pace"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="28" lineNum="15" parent="globals" pc="268441609" symbol="to_pace"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="28" lineNum="18" parent="globals" pc="268441655" symbol="to_pace"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="28" lineNum="19" parent="globals" pc="268441672" symbol="to_pace"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="28" lineNum="20" parent="globals" pc="268441691" symbol="to_pace"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="28" lineNum="23" parent="globals" pc="268441707" symbol="to_pace"/>
-        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="28" lineNum="25" parent="globals" pc="268441749" symbol="to_pace"/>
-        <entry filename="Rez" id="30" lineNum="2" parent="globals/Rez/Drawables" pc="268441808" symbol="&lt;init&gt;"/>
-        <entry filename="Rez" id="31" lineNum="6" parent="globals/Rez/Fonts" pc="268441810" symbol="&lt;init&gt;"/>
-        <entry filename="Rez" id="32" lineNum="8" parent="globals/Rez/JsonData" pc="268441812" symbol="&lt;init&gt;"/>
-        <entry filename="Rez" id="33" lineNum="10" parent="globals/Rez/Layouts" pc="268441811" symbol="&lt;init&gt;"/>
-        <entry filename="Rez" id="34" lineNum="12" parent="globals/Rez/Menus" pc="268441809" symbol="&lt;init&gt;"/>
-        <entry filename="Rez" id="35" lineNum="14" parent="globals/Rez/Strings" pc="268441813" symbol="&lt;init&gt;"/>
-        <entry filename="Rez" id="36" lineNum="1" parent="globals/Rez" pc="268441784" symbol="&lt;init&gt;"/>
-        <entry filename="Rez" id="36" lineNum="1" parent="globals/Rez" pc="268441784" symbol="&lt;init&gt;"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorApp.mc" id="1" lineNum="5" parent="globals/IntensityfactorApp" pc="268435460" symbol="&lt;init&gt;"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorApp.mc" id="2" lineNum="12" parent="globals/IntensityfactorApp" pc="268435479" symbol="onStart"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorApp.mc" id="3" lineNum="20" parent="globals/IntensityfactorApp" pc="268435482" symbol="getInitialView"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorApp.mc" id="3" lineNum="21" parent="globals/IntensityfactorApp" pc="268435484" symbol="getInitialView"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorApp.mc" id="4" lineNum="7" parent="globals/IntensityfactorApp" pc="268435525" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorApp.mc" id="4" lineNum="8" parent="globals/IntensityfactorApp" pc="268435527" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorApp.mc" id="5" lineNum="16" parent="globals/IntensityfactorApp" pc="268435546" symbol="onStop"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorApp.mc" id="6" lineNum="26" parent="globals" pc="268435549" symbol="getApp"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorApp.mc" id="6" lineNum="27" parent="globals" pc="268435559" symbol="getApp"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/bin/gen/006-B3992-00/source/Rez.mcgen" id="7" lineNum="7" parent="globals/Rez" pc="268435575" symbol="&lt;init&gt;"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="8" lineNum="12" parent="globals" pc="268435599" symbol="grade_factor"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="8" lineNum="13" parent="globals" pc="268435609" symbol="grade_factor"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="9" lineNum="7" parent="globals" pc="268435636" symbol="to_pace"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="9" lineNum="10" parent="globals" pc="268435646" symbol="to_pace"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="9" lineNum="13" parent="globals" pc="268435657" symbol="to_pace"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="9" lineNum="14" parent="globals" pc="268435679" symbol="to_pace"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="9" lineNum="15" parent="globals" pc="268435719" symbol="to_pace"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="9" lineNum="18" parent="globals" pc="268435765" symbol="to_pace"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="9" lineNum="19" parent="globals" pc="268435782" symbol="to_pace"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="9" lineNum="20" parent="globals" pc="268435801" symbol="to_pace"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="9" lineNum="23" parent="globals" pc="268435817" symbol="to_pace"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/format.mc" id="9" lineNum="25" parent="globals" pc="268435859" symbol="to_pace"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="10" lineNum="53" parent="globals/Queue" pc="268435893" symbol="last"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="10" lineNum="54" parent="globals/Queue" pc="268435897" symbol="last"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="10" lineNum="55" parent="globals/Queue" pc="268435927" symbol="last"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="10" lineNum="56" parent="globals/Queue" pc="268435943" symbol="last"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="10" lineNum="58" parent="globals/Queue" pc="268435998" symbol="last"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="10" lineNum="61" parent="globals/Queue" pc="268436014" symbol="last"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="11" lineNum="27" parent="globals/Queue" pc="268436016" symbol="mean"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="11" lineNum="28" parent="globals/Queue" pc="268436020" symbol="mean"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="11" lineNum="29" parent="globals/Queue" pc="268436033" symbol="mean"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="11" lineNum="32" parent="globals/Queue" pc="268436046" symbol="mean"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="11" lineNum="35" parent="globals/Queue" pc="268436067" symbol="mean"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="11" lineNum="36" parent="globals/Queue" pc="268436083" symbol="mean"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="11" lineNum="39" parent="globals/Queue" pc="268436089" symbol="mean"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="11" lineNum="40" parent="globals/Queue" pc="268436114" symbol="mean"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="11" lineNum="44" parent="globals/Queue" pc="268436146" symbol="mean"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="12" lineNum="19" parent="globals/Queue" pc="268436189" symbol="update"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="12" lineNum="20" parent="globals/Queue" pc="268436193" symbol="update"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="12" lineNum="21" parent="globals/Queue" pc="268436220" symbol="update"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="12" lineNum="23" parent="globals/Queue" pc="268436261" symbol="update"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="13" lineNum="13" parent="globals/Queue" pc="268436278" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="13" lineNum="14" parent="globals/Queue" pc="268436280" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="13" lineNum="15" parent="globals/Queue" pc="268436290" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="14" lineNum="48" parent="globals/Queue" pc="268436302" symbol="first"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="14" lineNum="49" parent="globals/Queue" pc="268436304" symbol="first"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="15" lineNum="65" parent="globals/Queue" pc="268436344" symbol="count_not_null"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="15" lineNum="66" parent="globals/Queue" pc="268436348" symbol="count_not_null"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="15" lineNum="67" parent="globals/Queue" pc="268436364" symbol="count_not_null"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="15" lineNum="68" parent="globals/Queue" pc="268436391" symbol="count_not_null"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="15" lineNum="69" parent="globals/Queue" pc="268436407" symbol="count_not_null"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="15" lineNum="71" parent="globals/Queue" pc="268436419" symbol="count_not_null"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="15" lineNum="72" parent="globals/Queue" pc="268436438" symbol="count_not_null"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/Queue.mc" id="15" lineNum="75" parent="globals/Queue" pc="268436454" symbol="count_not_null"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="16" lineNum="18" parent="globals/IntensityfactorView" pc="268436460" symbol="&lt;init&gt;"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="16" lineNum="32" parent="globals/IntensityfactorView" pc="268436478" symbol="&lt;init&gt;"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="311" parent="globals/IntensityfactorView" pc="268436493" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="314" parent="globals/IntensityfactorView" pc="268436497" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="317" parent="globals/IntensityfactorView" pc="268436514" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="318" parent="globals/IntensityfactorView" pc="268436525" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="319" parent="globals/IntensityfactorView" pc="268436572" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="320" parent="globals/IntensityfactorView" pc="268436625" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="325" parent="globals/IntensityfactorView" pc="268436675" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="326" parent="globals/IntensityfactorView" pc="268436722" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="327" parent="globals/IntensityfactorView" pc="268436769" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="328" parent="globals/IntensityfactorView" pc="268436816" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="331" parent="globals/IntensityfactorView" pc="268436863" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="332" parent="globals/IntensityfactorView" pc="268436888" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="337" parent="globals/IntensityfactorView" pc="268436913" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="340" parent="globals/IntensityfactorView" pc="268436938" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="343" parent="globals/IntensityfactorView" pc="268436980" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="344" parent="globals/IntensityfactorView" pc="268437088" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="345" parent="globals/IntensityfactorView" pc="268437129" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="348" parent="globals/IntensityfactorView" pc="268437170" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="352" parent="globals/IntensityfactorView" pc="268437196" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="353" parent="globals/IntensityfactorView" pc="268437246" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="356" parent="globals/IntensityfactorView" pc="268437272" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="359" parent="globals/IntensityfactorView" pc="268437297" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="362" parent="globals/IntensityfactorView" pc="268437329" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="363" parent="globals/IntensityfactorView" pc="268437346" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="364" parent="globals/IntensityfactorView" pc="268437380" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="365" parent="globals/IntensityfactorView" pc="268437397" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="366" parent="globals/IntensityfactorView" pc="268437431" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="367" parent="globals/IntensityfactorView" pc="268437448" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="369" parent="globals/IntensityfactorView" pc="268437482" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="372" parent="globals/IntensityfactorView" pc="268437532" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="373" parent="globals/IntensityfactorView" pc="268437606" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="377" parent="globals/IntensityfactorView" pc="268437632" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="378" parent="globals/IntensityfactorView" pc="268437649" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="381" parent="globals/IntensityfactorView" pc="268437692" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="382" parent="globals/IntensityfactorView" pc="268437709" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="383" parent="globals/IntensityfactorView" pc="268437736" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="386" parent="globals/IntensityfactorView" pc="268437845" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="387" parent="globals/IntensityfactorView" pc="268437862" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="388" parent="globals/IntensityfactorView" pc="268437889" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="391" parent="globals/IntensityfactorView" pc="268437998" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="392" parent="globals/IntensityfactorView" pc="268438015" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="395" parent="globals/IntensityfactorView" pc="268438078" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="397" parent="globals/IntensityfactorView" pc="268438095" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="398" parent="globals/IntensityfactorView" pc="268438113" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="399" parent="globals/IntensityfactorView" pc="268438136" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="400" parent="globals/IntensityfactorView" pc="268438152" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="401" parent="globals/IntensityfactorView" pc="268438216" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="402" parent="globals/IntensityfactorView" pc="268438262" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="404" parent="globals/IntensityfactorView" pc="268438268" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="405" parent="globals/IntensityfactorView" pc="268438281" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="408" parent="globals/IntensityfactorView" pc="268438307" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="409" parent="globals/IntensityfactorView" pc="268438324" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="410" parent="globals/IntensityfactorView" pc="268438343" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="412" parent="globals/IntensityfactorView" pc="268438359" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="416" parent="globals/IntensityfactorView" pc="268438456" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="422" parent="globals/IntensityfactorView" pc="268438475" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="423" parent="globals/IntensityfactorView" pc="268438497" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="425" parent="globals/IntensityfactorView" pc="268438532" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="426" parent="globals/IntensityfactorView" pc="268438554" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="429" parent="globals/IntensityfactorView" pc="268438589" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="435" parent="globals/IntensityfactorView" pc="268438608" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="436" parent="globals/IntensityfactorView" pc="268438630" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="438" parent="globals/IntensityfactorView" pc="268438665" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="439" parent="globals/IntensityfactorView" pc="268438687" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="441" parent="globals/IntensityfactorView" pc="268438725" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="443" parent="globals/IntensityfactorView" pc="268438742" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="444" parent="globals/IntensityfactorView" pc="268438761" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="447" parent="globals/IntensityfactorView" pc="268438777" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="17" lineNum="450" parent="globals/IntensityfactorView" pc="268438790" symbol="compute"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="18" lineNum="252" parent="globals/IntensityfactorView" pc="268438799" symbol="onTimerStart"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="18" lineNum="253" parent="globals/IntensityfactorView" pc="268438801" symbol="onTimerStart"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="18" lineNum="254" parent="globals/IntensityfactorView" pc="268438813" symbol="onTimerStart"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="18" lineNum="255" parent="globals/IntensityfactorView" pc="268438825" symbol="onTimerStart"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="19" lineNum="224" parent="globals/IntensityfactorView" pc="268438838" symbol="reset_queues"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="19" lineNum="225" parent="globals/IntensityfactorView" pc="268438840" symbol="reset_queues"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="19" lineNum="227" parent="globals/IntensityfactorView" pc="268438882" symbol="reset_queues"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="19" lineNum="228" parent="globals/IntensityfactorView" pc="268438924" symbol="reset_queues"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="19" lineNum="230" parent="globals/IntensityfactorView" pc="268438966" symbol="reset_queues"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="19" lineNum="231" parent="globals/IntensityfactorView" pc="268439008" symbol="reset_queues"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="19" lineNum="233" parent="globals/IntensityfactorView" pc="268439050" symbol="reset_queues"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="20" lineNum="264" parent="globals/IntensityfactorView" pc="268439064" symbol="onWorkoutStepComplete"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="20" lineNum="265" parent="globals/IntensityfactorView" pc="268439066" symbol="onWorkoutStepComplete"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="20" lineNum="266" parent="globals/IntensityfactorView" pc="268439078" symbol="onWorkoutStepComplete"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="21" lineNum="269" parent="globals/IntensityfactorView" pc="268439091" symbol="onTimerLap"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="21" lineNum="270" parent="globals/IntensityfactorView" pc="268439093" symbol="onTimerLap"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="22" lineNum="236" parent="globals/IntensityfactorView" pc="268439106" symbol="reset_lap_data"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="22" lineNum="237" parent="globals/IntensityfactorView" pc="268439108" symbol="reset_lap_data"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="22" lineNum="239" parent="globals/IntensityfactorView" pc="268439121" symbol="reset_lap_data"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="22" lineNum="240" parent="globals/IntensityfactorView" pc="268439134" symbol="reset_lap_data"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="23" lineNum="244" parent="globals/IntensityfactorView" pc="268439148" symbol="set_overall_data"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="23" lineNum="245" parent="globals/IntensityfactorView" pc="268439150" symbol="set_overall_data"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="23" lineNum="247" parent="globals/IntensityfactorView" pc="268439163" symbol="set_overall_data"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="23" lineNum="248" parent="globals/IntensityfactorView" pc="268439176" symbol="set_overall_data"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="24" lineNum="258" parent="globals/IntensityfactorView" pc="268439190" symbol="onTimerResume"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="24" lineNum="259" parent="globals/IntensityfactorView" pc="268439192" symbol="onTimerResume"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="56" parent="globals/IntensityfactorView" pc="268439205" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="57" parent="globals/IntensityfactorView" pc="268439209" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="60" parent="globals/IntensityfactorView" pc="268439227" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="61" parent="globals/IntensityfactorView" pc="268439273" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="62" parent="globals/IntensityfactorView" pc="268439319" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="63" parent="globals/IntensityfactorView" pc="268439371" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="64" parent="globals/IntensityfactorView" pc="268439423" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="67" parent="globals/IntensityfactorView" pc="268439460" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="70" parent="globals/IntensityfactorView" pc="268439507" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="71" parent="globals/IntensityfactorView" pc="268439526" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="72" parent="globals/IntensityfactorView" pc="268439544" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="74" parent="globals/IntensityfactorView" pc="268439618" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="77" parent="globals/IntensityfactorView" pc="268439637" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="78" parent="globals/IntensityfactorView" pc="268439683" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="79" parent="globals/IntensityfactorView" pc="268439769" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="82" parent="globals/IntensityfactorView" pc="268439794" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="83" parent="globals/IntensityfactorView" pc="268439811" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="85" parent="globals/IntensityfactorView" pc="268439827" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="86" parent="globals/IntensityfactorView" pc="268439844" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="88" parent="globals/IntensityfactorView" pc="268439860" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="89" parent="globals/IntensityfactorView" pc="268439877" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="91" parent="globals/IntensityfactorView" pc="268439893" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="92" parent="globals/IntensityfactorView" pc="268439910" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="94" parent="globals/IntensityfactorView" pc="268439926" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="95" parent="globals/IntensityfactorView" pc="268439943" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="100" parent="globals/IntensityfactorView" pc="268439959" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="106" parent="globals/IntensityfactorView" pc="268440025" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="109" parent="globals/IntensityfactorView" pc="268440048" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="115" parent="globals/IntensityfactorView" pc="268440114" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="118" parent="globals/IntensityfactorView" pc="268440137" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="124" parent="globals/IntensityfactorView" pc="268440203" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="127" parent="globals/IntensityfactorView" pc="268440226" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="133" parent="globals/IntensityfactorView" pc="268440292" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="146" parent="globals/IntensityfactorView" pc="268440315" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="152" parent="globals/IntensityfactorView" pc="268440381" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="155" parent="globals/IntensityfactorView" pc="268440404" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="161" parent="globals/IntensityfactorView" pc="268440470" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="165" parent="globals/IntensityfactorView" pc="268440493" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="171" parent="globals/IntensityfactorView" pc="268440572" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="174" parent="globals/IntensityfactorView" pc="268440595" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="180" parent="globals/IntensityfactorView" pc="268440661" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="183" parent="globals/IntensityfactorView" pc="268440684" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="189" parent="globals/IntensityfactorView" pc="268440750" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="192" parent="globals/IntensityfactorView" pc="268440773" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="194" parent="globals/IntensityfactorView" pc="268440784" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="200" parent="globals/IntensityfactorView" pc="268440850" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="203" parent="globals/IntensityfactorView" pc="268440873" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="209" parent="globals/IntensityfactorView" pc="268440939" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="212" parent="globals/IntensityfactorView" pc="268440962" symbol="initialize"/>
+        <entry filename="/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" id="25" lineNum="218" parent="globals/IntensityfactorView" pc="268441028" symbol="initialize"/>
     </pcToLineNum>
     <symbolTable>
-        <entry field="true" id="44" symbol="chart_units_power"/>
-        <entry field="true" id="25" symbol="ZONE2_TITLE"/>
-        <entry field="true" id="88" symbol="dist"/>
-        <entry field="true" id="94" symbol="zone_prct"/>
+        <entry field="true" id="98" symbol="chart_units_power"/>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry field="true" id="82" symbol="ZONE2_TITLE"/>
+        <entry field="true" id="35" symbol="dist"/>
+        <entry field="true" id="68" symbol="zone_prct"/>
         <entry id="10" object="true" symbol="IntensityfactorView"/>
-        <entry field="true" id="95" symbol="val"/>
-        <entry field="true" id="65" symbol="rolling_duration_grade"/>
-        <entry field="true" id="60" symbol="metric_id"/>
-        <entry id="82" method="true" symbol="reset_overall_data"/>
-        <entry field="true" id="38" symbol="chart_units_gap_p"/>
+        <entry field="true" id="66" symbol="val"/>
+        <entry field="true" id="60" symbol="rolling_duration_grade"/>
+        <entry field="true" id="50" symbol="metric_id"/>
+        <entry field="true" id="95" symbol="chart_units_gap_p"/>
         <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
-        <entry field="true" id="49" symbol="METRIC_ID_TITLE"/>
-        <entry field="true" id="75" symbol="OverallEfficiencyFitField"/>
-        <entry id="4" module="true" symbol="globals/Rez/Menus"/>
+        <entry field="true" id="75" symbol="METRIC_ID_TITLE"/>
+        <entry field="true" id="29" symbol="OverallEfficiencyFitField"/>
+        <entry id="7" module="true" symbol="globals/Rez/Menus"/>
         <entry id="8389849" symbol="units"/>
-        <entry field="true" id="70" symbol="gradeFitField"/>
+        <entry field="true" id="41" symbol="gradeFitField"/>
         <entry id="8391212" method="true" symbol="mean"/>
-        <entry field="true" id="52" symbol="queue"/>
-        <entry field="true" id="84" symbol="rolling_spd"/>
-        <entry field="true" id="96" symbol="lap_counter"/>
-        <entry field="true" id="90" symbol="heart_rate"/>
-        <entry field="true" id="67" symbol="gapFitField"/>
-        <entry field="true" id="36" symbol="chart_units_altitude"/>
-        <entry field="true" id="99" symbol="lap_gap_acc"/>
-        <entry field="true" id="13" symbol="pace"/>
-        <entry field="true" id="91" symbol="intensity_factor"/>
-        <entry field="true" id="69" symbol="efficiencyFitField"/>
-        <entry field="true" id="39" symbol="chart_units_gap"/>
+        <entry field="true" id="23" symbol="queue"/>
+        <entry field="true" id="63" symbol="rolling_spd"/>
+        <entry field="true" id="47" symbol="lap_counter"/>
+        <entry field="true" id="42" symbol="heart_rate"/>
+        <entry field="true" id="39" symbol="gapFitField"/>
+        <entry field="true" id="93" symbol="chart_units_altitude"/>
+        <entry field="true" id="14" symbol="pace"/>
+        <entry field="true" id="45" symbol="intensity_factor"/>
+        <entry field="true" id="37" symbol="efficiencyFitField"/>
+        <entry field="true" id="94" symbol="chart_units_gap"/>
         <entry field="true" id="8388611" module="true" symbol="Toybox"/>
-        <entry field="true" id="89" symbol="n_seconds"/>
-        <entry field="true" id="87" symbol="instant_gap"/>
+        <entry field="true" id="51" symbol="n_seconds"/>
+        <entry field="true" id="43" symbol="instant_gap"/>
         <entry id="8389747" method="true" symbol="onTimerStart"/>
-        <entry field="true" id="26" symbol="AppName"/>
-        <entry field="true" id="31" symbol="ZONE3_TITLE"/>
-        <entry field="true" id="73" symbol="LapGapFitField"/>
+        <entry field="true" id="71" symbol="AppName"/>
+        <entry field="true" id="83" symbol="ZONE3_TITLE"/>
+        <entry field="true" id="27" symbol="LapGapFitField"/>
         <entry field="true" id="8388963" symbol="altitude"/>
-        <entry field="true" id="92" symbol="efficiency"/>
+        <entry field="true" id="36" symbol="efficiency"/>
         <entry id="8" module="true" symbol="globals/Rez/Strings"/>
-        <entry field="true" id="51" symbol="ZONE4_TITLE"/>
-        <entry id="9" method="true" symbol="grade_factor"/>
+        <entry field="true" id="84" symbol="ZONE4_TITLE"/>
+        <entry id="12" method="true" symbol="grade_factor"/>
         <entry id="8388772" module="true" object="true" symbol="Fonts"/>
-        <entry field="true" id="42" symbol="chart_units_re"/>
+        <entry field="true" id="99" symbol="chart_units_re"/>
         <entry field="true" id="8388795" method="true" symbol="length"/>
-        <entry field="true" id="105" symbol="overall_gap_pace"/>
         <entry id="8388631" module="true" symbol="Activity"/>
-        <entry field="true" id="37" symbol="DATAFIELD_ID_TITLE"/>
+        <entry field="true" id="72" symbol="DATAFIELD_ID_TITLE"/>
         <entry id="16" method="true" symbol="to_pace"/>
         <entry id="8388648" module="true" symbol="WatchUi"/>
-        <entry field="true" id="48" symbol="chart_label_altitude"/>
-        <entry field="true" id="27" symbol="WINDOW_GRADE_TITLE"/>
+        <entry field="true" id="86" symbol="chart_label_altitude"/>
+        <entry field="true" id="79" symbol="WINDOW_GRADE_TITLE"/>
         <entry id="2" module="true" symbol="globals/Rez"/>
-        <entry field="true" id="22" symbol="chart_units_if"/>
-        <entry field="true" id="71" symbol="LapIntensityFitField"/>
-        <entry field="true" id="30" symbol="gap"/>
-        <entry field="true" id="68" symbol="intensityFitField"/>
-        <entry field="true" id="14" symbol="mins"/>
-        <entry field="true" id="97" symbol="lap_if_acc"/>
-        <entry field="true" id="54" symbol="sum"/>
+        <entry field="true" id="97" symbol="chart_units_if"/>
+        <entry field="true" id="28" symbol="LapIntensityFitField"/>
+        <entry field="true" id="38" symbol="gap"/>
+        <entry field="true" id="44" symbol="intensityFitField"/>
+        <entry field="true" id="13" symbol="mins"/>
+        <entry field="true" id="48" symbol="lap_if_acc"/>
+        <entry field="true" id="24" symbol="sum"/>
         <entry id="8388771" module="true" object="true" symbol="Drawables"/>
         <entry id="18" module="true" symbol="Menus"/>
         <entry id="8389275" method="true" symbol="getApp"/>
         <entry id="6" module="true" symbol="globals/Rez/Layouts"/>
         <entry field="true" id="8391580" symbol="intensity"/>
         <entry id="8389850" symbol="count"/>
-        <entry field="true" id="78" symbol="speedFitField"/>
-        <entry field="true" id="101" symbol="overall_counter"/>
-        <entry field="true" id="102" symbol="overall_if_acc"/>
-        <entry id="56" method="true" symbol="last"/>
+        <entry field="true" id="65" symbol="speedFitField"/>
+        <entry field="true" id="52" symbol="overall_counter"/>
+        <entry field="true" id="53" symbol="overall_if_acc"/>
+        <entry id="22" method="true" symbol="last"/>
         <entry id="8389137" method="true" symbol="compute"/>
-        <entry field="true" id="93" symbol="zone_num"/>
-        <entry id="7" module="true" symbol="globals/Rez/JsonData"/>
-        <entry field="true" id="40" symbol="ZONE5_TITLE"/>
+        <entry field="true" id="67" symbol="zone_num"/>
+        <entry id="5" module="true" symbol="globals/Rez/JsonData"/>
+        <entry field="true" id="85" symbol="ZONE5_TITLE"/>
         <entry id="8390685" method="true" symbol="onWorkoutStepComplete"/>
         <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
-        <entry field="true" id="83" symbol="rolling_pwr"/>
-        <entry field="true" id="45" symbol="chart_label_grade"/>
-        <entry field="true" id="35" symbol="chart_label_speed"/>
-        <entry field="true" id="59" symbol="lag"/>
-        <entry id="81" method="true" symbol="reset_lap_data"/>
-        <entry field="true" id="28" symbol="WINDOW_TITLE"/>
-        <entry field="true" id="21" symbol="chart_label_power"/>
+        <entry field="true" id="62" symbol="rolling_pwr"/>
+        <entry field="true" id="88" symbol="chart_label_grade"/>
+        <entry field="true" id="92" symbol="chart_label_speed"/>
+        <entry field="true" id="46" symbol="lag"/>
+        <entry id="57" method="true" symbol="reset_lap_data"/>
+        <entry field="true" id="80" symbol="WINDOW_TITLE"/>
+        <entry field="true" id="90" symbol="chart_label_power"/>
         <entry id="8388645" module="true" symbol="Time"/>
         <entry id="8388769" module="true" object="true" symbol="Rez"/>
-        <entry field="true" id="29" symbol="chart_label_re"/>
-        <entry field="true" id="61" symbol="datafield_id"/>
-        <entry field="true" id="64" symbol="rolling_duration"/>
-        <entry field="true" id="98" symbol="lap_re_acc"/>
+        <entry field="true" id="91" symbol="chart_label_re"/>
+        <entry field="true" id="33" symbol="datafield_id"/>
+        <entry field="true" id="59" symbol="rolling_duration"/>
+        <entry field="true" id="49" symbol="lap_re_acc"/>
         <entry id="8388640" module="true" symbol="Lang"/>
-        <entry field="true" id="23" symbol="chart_label_if"/>
+        <entry field="true" id="89" symbol="chart_label_if"/>
         <entry id="8390088" module="true" object="true" symbol="JsonData"/>
-        <entry field="true" id="86" symbol="rolling_gp"/>
-        <entry field="true" id="53" symbol="counter"/>
-        <entry field="true" id="19" symbol="LauncherIcon"/>
+        <entry field="true" id="61" symbol="rolling_gp"/>
+        <entry field="true" id="20" symbol="counter"/>
+        <entry field="true" id="70" symbol="LauncherIcon"/>
         <entry id="8388610" symbol="statics"/>
-        <entry field="true" id="104" symbol="overall_gap_acc"/>
-        <entry field="true" id="24" symbol="chart_label_gap"/>
-        <entry field="true" id="85" symbol="grade"/>
+        <entry field="true" id="87" symbol="chart_label_gap"/>
+        <entry id="64" method="true" symbol="set_overall_data"/>
+        <entry field="true" id="40" symbol="grade"/>
         <entry id="8389350" module="true" symbol="globals"/>
-        <entry field="true" id="103" symbol="overall_re_acc"/>
+        <entry field="true" id="54" symbol="overall_re_acc"/>
         <entry field="true" id="8388958" symbol="speed"/>
-        <entry field="true" id="20" symbol="DEBUG_TITLE"/>
+        <entry field="true" id="73" symbol="DEBUG_TITLE"/>
         <entry id="8388770" module="true" object="true" symbol="Strings"/>
-        <entry field="true" id="62" symbol="rFTP"/>
-        <entry field="true" id="100" symbol="lap_gap_pace"/>
+        <entry field="true" id="56" symbol="rFTP"/>
         <entry id="8388702" method="true" symbol="initialize"/>
-        <entry field="true" id="50" symbol="LTHR_TITLE"/>
-        <entry id="57" method="true" symbol="count_not_null"/>
+        <entry field="true" id="74" symbol="LTHR_TITLE"/>
+        <entry id="19" method="true" symbol="count_not_null"/>
         <entry id="8389279" method="true" symbol="onStart"/>
-        <entry field="true" id="76" symbol="OverallGapFitField"/>
+        <entry field="true" id="30" symbol="OverallGapFitField"/>
         <entry id="8389780" module="true" symbol="FitContributor"/>
         <entry field="true" id="8388961" symbol="power"/>
-        <entry field="true" id="58" symbol="ignore_first"/>
-        <entry field="true" id="34" symbol="VERSION_ID_TITLE"/>
+        <entry field="true" id="78" symbol="VERSION_ID_TITLE"/>
         <entry id="8388641" module="true" symbol="Math"/>
-        <entry field="true" id="43" symbol="zones"/>
+        <entry field="true" id="69" symbol="zones"/>
         <entry id="8389751" method="true" symbol="onTimerLap"/>
         <entry id="8389280" method="true" symbol="getInitialView"/>
         <entry id="8389281" method="true" symbol="onStop"/>
         <entry id="8389847" symbol="mesgType"/>
-        <entry field="true" id="77" symbol="powerFitField"/>
-        <entry field="true" id="66" symbol="debug_mode"/>
-        <entry field="true" id="72" symbol="LapEfficiencyFitField"/>
+        <entry field="true" id="55" symbol="powerFitField"/>
+        <entry field="true" id="34" symbol="debug_mode"/>
+        <entry field="true" id="26" symbol="LapEfficiencyFitField"/>
         <entry id="11" object="true" symbol="Queue"/>
-        <entry id="80" method="true" symbol="reset_queues"/>
+        <entry id="58" method="true" symbol="reset_queues"/>
         <entry id="17" module="true" symbol="Layouts"/>
-        <entry id="12" object="true" symbol="IntensityfactorApp"/>
-        <entry id="55" method="true" symbol="current"/>
-        <entry field="true" id="63" symbol="LTHR"/>
-        <entry field="true" id="79" symbol="altitudeFitField"/>
+        <entry id="9" object="true" symbol="IntensityfactorApp"/>
+        <entry field="true" id="25" symbol="LTHR"/>
+        <entry field="true" id="32" symbol="altitudeFitField"/>
         <entry id="8389750" method="true" symbol="onTimerResume"/>
-        <entry field="true" id="74" symbol="OverallIntensityFitField"/>
-        <entry field="true" id="33" symbol="chart_units_grade"/>
-        <entry id="5" module="true" symbol="globals/Rez/Fonts"/>
+        <entry field="true" id="31" symbol="OverallIntensityFitField"/>
+        <entry field="true" id="96" symbol="chart_units_grade"/>
+        <entry id="4" module="true" symbol="globals/Rez/Fonts"/>
         <entry id="8390514" method="true" symbol="update"/>
-        <entry field="true" id="46" symbol="chart_units_speed"/>
-        <entry field="true" id="41" symbol="RFTPa_TITLE"/>
+        <entry field="true" id="100" symbol="chart_units_speed"/>
+        <entry field="true" id="77" symbol="RFTPa_TITLE"/>
+        <entry id="21" method="true" symbol="first"/>
         <entry id="8388635" module="true" symbol="Application"/>
         <entry field="true" id="15" symbol="secs"/>
-        <entry field="true" id="32" symbol="RFTP_TITLE"/>
-        <entry field="true" id="47" symbol="ZONE1_TITLE"/>
+        <entry field="true" id="76" symbol="RFTP_TITLE"/>
+        <entry field="true" id="81" symbol="ZONE1_TITLE"/>
     </symbolTable>
     <localVars>
-        <entry arg="true" endPc="268435495" name="g" stackId="1" startPc="268435456"/>
-        <entry endPc="268435908" name="i" stackId="1" startPc="268435835"/>
-        <entry endPc="268440003" name="i" stackId="2" startPc="268439810"/>
-        <entry arg="true" endPc="268440844" name="info" stackId="1" startPc="268438187"/>
-        <entry arg="true" endPc="268440870" name="len" stackId="1" startPc="268440845"/>
-        <entry endPc="268440942" name="i" stackId="2" startPc="268440902"/>
-        <entry arg="true" endPc="268440959" name="member" stackId="1" startPc="268440871"/>
-        <entry endPc="268441089" name="i" stackId="1" startPc="268441011"/>
-        <entry arg="true" endPc="268441178" name="n" stackId="1" startPc="268441134"/>
-        <entry endPc="268441299" name="i" stackId="2" startPc="268441213"/>
-        <entry arg="true" endPc="268441302" name="n" stackId="1" startPc="268441179"/>
-        <entry endPc="268441412" name="i" stackId="1" startPc="268441350"/>
-        <entry arg="true" endPc="268441447" name="state" stackId="1" startPc="268441443"/>
-        <entry arg="true" endPc="268441452" name="state" stackId="1" startPc="268441448"/>
-        <entry arg="true" endPc="268441782" name="speed" stackId="1" startPc="268441524"/>
+        <entry arg="true" endPc="268435635" name="g" stackId="1" startPc="268435599"/>
+        <entry arg="true" endPc="268435892" name="speed" stackId="1" startPc="268435636"/>
+        <entry arg="true" endPc="268436015" name="n" stackId="1" startPc="268435893"/>
+        <entry endPc="268436013" name="i" stackId="2" startPc="268435927"/>
+        <entry endPc="268436145" name="i" stackId="1" startPc="268436067"/>
+        <entry arg="true" endPc="268436277" name="member" stackId="1" startPc="268436189"/>
+        <entry endPc="268436260" name="i" stackId="2" startPc="268436220"/>
+        <entry arg="true" endPc="268436301" name="len" stackId="1" startPc="268436278"/>
+        <entry arg="true" endPc="268436343" name="n" stackId="1" startPc="268436302"/>
+        <entry endPc="268436453" name="i" stackId="1" startPc="268436391"/>
+        <entry arg="true" endPc="268438798" name="info" stackId="1" startPc="268436493"/>
+        <entry endPc="268438306" name="i" stackId="2" startPc="268438113"/>
+        <entry endPc="268439617" name="i" stackId="1" startPc="268439544"/>
     </localVars>
     <annotations>
-        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="DEBUG_TITLE"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_label_power"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_if"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_label_if"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_label_gap"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZONE2_TITLE"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="WINDOW_GRADE_TITLE"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="WINDOW_TITLE"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_label_re"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="gap"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZONE3_TITLE"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="RFTP_TITLE"/>
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="power"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_grade"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="VERSION_ID_TITLE"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_label_speed"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_altitude"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="DATAFIELD_ID_TITLE"/>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_gap_p"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_gap"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZONE5_TITLE"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="pace"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="RFTPa_TITLE"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_re"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="zones"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_power"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="intensity"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_label_grade"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_speed"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZONE1_TITLE"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_label_altitude"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="METRIC_ID_TITLE"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="LTHR_TITLE"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="gap"/>
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZONE4_TITLE"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_grade"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_label_if"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="LTHR_TITLE"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_label_altitude"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_gap"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_altitude"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_label_re"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_speed"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="DATAFIELD_ID_TITLE"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="DEBUG_TITLE"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZONE1_TITLE"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_if"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="pace"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="zones"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_label_power"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZONE3_TITLE"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="intensity"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="RFTP_TITLE"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="METRIC_ID_TITLE"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_label_gap"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_label_grade"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_re"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="WINDOW_TITLE"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_label_speed"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZONE5_TITLE"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="chart_units_power"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="WINDOW_GRADE_TITLE"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="RFTPa_TITLE"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="VERSION_ID_TITLE"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZONE2_TITLE"/>
     </annotations>
     <dataEntryOffsetMappings>
         <dataEntry label="globals" offset="87" parentId="" symbolId="globals" type="module"/>
-        <dataEntry label="globals/Rez" offset="206" parentId="globals" symbolId="Rez" type="module"/>
-        <dataEntry label="globals/Rez/Drawables" offset="285" parentId="Rez" symbolId="Drawables" type="module"/>
-        <dataEntry label="globals/Rez/Menus" offset="324" parentId="Rez" symbolId="Menus" type="module"/>
-        <dataEntry label="globals/Rez/Fonts" offset="355" parentId="Rez" symbolId="Fonts" type="module"/>
-        <dataEntry label="globals/Rez/Layouts" offset="386" parentId="Rez" symbolId="Layouts" type="module"/>
-        <dataEntry label="globals/Rez/JsonData" offset="417" parentId="Rez" symbolId="JsonData" type="module"/>
-        <dataEntry label="globals/Rez/Strings" offset="448" parentId="Rez" symbolId="Strings" type="module"/>
-        <dataEntry label="globals/IntensityfactorApp" offset="759" parentId="globals" symbolId="IntensityfactorApp" type="class"/>
-        <dataEntry label="globals/Queue" offset="830" parentId="globals" symbolId="Queue" type="class"/>
-        <dataEntry label="globals/IntensityfactorView" offset="949" parentId="globals" symbolId="IntensityfactorView" type="class"/>
+        <dataEntry label="globals/IntensityfactorApp" offset="206" parentId="globals" symbolId="IntensityfactorApp" type="class"/>
+        <dataEntry label="globals/Rez" offset="277" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/Queue" offset="356" parentId="globals" symbolId="Queue" type="class"/>
+        <dataEntry label="globals/IntensityfactorView" offset="475" parentId="globals" symbolId="IntensityfactorView" type="class"/>
+        <dataEntry label="globals/Rez/Drawables" offset="954" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Layouts" offset="993" parentId="Rez" symbolId="Layouts" type="module"/>
+        <dataEntry label="globals/Rez/Menus" offset="1024" parentId="Rez" symbolId="Menus" type="module"/>
+        <dataEntry label="globals/Rez/Fonts" offset="1055" parentId="Rez" symbolId="Fonts" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="1086" parentId="Rez" symbolId="Strings" type="module"/>
+        <dataEntry label="globals/Rez/JsonData" offset="1397" parentId="Rez" symbolId="JsonData" type="module"/>
     </dataEntryOffsetMappings>
     <functions>
-        <functionEntry accessMode="public" endPc="268435495" name="grade_factor" startPc="268435456">
+        <functionEntry accessMode="public" endPc="268435478" name="&lt;init&gt;" parent="IntensityfactorApp" startPc="268435460">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435481" name="onStart" parent="IntensityfactorApp" startPc="268435479">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435524" name="getInitialView" parent="IntensityfactorApp" startPc="268435482">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435545" name="initialize" parent="IntensityfactorApp" startPc="268435525">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435548" name="onStop" parent="IntensityfactorApp" startPc="268435546">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435574" name="getApp" startPc="268435549">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435598" name="&lt;init&gt;" parent="Rez" startPc="268435575">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435635" name="grade_factor" startPc="268435599">
             <param id="g"/>
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268437760" name="initialize" parent="IntensityfactorView" startPc="268435496">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268437968" name="reset_queues" parent="IntensityfactorView" startPc="268437761">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268438025" name="reset_lap_data" parent="IntensityfactorView" startPc="268437969">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268438082" name="reset_overall_data" parent="IntensityfactorView" startPc="268438026">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268438123" name="onTimerStart" parent="IntensityfactorView" startPc="268438083">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268438140" name="onTimerResume" parent="IntensityfactorView" startPc="268438124">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268438169" name="onWorkoutStepComplete" parent="IntensityfactorView" startPc="268438141">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268438186" name="onTimerLap" parent="IntensityfactorView" startPc="268438170">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268440844" name="compute" parent="IntensityfactorView" startPc="268438187">
-            <param id="info"/>
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="protected" endPc="268441866" name="&lt;init&gt;" parent="IntensityfactorView" startPc="268441834">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268440870" name="initialize" parent="Queue" startPc="268440845">
-            <param id="len"/>
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268440959" name="update" parent="Queue" startPc="268440871">
-            <param id="member"/>
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268441133" name="mean" parent="Queue" startPc="268440960">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268441178" name="current" parent="Queue" startPc="268441134">
-            <param id="n"/>
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268441302" name="last" parent="Queue" startPc="268441179">
-            <param id="n"/>
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268441419" name="count_not_null" parent="Queue" startPc="268441303">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="protected" endPc="268441833" name="&lt;init&gt;" parent="Queue" startPc="268441833">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268441442" name="initialize" parent="IntensityfactorApp" startPc="268441420">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268441447" name="onStart" parent="IntensityfactorApp" startPc="268441443">
-            <param id="state"/>
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268441452" name="onStop" parent="IntensityfactorApp" startPc="268441448">
-            <param id="state"/>
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268441494" name="getInitialView" parent="IntensityfactorApp" startPc="268441453">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="protected" endPc="268441832" name="&lt;init&gt;" parent="IntensityfactorApp" startPc="268441814">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268441523" name="getApp" startPc="268441495">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268441782" name="to_pace" startPc="268441524">
+        <functionEntry accessMode="public" endPc="268435892" name="to_pace" startPc="268435636">
             <param id="speed"/>
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="protected" endPc="268441808" name="&lt;init&gt;" parent="Drawables" startPc="268441808">
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Queue">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="protected" endPc="268441810" name="&lt;init&gt;" parent="Fonts" startPc="268441810">
+        <functionEntry accessMode="public" endPc="268436015" name="last" parent="Queue" startPc="268435893">
+            <param id="n"/>
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="protected" endPc="268441812" name="&lt;init&gt;" parent="JsonData" startPc="268441812">
+        <functionEntry accessMode="public" endPc="268436188" name="mean" parent="Queue" startPc="268436016">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="protected" endPc="268441811" name="&lt;init&gt;" parent="Layouts" startPc="268441811">
+        <functionEntry accessMode="public" endPc="268436277" name="update" parent="Queue" startPc="268436189">
+            <param id="member"/>
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="protected" endPc="268441809" name="&lt;init&gt;" parent="Menus" startPc="268441809">
+        <functionEntry accessMode="public" endPc="268436301" name="initialize" parent="Queue" startPc="268436278">
+            <param id="len"/>
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="protected" endPc="268441813" name="&lt;init&gt;" parent="Strings" startPc="268441813">
+        <functionEntry accessMode="public" endPc="268436343" name="first" parent="Queue" startPc="268436302">
+            <param id="n"/>
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="protected" endPc="268441807" name="&lt;init&gt;" parent="Rez" startPc="268441784">
+        <functionEntry accessMode="public" endPc="268436459" name="count_not_null" parent="Queue" startPc="268436344">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436492" name="&lt;init&gt;" parent="IntensityfactorView" startPc="268436460">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438798" name="compute" parent="IntensityfactorView" startPc="268436493">
+            <param id="info"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438837" name="onTimerStart" parent="IntensityfactorView" startPc="268438799">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439063" name="reset_queues" parent="IntensityfactorView" startPc="268438838">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439090" name="onWorkoutStepComplete" parent="IntensityfactorView" startPc="268439064">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439105" name="onTimerLap" parent="IntensityfactorView" startPc="268439091">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439147" name="reset_lap_data" parent="IntensityfactorView" startPc="268439106">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439189" name="set_overall_data" parent="IntensityfactorView" startPc="268439148">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439204" name="onTimerResume" parent="IntensityfactorView" startPc="268439190">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441054" name="initialize" parent="IntensityfactorView" startPc="268439205">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Layouts">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Menus">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Fonts">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="JsonData">
             <documentation/>
         </functionEntry>
     </functions>

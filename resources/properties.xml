@@ -1,14 +1,14 @@
 <resources>
 
     <properties>
-        <property id="VERSION_ID" type="string">2.1.2</property>
+        <property id="VERSION_ID" type="string">2.2.0</property>
         
         <property id="METRIC_ID" type="number">2</property>
         <property id="DATAFIELD_ID" type="number">3</property>
         
-        <property id="RFTP" type="number">435</property>
-        <property id="RFTPa" type="float">4.17</property>
-        <property id="LTHR" type="number">188</property>
+        <property id="RFTP" type="number">465</property>
+        <property id="RFTPa" type="float">4.44</property>
+        <property id="LTHR" type="number">185</property>
 
         <property id="WINDOW" type="number">30</property>
         <property id="WINDOW_GRADE" type="number">15</property>
@@ -148,15 +148,15 @@
         chartTitle="@Strings.chart_label_re" dataLabel="@Strings.chart_label_re"
         unitLabel="@Strings.chart_units_re" fillColor="#ff2653" />
 
-        <fitField id="4" displayInActivitySummary="false" displayInChart="false" displayInActivityLaps="true" sortOrder="4"
-        dataLabel="@Strings.chart_label_gap" unitLabel="@Strings.chart_units_gap_p" />
+        <!-- <fitField id="4" displayInActivitySummary="false" displayInChart="false" displayInActivityLaps="true" sortOrder="4"
+        dataLabel="@Strings.chart_label_gap" unitLabel="@Strings.chart_units_gap_p" /> -->
         <fitField id="5" displayInActivitySummary="false" displayInChart="false" displayInActivityLaps="true" sortOrder="5" precision="0"
         dataLabel="@Strings.chart_label_if" unitLabel="@Strings.chart_units_if" />
         <fitField id="6" displayInActivitySummary="false" displayInChart="false" displayInActivityLaps="true" sortOrder="6" precision="2"
         dataLabel="@Strings.chart_label_re" unitLabel="@Strings.chart_units_re" />
 
-        <fitField id="11" displayInActivitySummary="true" displayInChart="false" displayInActivityLaps="false" sortOrder="7"
-        dataLabel="@Strings.chart_label_gap" unitLabel="@Strings.chart_units_gap_p" />
+        <!-- <fitField id="11" displayInActivitySummary="true" displayInChart="false" displayInActivityLaps="false" sortOrder="7"
+        dataLabel="@Strings.chart_label_gap" unitLabel="@Strings.chart_units_gap_p" /> -->
         <fitField id="12" displayInActivitySummary="true" displayInChart="false" displayInActivityLaps="false" sortOrder="8" precision="0"
         dataLabel="@Strings.chart_label_if" unitLabel="@Strings.chart_units_if" />
         <fitField id="13" displayInActivitySummary="true" displayInChart="false" displayInActivityLaps="false" sortOrder="9" precision="2"

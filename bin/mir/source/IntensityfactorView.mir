@@ -1,0 +1,1515 @@
+[ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 1; ]
+import Toybox.Activity;
+[ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 2; ]
+import Toybox.Lang;
+[ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 3; ]
+import Toybox.Time;
+[ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 4; ]
+import Toybox.WatchUi;
+[ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 5; ]
+import Toybox.Math;
+[ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 6; ]
+import Toybox.Application;
+[ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 7; ]
+import Toybox.FitContributor;
+[ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 12; ]
+function grade_factor(g) {
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_12_25_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 13 4 ]
+    %tmp.1 = 1;
+    %tmp.2 = 0.02869556;
+    %tmp.4 = lgetv %g;
+    %tmp.5 = mul %tmp.2 %tmp.4;
+    %tmp.6 = add %tmp.1 %tmp.5;
+    %tmp.7 = 0.001520768;
+    %tmp.9 = lgetv %g;
+    %tmp.10 = mul %tmp.7 %tmp.9;
+    %tmp.12 = lgetv %g;
+    %tmp.13 = mul %tmp.10 %tmp.12;
+    %tmp.14 = add %tmp.6 %tmp.13;
+    ret %tmp.14;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_12_25_stop:
+}
+[ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 18; ]
+class IntensityfactorView extends WatchUi.SimpleDataField{
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 18; ]
+    <init> {
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 32 8 ]
+        %tmp.16 = 7;
+        %tmp.15 = newa %tmp.16;
+        putv self :zones %tmp.15;
+    }
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 18; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 21; @position = 10; ]
+    const ignore_first = 10;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 22; @position = 8; ]
+    var lag = 0;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 25; @position = 8; ]
+    var metric_id;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 26; @position = 8; ]
+    var datafield_id;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 27; @position = 8; ]
+    var rFTP;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 28; @position = 8; ]
+    var LTHR;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 29; @position = 8; ]
+    var rolling_duration;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 30; @position = 8; ]
+    var rolling_duration_grade;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 31; @position = 8; ]
+    var debug_mode;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 32; @position = 8; ]
+    var zones;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 35; @position = 8; ]
+    var gapFitField;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 36; @position = 8; ]
+    var intensityFitField;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 37; @position = 8; ]
+    var efficiencyFitField;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 38; @position = 8; ]
+    var gradeFitField;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 41; @position = 8; ]
+    var LapIntensityFitField;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 42; @position = 8; ]
+    var LapEfficiencyFitField;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 43; @position = 8; ]
+    var LapGapFitField;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 46; @position = 8; ]
+    var OverallIntensityFitField;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 47; @position = 8; ]
+    var OverallEfficiencyFitField;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 48; @position = 8; ]
+    var OverallGapFitField;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 51; @position = 8; ]
+    var powerFitField;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 52; @position = 8; ]
+    var speedFitField;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 53; @position = 8; ]
+    var altitudeFitField;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 56; ]
+    function initialize() as Void {
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_56_26_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 57 8 ]
+        %tmp.2 = getv ? :SimpleDataField;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 60 8 ]
+        %tmp.4 = getm $.Toybox.Application;
+        %tmp.5 = getv function %tmp.4 :getApp;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        %tmp.7 = getv function %tmp.6 :getProperty;
+        %tmp.8 = "METRIC_ID";
+        %tmp.9 = invoke %tmp.6 %tmp.7(%tmp.8);
+        %tmp.10 = getv function %tmp.9 :toNumber;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        putv self :metric_id %tmp.11;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 61 8 ]
+        %tmp.12 = getm $.Toybox.Application;
+        %tmp.13 = getv function %tmp.12 :getApp;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        %tmp.15 = getv function %tmp.14 :getProperty;
+        %tmp.16 = "DATAFIELD_ID";
+        %tmp.17 = invoke %tmp.14 %tmp.15(%tmp.16);
+        %tmp.18 = getv function %tmp.17 :toNumber;
+        %tmp.19 = invoke %tmp.17 %tmp.18();
+        putv self :datafield_id %tmp.19;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 62 8 ]
+        %tmp.20 = getm $.Toybox.Application;
+        %tmp.21 = getv function %tmp.20 :getApp;
+        %tmp.22 = invoke %tmp.20 %tmp.21();
+        %tmp.23 = getv function %tmp.22 :getProperty;
+        %tmp.24 = "WINDOW";
+        %tmp.25 = invoke %tmp.22 %tmp.23(%tmp.24);
+        %tmp.26 = getv function %tmp.25 :toNumber;
+        %tmp.27 = invoke %tmp.25 %tmp.26();
+        %tmp.28 = 1;
+        %tmp.29 = add %tmp.27 %tmp.28;
+        putv self :rolling_duration %tmp.29;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 63 8 ]
+        %tmp.30 = getm $.Toybox.Application;
+        %tmp.31 = getv function %tmp.30 :getApp;
+        %tmp.32 = invoke %tmp.30 %tmp.31();
+        %tmp.33 = getv function %tmp.32 :getProperty;
+        %tmp.34 = "WINDOW_GRADE";
+        %tmp.35 = invoke %tmp.32 %tmp.33(%tmp.34);
+        %tmp.36 = getv function %tmp.35 :toNumber;
+        %tmp.37 = invoke %tmp.35 %tmp.36();
+        %tmp.38 = 1;
+        %tmp.39 = add %tmp.37 %tmp.38;
+        putv self :rolling_duration_grade %tmp.39;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 64 8 ]
+        %tmp.40 = getm $.Toybox.Application;
+        %tmp.41 = getv function %tmp.40 :getApp;
+        %tmp.42 = invoke %tmp.40 %tmp.41();
+        %tmp.43 = getv function %tmp.42 :getProperty;
+        %tmp.44 = "DEBUG";
+        %tmp.45 = invoke %tmp.42 %tmp.43(%tmp.44);
+        putv self :debug_mode %tmp.45;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 67 8 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_67_33_begin:
+        %tmp.47 = getv ? :rolling_duration;
+        %tmp.49 = getv ? :rolling_duration_grade;
+        %tmp.50 = lt %tmp.47 %tmp.49;
+        bf %tmp.50 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_67_33_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_67_33_true:
+        %tmp.52 = getv ? :rolling_duration;
+        push %tmp.52;
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_67_33_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_67_33_false:
+        %tmp.54 = getv ? :rolling_duration_grade;
+        push %tmp.54;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_67_33_end:
+        %tmp.55 = phi [%tmp.50 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_67_33_begin] [%tmp.52 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_67_33_true] [%tmp.54 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_67_33_false] [%tmp.55 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_67_33_end];
+        putv self :rolling_duration_grade %tmp.55;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 70 8 ]
+        %tmp.56 = getv self :zones;
+        %tmp.57 = 0;
+        %tmp.58 = 0;
+        aputv %tmp.56 %tmp.58 %tmp.57;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 71 8 ]
+        for @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_71_8_for_test @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_71_8_for_incr @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_71_8_for_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_71_8_for_init:
+        [ "_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_71_8_for_begin" "_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_71_8_for_end" ]
+        %i.1 = local;
+        %tmp.59 = 1;
+        lputv %i.1 %tmp.59;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_71_8_for_test:
+        %tmp.61 = lgetv %i.1;
+        %tmp.62 = 5;
+        %tmp.63 = lte %tmp.61 %tmp.62;
+        bf %tmp.63 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_71_8_for_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_71_8_for_begin:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_71_37_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 72 12 ]
+        %tmp.64 = getv self :zones;
+        %tmp.65 = getm $.Toybox.Application;
+        %tmp.66 = getv function %tmp.65 :getApp;
+        %tmp.67 = invoke %tmp.65 %tmp.66();
+        %tmp.68 = getv function %tmp.67 :getProperty;
+        %tmp.69 = "ZONE";
+        %tmp.70 = lgetv %i.1;
+        %tmp.71 = getv function %tmp.70 :toString;
+        %tmp.72 = invoke %tmp.70 %tmp.71();
+        %tmp.73 = add %tmp.69 %tmp.72;
+        %tmp.74 = invoke %tmp.67 %tmp.68(%tmp.73);
+        %tmp.75 = getv function %tmp.74 :toNumber;
+        %tmp.76 = invoke %tmp.74 %tmp.75();
+        %tmp.78 = lgetv %i.1;
+        aputv %tmp.64 %tmp.78 %tmp.76;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_71_37_stop:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_71_8_for_incr:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 71 ]
+        %tmp.81 = lgetv %i.1;
+        %tmp.82 = add %tmp.81 1;
+        lputv %i.1 %tmp.82;
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_71_8_for_test;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_71_8_for_end:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 74 8 ]
+        %tmp.83 = getv self :zones;
+        %tmp.84 = 150;
+        %tmp.85 = 6;
+        aputv %tmp.83 %tmp.85 %tmp.84;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 77 8 ]
+        %tmp.86 = getm $.Toybox.Application;
+        %tmp.87 = getv function %tmp.86 :getApp;
+        %tmp.88 = invoke %tmp.86 %tmp.87();
+        %tmp.89 = getv function %tmp.88 :getProperty;
+        %tmp.90 = "LTHR";
+        %tmp.91 = invoke %tmp.88 %tmp.89(%tmp.90);
+        %tmp.92 = getv function %tmp.91 :toFloat;
+        %tmp.93 = invoke %tmp.91 %tmp.92();
+        putv self :LTHR %tmp.93;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 78 8 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_78_15_begin:
+        %tmp.95 = getv ? :metric_id;
+        %tmp.96 = 0;
+        %tmp.97 = eq %tmp.95 %tmp.96;
+        bf %tmp.97 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_78_15_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_78_15_true:
+        %tmp.98 = getm $.Toybox.Application;
+        %tmp.99 = getv function %tmp.98 :getApp;
+        %tmp.100 = invoke %tmp.98 %tmp.99();
+        %tmp.101 = getv function %tmp.100 :getProperty;
+        %tmp.102 = "RFTP";
+        %tmp.103 = invoke %tmp.100 %tmp.101(%tmp.102);
+        push %tmp.103;
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_78_15_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_78_15_false:
+        %tmp.104 = getm $.Toybox.Application;
+        %tmp.105 = getv function %tmp.104 :getApp;
+        %tmp.106 = invoke %tmp.104 %tmp.105();
+        %tmp.107 = getv function %tmp.106 :getProperty;
+        %tmp.108 = "RFTPa";
+        %tmp.109 = invoke %tmp.106 %tmp.107(%tmp.108);
+        push %tmp.109;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_78_15_end:
+        %tmp.110 = phi [%tmp.97 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_78_15_begin] [%tmp.103 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_78_15_true] [%tmp.109 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_78_15_false] [%tmp.110 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_78_15_end];
+        putv self :rFTP %tmp.110;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 79 8 ]
+        %tmp.112 = getv ? :rFTP;
+        %tmp.113 = getv function %tmp.112 :toFloat;
+        %tmp.114 = invoke %tmp.112 %tmp.113();
+        putv self :rFTP %tmp.114;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 82 8 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_82_8_if_stmt:
+        %tmp.116 = getv ? :datafield_id;
+        %tmp.117 = 0;
+        %tmp.118 = eq %tmp.116 %tmp.117;
+        bf %tmp.118 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_82_8_if_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_82_8_if_true:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_82_31_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 83 12 ]
+        %tmp.119 = "POWER";
+        putv self :label %tmp.119;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_82_31_stop:
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_82_8_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_82_8_if_false:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 85 15 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_85_15_if_stmt:
+        %tmp.121 = getv ? :datafield_id;
+        %tmp.122 = 1;
+        %tmp.123 = eq %tmp.121 %tmp.122;
+        bf %tmp.123 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_85_15_if_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_85_15_if_true:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_85_38_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 86 12 ]
+        %tmp.124 = "PACE";
+        putv self :label %tmp.124;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_85_38_stop:
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_85_15_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_85_15_if_false:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 88 15 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_88_15_if_stmt:
+        %tmp.126 = getv ? :datafield_id;
+        %tmp.127 = 2;
+        %tmp.128 = eq %tmp.126 %tmp.127;
+        bf %tmp.128 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_88_15_if_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_88_15_if_true:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_88_38_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 89 12 ]
+        %tmp.129 = "GAP";
+        putv self :label %tmp.129;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_88_38_stop:
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_88_15_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_88_15_if_false:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 91 15 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_91_15_if_stmt:
+        %tmp.131 = getv ? :datafield_id;
+        %tmp.132 = 3;
+        %tmp.133 = eq %tmp.131 %tmp.132;
+        bf %tmp.133 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_91_15_if_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_91_15_if_true:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_91_38_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 92 12 ]
+        %tmp.134 = "INTENSITY";
+        putv self :label %tmp.134;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_91_38_stop:
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_91_15_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_91_15_if_false:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 94 15 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_94_15_if_stmt:
+        %tmp.136 = getv ? :datafield_id;
+        %tmp.137 = 4;
+        %tmp.138 = eq %tmp.136 %tmp.137;
+        bf %tmp.138 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_94_15_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_94_15_if_true:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_94_38_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 95 12 ]
+        %tmp.139 = "ZONES";
+        putv self :label %tmp.139;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_94_38_stop:
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_94_15_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_94_15_if_end:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_91_15_if_end:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_88_15_if_end:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_85_15_if_end:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_82_8_if_end:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 100 8 ]
+        %tmp.140 = self;
+        %tmp.141 = getv function %tmp.140 :createField;
+        %tmp.142 = "GAP";
+        %tmp.143 = 0;
+        %tmp.144 = getm $.Toybox.FitContributor;
+        %tmp.145 = getv %tmp.144 :DATA_TYPE_FLOAT;
+        %tmp.146 = newd 2;
+        %tmp.148 = const :mesgType;
+        %tmp.149 = getm $.Toybox.FitContributor;
+        %tmp.150 = getv %tmp.149 :MESG_TYPE_RECORD;
+        %tmp.151 = dup %tmp.146;
+        %tmp.152 = aputv %tmp.151 %tmp.148 %tmp.150;
+        %tmp.154 = const :units;
+        %tmp.155 = "";
+        %tmp.156 = dup %tmp.152;
+        %tmp.157 = aputv %tmp.156 %tmp.154 %tmp.155;
+        %tmp.158 = invoke %tmp.140 %tmp.141(%tmp.142, %tmp.143, %tmp.145, %tmp.157);
+        putv self :gapFitField %tmp.158;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 106 8 ]
+        %tmp.160 = getv ? :gapFitField;
+        %tmp.161 = getv function %tmp.160 :setData;
+        %tmp.162 = 0;
+        invoke %tmp.160 %tmp.161(%tmp.162);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 109 8 ]
+        %tmp.163 = self;
+        %tmp.164 = getv function %tmp.163 :createField;
+        %tmp.165 = "Intensity factor";
+        %tmp.166 = 1;
+        %tmp.167 = getm $.Toybox.FitContributor;
+        %tmp.168 = getv %tmp.167 :DATA_TYPE_UINT16;
+        %tmp.169 = newd 2;
+        %tmp.171 = const :mesgType;
+        %tmp.172 = getm $.Toybox.FitContributor;
+        %tmp.173 = getv %tmp.172 :MESG_TYPE_RECORD;
+        %tmp.174 = dup %tmp.169;
+        %tmp.175 = aputv %tmp.174 %tmp.171 %tmp.173;
+        %tmp.177 = const :units;
+        %tmp.178 = "";
+        %tmp.179 = dup %tmp.175;
+        %tmp.180 = aputv %tmp.179 %tmp.177 %tmp.178;
+        %tmp.181 = invoke %tmp.163 %tmp.164(%tmp.165, %tmp.166, %tmp.168, %tmp.180);
+        putv self :intensityFitField %tmp.181;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 115 8 ]
+        %tmp.183 = getv ? :intensityFitField;
+        %tmp.184 = getv function %tmp.183 :setData;
+        %tmp.185 = 0;
+        invoke %tmp.183 %tmp.184(%tmp.185);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 118 8 ]
+        %tmp.186 = self;
+        %tmp.187 = getv function %tmp.186 :createField;
+        %tmp.188 = "Running efficiency";
+        %tmp.189 = 2;
+        %tmp.190 = getm $.Toybox.FitContributor;
+        %tmp.191 = getv %tmp.190 :DATA_TYPE_FLOAT;
+        %tmp.192 = newd 2;
+        %tmp.194 = const :mesgType;
+        %tmp.195 = getm $.Toybox.FitContributor;
+        %tmp.196 = getv %tmp.195 :MESG_TYPE_RECORD;
+        %tmp.197 = dup %tmp.192;
+        %tmp.198 = aputv %tmp.197 %tmp.194 %tmp.196;
+        %tmp.200 = const :units;
+        %tmp.201 = "";
+        %tmp.202 = dup %tmp.198;
+        %tmp.203 = aputv %tmp.202 %tmp.200 %tmp.201;
+        %tmp.204 = invoke %tmp.186 %tmp.187(%tmp.188, %tmp.189, %tmp.191, %tmp.203);
+        putv self :efficiencyFitField %tmp.204;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 124 8 ]
+        %tmp.206 = getv ? :efficiencyFitField;
+        %tmp.207 = getv function %tmp.206 :setData;
+        %tmp.208 = 0;
+        invoke %tmp.206 %tmp.207(%tmp.208);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 127 8 ]
+        %tmp.209 = self;
+        %tmp.210 = getv function %tmp.209 :createField;
+        %tmp.211 = "Grade";
+        %tmp.212 = 3;
+        %tmp.213 = getm $.Toybox.FitContributor;
+        %tmp.214 = getv %tmp.213 :DATA_TYPE_FLOAT;
+        %tmp.215 = newd 2;
+        %tmp.217 = const :mesgType;
+        %tmp.218 = getm $.Toybox.FitContributor;
+        %tmp.219 = getv %tmp.218 :MESG_TYPE_RECORD;
+        %tmp.220 = dup %tmp.215;
+        %tmp.221 = aputv %tmp.220 %tmp.217 %tmp.219;
+        %tmp.223 = const :units;
+        %tmp.224 = "";
+        %tmp.225 = dup %tmp.221;
+        %tmp.226 = aputv %tmp.225 %tmp.223 %tmp.224;
+        %tmp.227 = invoke %tmp.209 %tmp.210(%tmp.211, %tmp.212, %tmp.214, %tmp.226);
+        putv self :gradeFitField %tmp.227;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 133 8 ]
+        %tmp.229 = getv ? :gradeFitField;
+        %tmp.230 = getv function %tmp.229 :setData;
+        %tmp.231 = 0;
+        invoke %tmp.229 %tmp.230(%tmp.231);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 146 8 ]
+        %tmp.232 = self;
+        %tmp.233 = getv function %tmp.232 :createField;
+        %tmp.234 = "Lap intensity factor";
+        %tmp.235 = 5;
+        %tmp.236 = getm $.Toybox.FitContributor;
+        %tmp.237 = getv %tmp.236 :DATA_TYPE_UINT16;
+        %tmp.238 = newd 2;
+        %tmp.240 = const :mesgType;
+        %tmp.241 = getm $.Toybox.FitContributor;
+        %tmp.242 = getv %tmp.241 :MESG_TYPE_LAP;
+        %tmp.243 = dup %tmp.238;
+        %tmp.244 = aputv %tmp.243 %tmp.240 %tmp.242;
+        %tmp.246 = const :units;
+        %tmp.247 = "";
+        %tmp.248 = dup %tmp.244;
+        %tmp.249 = aputv %tmp.248 %tmp.246 %tmp.247;
+        %tmp.250 = invoke %tmp.232 %tmp.233(%tmp.234, %tmp.235, %tmp.237, %tmp.249);
+        putv self :LapIntensityFitField %tmp.250;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 152 8 ]
+        %tmp.252 = getv ? :LapIntensityFitField;
+        %tmp.253 = getv function %tmp.252 :setData;
+        %tmp.254 = 0;
+        invoke %tmp.252 %tmp.253(%tmp.254);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 155 8 ]
+        %tmp.255 = self;
+        %tmp.256 = getv function %tmp.255 :createField;
+        %tmp.257 = "Lap running efficiency";
+        %tmp.258 = 6;
+        %tmp.259 = getm $.Toybox.FitContributor;
+        %tmp.260 = getv %tmp.259 :DATA_TYPE_FLOAT;
+        %tmp.261 = newd 2;
+        %tmp.263 = const :mesgType;
+        %tmp.264 = getm $.Toybox.FitContributor;
+        %tmp.265 = getv %tmp.264 :MESG_TYPE_LAP;
+        %tmp.266 = dup %tmp.261;
+        %tmp.267 = aputv %tmp.266 %tmp.263 %tmp.265;
+        %tmp.269 = const :units;
+        %tmp.270 = "";
+        %tmp.271 = dup %tmp.267;
+        %tmp.272 = aputv %tmp.271 %tmp.269 %tmp.270;
+        %tmp.273 = invoke %tmp.255 %tmp.256(%tmp.257, %tmp.258, %tmp.260, %tmp.272);
+        putv self :LapEfficiencyFitField %tmp.273;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 161 8 ]
+        %tmp.275 = getv ? :LapEfficiencyFitField;
+        %tmp.276 = getv function %tmp.275 :setData;
+        %tmp.277 = 0;
+        invoke %tmp.275 %tmp.276(%tmp.277);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 165 8 ]
+        %tmp.278 = self;
+        %tmp.279 = getv function %tmp.278 :createField;
+        %tmp.280 = "Overall GAP";
+        %tmp.281 = 11;
+        %tmp.282 = getm $.Toybox.FitContributor;
+        %tmp.283 = getv %tmp.282 :DATA_TYPE_STRING;
+        %tmp.284 = newd 3;
+        %tmp.286 = const :mesgType;
+        %tmp.287 = getm $.Toybox.FitContributor;
+        %tmp.288 = getv %tmp.287 :MESG_TYPE_SESSION;
+        %tmp.289 = dup %tmp.284;
+        %tmp.290 = aputv %tmp.289 %tmp.286 %tmp.288;
+        %tmp.292 = const :units;
+        %tmp.293 = "";
+        %tmp.294 = dup %tmp.290;
+        %tmp.295 = aputv %tmp.294 %tmp.292 %tmp.293;
+        %tmp.297 = const :count;
+        %tmp.298 = 8;
+        %tmp.299 = dup %tmp.295;
+        %tmp.300 = aputv %tmp.299 %tmp.297 %tmp.298;
+        %tmp.301 = invoke %tmp.278 %tmp.279(%tmp.280, %tmp.281, %tmp.283, %tmp.300);
+        putv self :OverallGapFitField %tmp.301;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 171 8 ]
+        %tmp.303 = getv ? :OverallGapFitField;
+        %tmp.304 = getv function %tmp.303 :setData;
+        %tmp.305 = "";
+        invoke %tmp.303 %tmp.304(%tmp.305);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 174 8 ]
+        %tmp.306 = self;
+        %tmp.307 = getv function %tmp.306 :createField;
+        %tmp.308 = "Overall intensity factor";
+        %tmp.309 = 12;
+        %tmp.310 = getm $.Toybox.FitContributor;
+        %tmp.311 = getv %tmp.310 :DATA_TYPE_UINT16;
+        %tmp.312 = newd 2;
+        %tmp.314 = const :mesgType;
+        %tmp.315 = getm $.Toybox.FitContributor;
+        %tmp.316 = getv %tmp.315 :MESG_TYPE_SESSION;
+        %tmp.317 = dup %tmp.312;
+        %tmp.318 = aputv %tmp.317 %tmp.314 %tmp.316;
+        %tmp.320 = const :units;
+        %tmp.321 = "";
+        %tmp.322 = dup %tmp.318;
+        %tmp.323 = aputv %tmp.322 %tmp.320 %tmp.321;
+        %tmp.324 = invoke %tmp.306 %tmp.307(%tmp.308, %tmp.309, %tmp.311, %tmp.323);
+        putv self :OverallIntensityFitField %tmp.324;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 180 8 ]
+        %tmp.326 = getv ? :OverallIntensityFitField;
+        %tmp.327 = getv function %tmp.326 :setData;
+        %tmp.328 = 0;
+        invoke %tmp.326 %tmp.327(%tmp.328);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 183 8 ]
+        %tmp.329 = self;
+        %tmp.330 = getv function %tmp.329 :createField;
+        %tmp.331 = "Overall running efficiency";
+        %tmp.332 = 13;
+        %tmp.333 = getm $.Toybox.FitContributor;
+        %tmp.334 = getv %tmp.333 :DATA_TYPE_FLOAT;
+        %tmp.335 = newd 2;
+        %tmp.337 = const :mesgType;
+        %tmp.338 = getm $.Toybox.FitContributor;
+        %tmp.339 = getv %tmp.338 :MESG_TYPE_SESSION;
+        %tmp.340 = dup %tmp.335;
+        %tmp.341 = aputv %tmp.340 %tmp.337 %tmp.339;
+        %tmp.343 = const :units;
+        %tmp.344 = "";
+        %tmp.345 = dup %tmp.341;
+        %tmp.346 = aputv %tmp.345 %tmp.343 %tmp.344;
+        %tmp.347 = invoke %tmp.329 %tmp.330(%tmp.331, %tmp.332, %tmp.334, %tmp.346);
+        putv self :OverallEfficiencyFitField %tmp.347;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 189 8 ]
+        %tmp.349 = getv ? :OverallEfficiencyFitField;
+        %tmp.350 = getv function %tmp.349 :setData;
+        %tmp.351 = 0;
+        invoke %tmp.349 %tmp.350(%tmp.351);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 192 8 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_192_8_if_stmt:
+        %tmp.353 = getv ? :debug_mode;
+        bf %tmp.353 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_192_8_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_192_8_if_true:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_192_24_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 194 12 ]
+        %tmp.354 = self;
+        %tmp.355 = getv function %tmp.354 :createField;
+        %tmp.356 = "Power API";
+        %tmp.357 = 8;
+        %tmp.358 = getm $.Toybox.FitContributor;
+        %tmp.359 = getv %tmp.358 :DATA_TYPE_UINT16;
+        %tmp.360 = newd 2;
+        %tmp.362 = const :mesgType;
+        %tmp.363 = getm $.Toybox.FitContributor;
+        %tmp.364 = getv %tmp.363 :MESG_TYPE_RECORD;
+        %tmp.365 = dup %tmp.360;
+        %tmp.366 = aputv %tmp.365 %tmp.362 %tmp.364;
+        %tmp.368 = const :units;
+        %tmp.369 = "";
+        %tmp.370 = dup %tmp.366;
+        %tmp.371 = aputv %tmp.370 %tmp.368 %tmp.369;
+        %tmp.372 = invoke %tmp.354 %tmp.355(%tmp.356, %tmp.357, %tmp.359, %tmp.371);
+        putv self :powerFitField %tmp.372;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 200 12 ]
+        %tmp.374 = getv ? :powerFitField;
+        %tmp.375 = getv function %tmp.374 :setData;
+        %tmp.376 = 0;
+        invoke %tmp.374 %tmp.375(%tmp.376);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 203 12 ]
+        %tmp.377 = self;
+        %tmp.378 = getv function %tmp.377 :createField;
+        %tmp.379 = "Speed API";
+        %tmp.380 = 9;
+        %tmp.381 = getm $.Toybox.FitContributor;
+        %tmp.382 = getv %tmp.381 :DATA_TYPE_FLOAT;
+        %tmp.383 = newd 2;
+        %tmp.385 = const :mesgType;
+        %tmp.386 = getm $.Toybox.FitContributor;
+        %tmp.387 = getv %tmp.386 :MESG_TYPE_RECORD;
+        %tmp.388 = dup %tmp.383;
+        %tmp.389 = aputv %tmp.388 %tmp.385 %tmp.387;
+        %tmp.391 = const :units;
+        %tmp.392 = "";
+        %tmp.393 = dup %tmp.389;
+        %tmp.394 = aputv %tmp.393 %tmp.391 %tmp.392;
+        %tmp.395 = invoke %tmp.377 %tmp.378(%tmp.379, %tmp.380, %tmp.382, %tmp.394);
+        putv self :speedFitField %tmp.395;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 209 12 ]
+        %tmp.397 = getv ? :speedFitField;
+        %tmp.398 = getv function %tmp.397 :setData;
+        %tmp.399 = 0;
+        invoke %tmp.397 %tmp.398(%tmp.399);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 212 12 ]
+        %tmp.400 = self;
+        %tmp.401 = getv function %tmp.400 :createField;
+        %tmp.402 = "Altitude API";
+        %tmp.403 = 10;
+        %tmp.404 = getm $.Toybox.FitContributor;
+        %tmp.405 = getv %tmp.404 :DATA_TYPE_FLOAT;
+        %tmp.406 = newd 2;
+        %tmp.408 = const :mesgType;
+        %tmp.409 = getm $.Toybox.FitContributor;
+        %tmp.410 = getv %tmp.409 :MESG_TYPE_RECORD;
+        %tmp.411 = dup %tmp.406;
+        %tmp.412 = aputv %tmp.411 %tmp.408 %tmp.410;
+        %tmp.414 = const :units;
+        %tmp.415 = "";
+        %tmp.416 = dup %tmp.412;
+        %tmp.417 = aputv %tmp.416 %tmp.414 %tmp.415;
+        %tmp.418 = invoke %tmp.400 %tmp.401(%tmp.402, %tmp.403, %tmp.405, %tmp.417);
+        putv self :altitudeFitField %tmp.418;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 218 12 ]
+        %tmp.420 = getv ? :altitudeFitField;
+        %tmp.421 = getv function %tmp.420 :setData;
+        %tmp.422 = 0;
+        invoke %tmp.420 %tmp.421(%tmp.422);
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_192_24_stop:
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_192_8_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_192_8_if_end:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_56_26_stop:
+    }
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 224; ]
+    function reset_queues() {
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_224_28_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 225 8 ]
+        %tmp.4 = getv ? :Queue;
+        %tmp.6 = getv ? :rolling_duration;
+        %tmp.1 = newc %tmp.4 (%tmp.6);
+        putv self :heart_rate %tmp.1;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 227 8 ]
+        %tmp.10 = getv ? :Queue;
+        %tmp.12 = getv ? :rolling_duration;
+        %tmp.7 = newc %tmp.10 (%tmp.12);
+        putv self :power %tmp.7;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 228 8 ]
+        %tmp.16 = getv ? :Queue;
+        %tmp.18 = getv ? :rolling_duration;
+        %tmp.13 = newc %tmp.16 (%tmp.18);
+        putv self :speed %tmp.13;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 230 8 ]
+        %tmp.22 = getv ? :Queue;
+        %tmp.24 = getv ? :rolling_duration;
+        %tmp.19 = newc %tmp.22 (%tmp.24);
+        putv self :gap %tmp.19;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 231 8 ]
+        %tmp.28 = getv ? :Queue;
+        %tmp.30 = getv ? :rolling_duration_grade;
+        %tmp.25 = newc %tmp.28 (%tmp.30);
+        putv self :altitude %tmp.25;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 233 8 ]
+        %tmp.31 = 0;
+        putv self :lag %tmp.31;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_224_28_stop:
+    }
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 236; ]
+    function reset_lap_data() {
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_236_30_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 237 8 ]
+        %tmp.1 = 0;
+        putv self :lap_counter %tmp.1;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 239 8 ]
+        %tmp.2 = 0;
+        putv self :lap_if_acc %tmp.2;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 240 8 ]
+        %tmp.3 = 0;
+        putv self :lap_re_acc %tmp.3;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_236_30_stop:
+    }
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 244; ]
+    function set_overall_data() {
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_244_32_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 245 8 ]
+        %tmp.1 = 0;
+        putv self :overall_counter %tmp.1;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 247 8 ]
+        %tmp.2 = 0;
+        putv self :overall_if_acc %tmp.2;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 248 8 ]
+        %tmp.3 = 0;
+        putv self :overall_re_acc %tmp.3;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_244_32_stop:
+    }
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 252; ]
+    function onTimerStart() {
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_252_28_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 253 8 ]
+        %tmp.1 = self;
+        %tmp.2 = getv function %tmp.1 :reset_queues;
+        invoke %tmp.1 %tmp.2();
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 254 8 ]
+        %tmp.3 = self;
+        %tmp.4 = getv function %tmp.3 :reset_lap_data;
+        invoke %tmp.3 %tmp.4();
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 255 8 ]
+        %tmp.5 = self;
+        %tmp.6 = getv function %tmp.5 :set_overall_data;
+        invoke %tmp.5 %tmp.6();
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_252_28_stop:
+    }
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 258; ]
+    function onTimerResume() {
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_258_29_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 259 8 ]
+        %tmp.1 = self;
+        %tmp.2 = getv function %tmp.1 :reset_queues;
+        invoke %tmp.1 %tmp.2();
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_258_29_stop:
+    }
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 264; ]
+    function onWorkoutStepComplete() {
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_264_37_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 265 8 ]
+        %tmp.1 = self;
+        %tmp.2 = getv function %tmp.1 :reset_queues;
+        invoke %tmp.1 %tmp.2();
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 266 8 ]
+        %tmp.3 = self;
+        %tmp.4 = getv function %tmp.3 :reset_lap_data;
+        invoke %tmp.3 %tmp.4();
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_264_37_stop:
+    }
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 269; ]
+    function onTimerLap() {
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_269_26_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 270 8 ]
+        %tmp.1 = self;
+        %tmp.2 = getv function %tmp.1 :reset_lap_data;
+        invoke %tmp.1 %tmp.2();
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_269_26_stop:
+    }
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 274; @position = 8; ]
+    var power;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 275; @position = 8; ]
+    var rolling_pwr;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 276; @position = 8; ]
+    var speed;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 277; @position = 8; ]
+    var rolling_spd;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 278; @position = 8; ]
+    var altitude;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 279; @position = 8; ]
+    var grade;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 280; @position = 8; ]
+    var gap;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 281; @position = 8; ]
+    var rolling_gp;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 282; @position = 8; ]
+    var instant_gap;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 283; @position = 8; ]
+    var dist;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 284; @position = 8; ]
+    var n_seconds;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 285; @position = 8; ]
+    var heart_rate;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 286; @position = 8; ]
+    var intensity_factor;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 287; @position = 8; ]
+    var efficiency;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 288; @position = 8; ]
+    var zone_num;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 289; @position = 8; ]
+    var zone_prct;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 290; @position = 8; ]
+    var val;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 291; @position = 8; ]
+    var pace;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 294; @position = 8; ]
+    var lap_counter;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 295; @position = 8; ]
+    var lap_if_acc;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 296; @position = 8; ]
+    var lap_re_acc;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 301; @position = 8; ]
+    var overall_counter;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 302; @position = 8; ]
+    var overall_if_acc;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 303; @position = 8; ]
+    var overall_re_acc;
+    [ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 311; ]
+    function compute(info as Activity.Info) as Numeric or Duration or String or Null {
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_311_85_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 314 8 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_314_8_if_stmt:
+        %tmp.2 = getv ? :lag;
+        %tmp.4 = getv ? :ignore_first;
+        %tmp.5 = gte %tmp.2 %tmp.4;
+        bf %tmp.5 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_314_8_if_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_314_8_if_true:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_314_33_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 317 12 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_317_12_if_stmt:
+        %tmp.7 = getv ? :debug_mode;
+        bf %tmp.7 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_317_12_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_317_12_if_true:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_317_28_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 318 16 ]
+        %tmp.9 = getv ? :powerFitField;
+        %tmp.10 = getv function %tmp.9 :setData;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_318_38_begin:
+        %tmp.11 = lgetv %info;
+        %tmp.12 = getv %tmp.11 :currentPower;
+        %tmp.13 = null;
+        %tmp.14 = ne %tmp.12 %tmp.13;
+        bf %tmp.14 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_318_38_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_318_38_true:
+        %tmp.15 = lgetv %info;
+        %tmp.16 = getv %tmp.15 :currentPower;
+        push %tmp.16;
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_318_38_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_318_38_false:
+        %tmp.17 = 0;
+        push %tmp.17;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_318_38_end:
+        %tmp.18 = phi [%tmp.14 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_318_38_begin] [%tmp.16 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_318_38_true] [%tmp.17 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_318_38_false] [%tmp.18 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_318_38_end];
+        invoke %tmp.9 %tmp.10(%tmp.18);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 319 16 ]
+        %tmp.20 = getv ? :speedFitField;
+        %tmp.21 = getv function %tmp.20 :setData;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_319_38_begin:
+        %tmp.22 = lgetv %info;
+        %tmp.23 = getv %tmp.22 :currentSpeed;
+        %tmp.24 = null;
+        %tmp.25 = ne %tmp.23 %tmp.24;
+        bf %tmp.25 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_319_38_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_319_38_true:
+        %tmp.26 = lgetv %info;
+        %tmp.27 = getv %tmp.26 :currentSpeed;
+        %tmp.28 = 3.6;
+        %tmp.29 = mul %tmp.27 %tmp.28;
+        push %tmp.29;
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_319_38_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_319_38_false:
+        %tmp.30 = 0;
+        push %tmp.30;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_319_38_end:
+        %tmp.31 = phi [%tmp.25 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_319_38_begin] [%tmp.29 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_319_38_true] [%tmp.30 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_319_38_false] [%tmp.31 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_319_38_end];
+        invoke %tmp.20 %tmp.21(%tmp.31);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 320 16 ]
+        %tmp.33 = getv ? :altitudeFitField;
+        %tmp.34 = getv function %tmp.33 :setData;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_320_41_begin:
+        %tmp.35 = lgetv %info;
+        %tmp.36 = getv %tmp.35 :altitude;
+        %tmp.37 = null;
+        %tmp.38 = ne %tmp.36 %tmp.37;
+        bf %tmp.38 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_320_41_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_320_41_true:
+        %tmp.39 = lgetv %info;
+        %tmp.40 = getv %tmp.39 :altitude;
+        push %tmp.40;
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_320_41_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_320_41_false:
+        %tmp.41 = 0;
+        push %tmp.41;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_320_41_end:
+        %tmp.42 = phi [%tmp.38 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_320_41_begin] [%tmp.40 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_320_41_true] [%tmp.41 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_320_41_false] [%tmp.42 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_320_41_end];
+        invoke %tmp.33 %tmp.34(%tmp.42);
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_317_28_stop:
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_317_12_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_317_12_if_end:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 325 12 ]
+        %tmp.44 = getv ? :heart_rate;
+        %tmp.45 = getv function %tmp.44 :update;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_325_30_begin:
+        %tmp.46 = lgetv %info;
+        %tmp.47 = getv %tmp.46 :currentHeartRate;
+        %tmp.48 = null;
+        %tmp.49 = ne %tmp.47 %tmp.48;
+        bf %tmp.49 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_325_30_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_325_30_true:
+        %tmp.50 = lgetv %info;
+        %tmp.51 = getv %tmp.50 :currentHeartRate;
+        push %tmp.51;
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_325_30_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_325_30_false:
+        %tmp.52 = 0;
+        push %tmp.52;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_325_30_end:
+        %tmp.53 = phi [%tmp.49 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_325_30_begin] [%tmp.51 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_325_30_true] [%tmp.52 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_325_30_false] [%tmp.53 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_325_30_end];
+        invoke %tmp.44 %tmp.45(%tmp.53);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 326 12 ]
+        %tmp.55 = getv ? :power;
+        %tmp.56 = getv function %tmp.55 :update;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_326_25_begin:
+        %tmp.57 = lgetv %info;
+        %tmp.58 = getv %tmp.57 :currentPower;
+        %tmp.59 = null;
+        %tmp.60 = ne %tmp.58 %tmp.59;
+        bf %tmp.60 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_326_25_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_326_25_true:
+        %tmp.61 = lgetv %info;
+        %tmp.62 = getv %tmp.61 :currentPower;
+        push %tmp.62;
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_326_25_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_326_25_false:
+        %tmp.63 = 0;
+        push %tmp.63;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_326_25_end:
+        %tmp.64 = phi [%tmp.60 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_326_25_begin] [%tmp.62 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_326_25_true] [%tmp.63 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_326_25_false] [%tmp.64 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_326_25_end];
+        invoke %tmp.55 %tmp.56(%tmp.64);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 327 12 ]
+        %tmp.66 = getv ? :speed;
+        %tmp.67 = getv function %tmp.66 :update;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_327_25_begin:
+        %tmp.68 = lgetv %info;
+        %tmp.69 = getv %tmp.68 :currentSpeed;
+        %tmp.70 = null;
+        %tmp.71 = ne %tmp.69 %tmp.70;
+        bf %tmp.71 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_327_25_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_327_25_true:
+        %tmp.72 = lgetv %info;
+        %tmp.73 = getv %tmp.72 :currentSpeed;
+        push %tmp.73;
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_327_25_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_327_25_false:
+        %tmp.74 = 0;
+        push %tmp.74;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_327_25_end:
+        %tmp.75 = phi [%tmp.71 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_327_25_begin] [%tmp.73 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_327_25_true] [%tmp.74 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_327_25_false] [%tmp.75 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_327_25_end];
+        invoke %tmp.66 %tmp.67(%tmp.75);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 328 12 ]
+        %tmp.77 = getv ? :altitude;
+        %tmp.78 = getv function %tmp.77 :update;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_328_28_begin:
+        %tmp.79 = lgetv %info;
+        %tmp.80 = getv %tmp.79 :altitude;
+        %tmp.81 = null;
+        %tmp.82 = ne %tmp.80 %tmp.81;
+        bf %tmp.82 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_328_28_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_328_28_true:
+        %tmp.83 = lgetv %info;
+        %tmp.84 = getv %tmp.83 :altitude;
+        push %tmp.84;
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_328_28_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_328_28_false:
+        %tmp.85 = 0;
+        push %tmp.85;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_328_28_end:
+        %tmp.86 = phi [%tmp.82 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_328_28_begin] [%tmp.84 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_328_28_true] [%tmp.85 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_328_28_false] [%tmp.86 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_328_28_end];
+        invoke %tmp.77 %tmp.78(%tmp.86);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 331 12 ]
+        %tmp.88 = getv ? :speed;
+        %tmp.89 = getv function %tmp.88 :mean;
+        %tmp.90 = invoke %tmp.88 %tmp.89();
+        putv self :rolling_spd %tmp.90;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 332 12 ]
+        %tmp.92 = getv ? :power;
+        %tmp.93 = getv function %tmp.92 :mean;
+        %tmp.94 = invoke %tmp.92 %tmp.93();
+        putv self :rolling_pwr %tmp.94;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 337 12 ]
+        %tmp.96 = getv ? :altitude;
+        %tmp.97 = getv function %tmp.96 :count_not_null;
+        %tmp.98 = invoke %tmp.96 %tmp.97();
+        putv self :n_seconds %tmp.98;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 340 12 ]
+        %tmp.100 = getv ? :speed;
+        %tmp.101 = getv function %tmp.100 :first;
+        %tmp.103 = getv ? :n_seconds;
+        %tmp.104 = invoke %tmp.100 %tmp.101(%tmp.103);
+        %tmp.106 = getv ? :n_seconds;
+        %tmp.107 = mul %tmp.104 %tmp.106;
+        putv self :dist %tmp.107;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 343 12 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_343_20_begin:
+        %tmp.109 = getv ? :n_seconds;
+        %tmp.110 = 5;
+        %tmp.111 = gte %tmp.109 %tmp.110;
+        %tmp.113 = getv ? :dist;
+        %tmp.114 = 1;
+        %tmp.115 = gt %tmp.113 %tmp.114;
+        %tmp.116 = bitand %tmp.111 %tmp.115;
+        bf %tmp.116 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_343_20_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_343_20_true:
+        %tmp.117 = 100;
+        %tmp.119 = getv ? :altitude;
+        %tmp.120 = getv function %tmp.119 :first;
+        %tmp.121 = 2;
+        %tmp.122 = invoke %tmp.119 %tmp.120(%tmp.121);
+        %tmp.124 = getv ? :altitude;
+        %tmp.125 = getv function %tmp.124 :last;
+        %tmp.126 = 2;
+        %tmp.127 = invoke %tmp.124 %tmp.125(%tmp.126);
+        %tmp.128 = sub %tmp.122 %tmp.127;
+        %tmp.129 = mul %tmp.117 %tmp.128;
+        %tmp.131 = getv ? :dist;
+        %tmp.132 = div %tmp.129 %tmp.131;
+        push %tmp.132;
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_343_20_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_343_20_false:
+        %tmp.133 = 0;
+        push %tmp.133;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_343_20_end:
+        %tmp.134 = phi [%tmp.116 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_343_20_begin] [%tmp.132 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_343_20_true] [%tmp.133 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_343_20_false] [%tmp.134 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_343_20_end];
+        putv self :grade %tmp.134;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 344 12 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_344_20_begin:
+        %tmp.136 = getv ? :grade;
+        %tmp.137 = 40;
+        %tmp.138 = lt %tmp.136 %tmp.137;
+        bf %tmp.138 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_344_20_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_344_20_true:
+        %tmp.140 = getv ? :grade;
+        push %tmp.140;
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_344_20_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_344_20_false:
+        %tmp.141 = 40;
+        push %tmp.141;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_344_20_end:
+        %tmp.142 = phi [%tmp.138 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_344_20_begin] [%tmp.140 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_344_20_true] [%tmp.141 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_344_20_false] [%tmp.142 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_344_20_end];
+        putv self :grade %tmp.142;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 345 12 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_345_20_begin:
+        %tmp.144 = getv ? :grade;
+        %tmp.145 = 40;
+        %tmp.146 = sub 0 %tmp.145;
+        %tmp.147 = gt %tmp.144 %tmp.146;
+        bf %tmp.147 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_345_20_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_345_20_true:
+        %tmp.149 = getv ? :grade;
+        push %tmp.149;
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_345_20_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_345_20_false:
+        %tmp.150 = 40;
+        %tmp.151 = sub 0 %tmp.150;
+        push %tmp.151;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_345_20_end:
+        %tmp.152 = phi [%tmp.147 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_345_20_begin] [%tmp.149 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_345_20_true] [%tmp.151 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_345_20_false] [%tmp.152 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_345_20_end];
+        putv self :grade %tmp.152;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 348 12 ]
+        %tmp.154 = getv ? :gradeFitField;
+        %tmp.155 = getv function %tmp.154 :setData;
+        %tmp.157 = getv ? :grade;
+        invoke %tmp.154 %tmp.155(%tmp.157);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 352 12 ]
+        %tmp.159 = getv ? :speed;
+        %tmp.160 = getv function %tmp.159 :first;
+        %tmp.161 = 1;
+        %tmp.162 = invoke %tmp.159 %tmp.160(%tmp.161);
+        %tmp.163 = self;
+        %tmp.164 = getv function %tmp.163 :grade_factor;
+        %tmp.166 = getv ? :grade;
+        %tmp.167 = invoke %tmp.163 %tmp.164(%tmp.166);
+        %tmp.168 = mul %tmp.162 %tmp.167;
+        putv self :instant_gap %tmp.168;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 353 12 ]
+        %tmp.170 = getv ? :gap;
+        %tmp.171 = getv function %tmp.170 :update;
+        %tmp.173 = getv ? :instant_gap;
+        invoke %tmp.170 %tmp.171(%tmp.173);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 356 12 ]
+        %tmp.175 = getv ? :gap;
+        %tmp.176 = getv function %tmp.175 :mean;
+        %tmp.177 = invoke %tmp.175 %tmp.176();
+        putv self :rolling_gp %tmp.177;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 359 12 ]
+        %tmp.179 = getv ? :gapFitField;
+        %tmp.180 = getv function %tmp.179 :setData;
+        %tmp.182 = getv ? :rolling_gp;
+        %tmp.183 = 3.6;
+        %tmp.184 = mul %tmp.182 %tmp.183;
+        invoke %tmp.179 %tmp.180(%tmp.184);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 362 12 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_362_12_if_stmt:
+        %tmp.186 = getv ? :metric_id;
+        %tmp.187 = 0;
+        %tmp.188 = eq %tmp.186 %tmp.187;
+        bf %tmp.188 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_362_12_if_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_362_12_if_true:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_362_32_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 363 16 ]
+        %tmp.189 = 100;
+        %tmp.191 = getv ? :rolling_pwr;
+        %tmp.192 = mul %tmp.189 %tmp.191;
+        %tmp.194 = getv ? :rFTP;
+        %tmp.195 = div %tmp.192 %tmp.194;
+        putv self :intensity_factor %tmp.195;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_362_32_stop:
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_362_12_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_362_12_if_false:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 364 19 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_364_19_if_stmt:
+        %tmp.197 = getv ? :metric_id;
+        %tmp.198 = 1;
+        %tmp.199 = eq %tmp.197 %tmp.198;
+        bf %tmp.199 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_364_19_if_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_364_19_if_true:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_364_39_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 365 16 ]
+        %tmp.200 = 100;
+        %tmp.202 = getv ? :rolling_spd;
+        %tmp.203 = mul %tmp.200 %tmp.202;
+        %tmp.205 = getv ? :rFTP;
+        %tmp.206 = div %tmp.203 %tmp.205;
+        putv self :intensity_factor %tmp.206;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_364_39_stop:
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_364_19_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_364_19_if_false:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 366 19 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_366_19_if_stmt:
+        %tmp.208 = getv ? :metric_id;
+        %tmp.209 = 2;
+        %tmp.210 = eq %tmp.208 %tmp.209;
+        bf %tmp.210 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_366_19_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_366_19_if_true:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_366_39_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 367 16 ]
+        %tmp.211 = 100;
+        %tmp.213 = getv ? :rolling_gp;
+        %tmp.214 = mul %tmp.211 %tmp.213;
+        %tmp.216 = getv ? :rFTP;
+        %tmp.217 = div %tmp.214 %tmp.216;
+        putv self :intensity_factor %tmp.217;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_366_39_stop:
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_366_19_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_366_19_if_end:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_364_19_if_end:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_362_12_if_end:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 369 12 ]
+        %tmp.219 = getv ? :intensityFitField;
+        %tmp.220 = getv function %tmp.219 :setData;
+        %tmp.221 = getm $.Toybox.Math;
+        %tmp.222 = getv function %tmp.221 :round;
+        %tmp.224 = getv ? :intensity_factor;
+        %tmp.225 = invoke %tmp.221 %tmp.222(%tmp.224);
+        %tmp.226 = getv function %tmp.225 :toNumber;
+        %tmp.227 = invoke %tmp.225 %tmp.226();
+        invoke %tmp.219 %tmp.220(%tmp.227);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 372 12 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_372_25_begin:
+        %tmp.229 = getv ? :intensity_factor;
+        %tmp.230 = 0;
+        %tmp.231 = ne %tmp.229 %tmp.230;
+        bf %tmp.231 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_372_25_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_372_25_true:
+        %tmp.233 = getv ? :heart_rate;
+        %tmp.234 = getv function %tmp.233 :mean;
+        %tmp.235 = invoke %tmp.233 %tmp.234();
+        %tmp.237 = getv ? :LTHR;
+        %tmp.238 = div %tmp.235 %tmp.237;
+        %tmp.240 = getv ? :intensity_factor;
+        %tmp.241 = 100;
+        %tmp.242 = div %tmp.240 %tmp.241;
+        %tmp.243 = div %tmp.238 %tmp.242;
+        push %tmp.243;
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_372_25_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_372_25_false:
+        %tmp.244 = 1;
+        push %tmp.244;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_372_25_end:
+        %tmp.245 = phi [%tmp.231 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_372_25_begin] [%tmp.243 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_372_25_true] [%tmp.244 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_372_25_false] [%tmp.245 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_372_25_end];
+        putv self :efficiency %tmp.245;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 373 12 ]
+        %tmp.247 = getv ? :efficiencyFitField;
+        %tmp.248 = getv function %tmp.247 :setData;
+        %tmp.250 = getv ? :efficiency;
+        invoke %tmp.247 %tmp.248(%tmp.250);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 377 12 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_377_12_if_stmt:
+        %tmp.252 = getv ? :datafield_id;
+        %tmp.253 = 0;
+        %tmp.254 = eq %tmp.252 %tmp.253;
+        bf %tmp.254 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_377_12_if_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_377_12_if_true:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_377_35_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 378 16 ]
+        %tmp.255 = getm $.Toybox.Math;
+        %tmp.256 = getv function %tmp.255 :round;
+        %tmp.258 = getv ? :rolling_pwr;
+        %tmp.259 = invoke %tmp.255 %tmp.256(%tmp.258);
+        %tmp.260 = getv function %tmp.259 :toNumber;
+        %tmp.261 = invoke %tmp.259 %tmp.260();
+        putv self :val %tmp.261;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_377_35_stop:
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_377_12_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_377_12_if_false:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 381 19 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_381_19_if_stmt:
+        %tmp.263 = getv ? :datafield_id;
+        %tmp.264 = 1;
+        %tmp.265 = eq %tmp.263 %tmp.264;
+        bf %tmp.265 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_381_19_if_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_381_19_if_true:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_381_42_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 382 16 ]
+        %tmp.266 = self;
+        %tmp.267 = getv function %tmp.266 :to_pace;
+        %tmp.269 = getv ? :rolling_spd;
+        %tmp.270 = invoke %tmp.266 %tmp.267(%tmp.269);
+        putv self :pace %tmp.270;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 383 16 ]
+        %tmp.271 = getm $.Toybox.Lang;
+        %tmp.272 = getv function %tmp.271 :format;
+        %tmp.273 = "$1$:$2$";
+        %tmp.274 = newa 2;
+        %tmp.276 = getv ? :pace;
+        %tmp.277 = 0;
+        %tmp.278 = agetv %tmp.276 %tmp.277;
+        %tmp.279 = getv function %tmp.278 :format;
+        %tmp.280 = "%d";
+        %tmp.281 = invoke %tmp.278 %tmp.279(%tmp.280);
+        %tmp.282 = dup %tmp.274;
+        %tmp.283 = aputv %tmp.282 0 %tmp.281;
+        %tmp.285 = getv ? :pace;
+        %tmp.286 = 1;
+        %tmp.287 = agetv %tmp.285 %tmp.286;
+        %tmp.288 = getv function %tmp.287 :format;
+        %tmp.289 = "%02d";
+        %tmp.290 = invoke %tmp.287 %tmp.288(%tmp.289);
+        %tmp.291 = dup %tmp.283;
+        %tmp.292 = aputv %tmp.291 1 %tmp.290;
+        %tmp.293 = invoke %tmp.271 %tmp.272(%tmp.273, %tmp.292);
+        putv self :val %tmp.293;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_381_42_stop:
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_381_19_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_381_19_if_false:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 386 19 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_386_19_if_stmt:
+        %tmp.295 = getv ? :datafield_id;
+        %tmp.296 = 2;
+        %tmp.297 = eq %tmp.295 %tmp.296;
+        bf %tmp.297 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_386_19_if_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_386_19_if_true:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_386_42_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 387 16 ]
+        %tmp.298 = self;
+        %tmp.299 = getv function %tmp.298 :to_pace;
+        %tmp.301 = getv ? :rolling_gp;
+        %tmp.302 = invoke %tmp.298 %tmp.299(%tmp.301);
+        putv self :pace %tmp.302;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 388 16 ]
+        %tmp.303 = getm $.Toybox.Lang;
+        %tmp.304 = getv function %tmp.303 :format;
+        %tmp.305 = "$1$:$2$";
+        %tmp.306 = newa 2;
+        %tmp.308 = getv ? :pace;
+        %tmp.309 = 0;
+        %tmp.310 = agetv %tmp.308 %tmp.309;
+        %tmp.311 = getv function %tmp.310 :format;
+        %tmp.312 = "%d";
+        %tmp.313 = invoke %tmp.310 %tmp.311(%tmp.312);
+        %tmp.314 = dup %tmp.306;
+        %tmp.315 = aputv %tmp.314 0 %tmp.313;
+        %tmp.317 = getv ? :pace;
+        %tmp.318 = 1;
+        %tmp.319 = agetv %tmp.317 %tmp.318;
+        %tmp.320 = getv function %tmp.319 :format;
+        %tmp.321 = "%02d";
+        %tmp.322 = invoke %tmp.319 %tmp.320(%tmp.321);
+        %tmp.323 = dup %tmp.315;
+        %tmp.324 = aputv %tmp.323 1 %tmp.322;
+        %tmp.325 = invoke %tmp.303 %tmp.304(%tmp.305, %tmp.324);
+        putv self :val %tmp.325;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_386_42_stop:
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_386_19_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_386_19_if_false:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 391 19 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_391_19_if_stmt:
+        %tmp.327 = getv ? :datafield_id;
+        %tmp.328 = 3;
+        %tmp.329 = eq %tmp.327 %tmp.328;
+        bf %tmp.329 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_391_19_if_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_391_19_if_true:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_391_42_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 392 16 ]
+        %tmp.330 = getm $.Toybox.Math;
+        %tmp.331 = getv function %tmp.330 :round;
+        %tmp.333 = getv ? :intensity_factor;
+        %tmp.334 = invoke %tmp.330 %tmp.331(%tmp.333);
+        %tmp.335 = getv function %tmp.334 :toNumber;
+        %tmp.336 = invoke %tmp.334 %tmp.335();
+        %tmp.337 = getv function %tmp.336 :format;
+        %tmp.338 = "%d";
+        %tmp.339 = invoke %tmp.336 %tmp.337(%tmp.338);
+        %tmp.340 = "%";
+        %tmp.341 = add %tmp.339 %tmp.340;
+        putv self :val %tmp.341;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_391_42_stop:
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_391_19_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_391_19_if_false:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 395 19 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_395_19_if_stmt:
+        %tmp.343 = getv ? :datafield_id;
+        %tmp.344 = 4;
+        %tmp.345 = eq %tmp.343 %tmp.344;
+        bf %tmp.345 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_395_19_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_395_19_if_true:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_395_42_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 397 16 ]
+        for @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_397_16_for_test @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_397_16_for_incr @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_397_16_for_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_397_16_for_init:
+        [ "_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_397_16_for_begin" "_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_397_16_for_end" ]
+        %i.1 = local;
+        %tmp.346 = 1;
+        lputv %i.1 %tmp.346;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_397_16_for_test:
+        %tmp.348 = lgetv %i.1;
+        %tmp.349 = 6;
+        %tmp.350 = lte %tmp.348 %tmp.349;
+        bf %tmp.350 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_397_16_for_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_397_16_for_begin:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_397_45_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 398 20 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_398_20_if_stmt:
+        %tmp.352 = getv ? :intensity_factor;
+        %tmp.354 = getv ? :zones;
+        %tmp.356 = lgetv %i.1;
+        %tmp.357 = agetv %tmp.354 %tmp.356;
+        %tmp.358 = lt %tmp.352 %tmp.357;
+        bf %tmp.358 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_398_20_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_398_20_if_true:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_398_53_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 399 24 ]
+        %tmp.360 = lgetv %i.1;
+        %tmp.361 = 1;
+        %tmp.362 = sub %tmp.360 %tmp.361;
+        putv self :zone_num %tmp.362;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 400 24 ]
+        %tmp.364 = getv ? :intensity_factor;
+        %tmp.366 = getv ? :zones;
+        %tmp.368 = lgetv %i.1;
+        %tmp.369 = 1;
+        %tmp.370 = sub %tmp.368 %tmp.369;
+        %tmp.371 = agetv %tmp.366 %tmp.370;
+        %tmp.372 = sub %tmp.364 %tmp.371;
+        %tmp.374 = getv ? :zones;
+        %tmp.376 = lgetv %i.1;
+        %tmp.377 = agetv %tmp.374 %tmp.376;
+        %tmp.379 = getv ? :zones;
+        %tmp.381 = lgetv %i.1;
+        %tmp.382 = 1;
+        %tmp.383 = sub %tmp.381 %tmp.382;
+        %tmp.384 = agetv %tmp.379 %tmp.383;
+        %tmp.385 = sub %tmp.377 %tmp.384;
+        %tmp.386 = div %tmp.372 %tmp.385;
+        putv self :zone_prct %tmp.386;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 401 24 ]
+        %tmp.387 = getm $.Toybox.Math;
+        %tmp.388 = getv function %tmp.387 :round;
+        %tmp.389 = 10;
+        %tmp.391 = getv ? :zone_prct;
+        %tmp.392 = mul %tmp.389 %tmp.391;
+        %tmp.393 = invoke %tmp.387 %tmp.388(%tmp.392);
+        %tmp.394 = getv function %tmp.393 :toNumber;
+        %tmp.395 = invoke %tmp.393 %tmp.394();
+        putv self :zone_prct %tmp.395;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 402 24 ]
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_397_16_for_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_398_53_stop:
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_398_20_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_398_20_if_end:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 404 20 ]
+        %tmp.396 = 6;
+        putv self :zone_num %tmp.396;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 405 20 ]
+        %tmp.397 = 0;
+        putv self :zone_prct %tmp.397;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_397_45_stop:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_397_16_for_incr:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 397 ]
+        %tmp.400 = lgetv %i.1;
+        %tmp.401 = add %tmp.400 1;
+        lputv %i.1 %tmp.401;
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_397_16_for_test;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_397_16_for_end:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 408 16 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_408_16_if_stmt:
+        %tmp.403 = getv ? :zone_prct;
+        %tmp.404 = 10;
+        %tmp.405 = eq %tmp.403 %tmp.404;
+        bf %tmp.405 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_408_16_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_408_16_if_true:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_408_37_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 409 20 ]
+        %tmp.406 = getv self :zone_num;
+        %tmp.407 = 1;
+        %tmp.408 = add %tmp.406 %tmp.407;
+        putv self :zone_num dup %tmp.408;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 410 20 ]
+        %tmp.409 = 0;
+        putv self :zone_prct %tmp.409;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_408_37_stop:
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_408_16_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_408_16_if_end:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 412 16 ]
+        %tmp.410 = getm $.Toybox.Lang;
+        %tmp.411 = getv function %tmp.410 :format;
+        %tmp.412 = "$1$.$2$";
+        %tmp.413 = newa 2;
+        %tmp.415 = getv ? :zone_num;
+        %tmp.416 = getv function %tmp.415 :format;
+        %tmp.417 = "%d";
+        %tmp.418 = invoke %tmp.415 %tmp.416(%tmp.417);
+        %tmp.419 = dup %tmp.413;
+        %tmp.420 = aputv %tmp.419 0 %tmp.418;
+        %tmp.422 = getv ? :zone_prct;
+        %tmp.423 = getv function %tmp.422 :format;
+        %tmp.424 = "%d";
+        %tmp.425 = invoke %tmp.422 %tmp.423(%tmp.424);
+        %tmp.426 = dup %tmp.420;
+        %tmp.427 = aputv %tmp.426 1 %tmp.425;
+        %tmp.428 = invoke %tmp.410 %tmp.411(%tmp.412, %tmp.427);
+        putv self :val %tmp.428;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_395_42_stop:
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_395_19_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_395_19_if_end:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_391_19_if_end:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_386_19_if_end:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_381_19_if_end:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_377_12_if_end:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 416 12 ]
+        %tmp.431 = getv ? :lap_counter;
+        %tmp.432 = add %tmp.431 1;
+        putv self :lap_counter dup %tmp.432;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 422 12 ]
+        %tmp.433 = getv self :lap_if_acc;
+        %tmp.435 = getv ? :intensity_factor;
+        %tmp.436 = add %tmp.433 %tmp.435;
+        putv self :lap_if_acc dup %tmp.436;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 423 12 ]
+        %tmp.438 = getv ? :LapIntensityFitField;
+        %tmp.439 = getv function %tmp.438 :setData;
+        %tmp.441 = getv ? :lap_if_acc;
+        %tmp.443 = getv ? :lap_counter;
+        %tmp.444 = div %tmp.441 %tmp.443;
+        invoke %tmp.438 %tmp.439(%tmp.444);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 425 12 ]
+        %tmp.445 = getv self :lap_re_acc;
+        %tmp.447 = getv ? :efficiency;
+        %tmp.448 = add %tmp.445 %tmp.447;
+        putv self :lap_re_acc dup %tmp.448;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 426 12 ]
+        %tmp.450 = getv ? :LapEfficiencyFitField;
+        %tmp.451 = getv function %tmp.450 :setData;
+        %tmp.453 = getv ? :lap_re_acc;
+        %tmp.455 = getv ? :lap_counter;
+        %tmp.456 = div %tmp.453 %tmp.455;
+        invoke %tmp.450 %tmp.451(%tmp.456);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 429 12 ]
+        %tmp.459 = getv ? :overall_counter;
+        %tmp.460 = add %tmp.459 1;
+        putv self :overall_counter dup %tmp.460;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 435 12 ]
+        %tmp.461 = getv self :overall_if_acc;
+        %tmp.463 = getv ? :intensity_factor;
+        %tmp.464 = add %tmp.461 %tmp.463;
+        putv self :overall_if_acc dup %tmp.464;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 436 12 ]
+        %tmp.466 = getv ? :OverallIntensityFitField;
+        %tmp.467 = getv function %tmp.466 :setData;
+        %tmp.469 = getv ? :overall_if_acc;
+        %tmp.471 = getv ? :overall_counter;
+        %tmp.472 = div %tmp.469 %tmp.471;
+        invoke %tmp.466 %tmp.467(%tmp.472);
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 438 12 ]
+        %tmp.473 = getv self :overall_re_acc;
+        %tmp.475 = getv ? :efficiency;
+        %tmp.476 = add %tmp.473 %tmp.475;
+        putv self :overall_re_acc dup %tmp.476;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 439 12 ]
+        %tmp.478 = getv ? :OverallEfficiencyFitField;
+        %tmp.479 = getv function %tmp.478 :setData;
+        %tmp.481 = getv ? :overall_re_acc;
+        %tmp.483 = getv ? :overall_counter;
+        %tmp.484 = div %tmp.481 %tmp.483;
+        invoke %tmp.478 %tmp.479(%tmp.484);
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_314_33_stop:
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_314_8_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_314_8_if_false:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 441 15 ]
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_441_15_if_stmt:
+        %tmp.485 = lgetv %info;
+        %tmp.486 = getv %tmp.485 :timerState;
+        %tmp.487 = 3;
+        %tmp.488 = eq %tmp.486 %tmp.487;
+        bf %tmp.488 @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_441_15_if_false;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_441_15_if_true:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_441_41_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 443 12 ]
+        %tmp.491 = getv ? :lag;
+        %tmp.492 = add %tmp.491 1;
+        putv self :lag dup %tmp.492;
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 444 12 ]
+        %tmp.493 = "--";
+        putv self :val %tmp.493;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_441_41_stop:
+        goto @_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_441_15_if_end;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_441_15_if_false:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_446_15_start:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 447 12 ]
+        %tmp.494 = "--";
+        putv self :val %tmp.494;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_446_15_stop:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_441_15_if_end:
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_314_8_if_end:
+[ "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc" 450 8 ]
+        %tmp.496 = getv ? :val;
+        ret %tmp.496;
+_home_hugo_Bureau_Garmin_intensity_factor_source_IntensityfactorView_mc_311_85_stop:
+    }
+}
+[ @file = "/home/hugo/Bureau/Garmin/intensity-factor/source/IntensityfactorView.mc"; @line = 1; ]
+<init> {
+}

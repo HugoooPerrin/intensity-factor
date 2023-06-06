@@ -1,4 +1,4 @@
-using Toybox.Math;
+import Toybox.Math;
 
 // ROLLING QUEUE CLASS
 class Queue {
@@ -44,8 +44,8 @@ class Queue {
         return (counter != 0) ? sum / counter : 0.0;
     }
 
-    // Get current
-    function current(n) {
+    // Get first
+    function first(n) {
         return Math.mean(self.queue.slice(0, n));
     }
 

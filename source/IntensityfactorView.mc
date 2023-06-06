@@ -1,10 +1,10 @@
-using Toybox.Activity;
-using Toybox.Lang;
-using Toybox.Time;
-using Toybox.WatchUi;
-using Toybox.Math;
-using Toybox.Application;
-using Toybox.FitContributor;
+import Toybox.Activity;
+import Toybox.Lang;
+import Toybox.Time;
+import Toybox.WatchUi;
+import Toybox.Math;
+import Toybox.Application;
+import Toybox.FitContributor;
 
 
 // GAP modelling
@@ -40,12 +40,12 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
     // LAP fit fields
     var LapIntensityFitField;
     var LapEfficiencyFitField;
-    var LapGapFitField;
+    // var LapGapFitField;
 
     // Overall fit fields
     var OverallIntensityFitField;
     var OverallEfficiencyFitField;
-    var OverallGapFitField;
+    // var OverallGapFitField;
 
     // Debug fit fields
     var powerFitField;
@@ -133,14 +133,14 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
         gradeFitField.setData(0);
 
         // LAP FIT FIELDS
-        // Create the custom lap GAP FIT data field we want to record
-        LapGapFitField = createField(
-            "Lap GAP",
-            4,
-            FitContributor.DATA_TYPE_STRING,
-            {:mesgType=>FitContributor.MESG_TYPE_LAP, :units=>"", :count=>8}
-        );
-        LapGapFitField.setData("");
+        // // Create the custom lap GAP FIT data field we want to record
+        // LapGapFitField = createField(
+        //     "Lap GAP",
+        //     4,
+        //     FitContributor.DATA_TYPE_STRING,
+        //     {:mesgType=>FitContributor.MESG_TYPE_LAP, :units=>"", :count=>8}
+        // );
+        // LapGapFitField.setData("");
 
         // Create the custom lap intensity FIT data field we want to record
         LapIntensityFitField = createField(
@@ -161,14 +161,14 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
         LapEfficiencyFitField.setData(0);
 
         // OVERALL FIT FIELDS
-        // Create the custom overall GAP FIT data field we want to record
-        OverallGapFitField = createField(
-            "Overall GAP",
-            11,
-            FitContributor.DATA_TYPE_STRING,
-            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"", :count=>8}
-        );
-        OverallGapFitField.setData("");
+        // // Create the custom overall GAP FIT data field we want to record
+        // OverallGapFitField = createField(
+        //     "Overall GAP",
+        //     11,
+        //     FitContributor.DATA_TYPE_STRING,
+        //     {:mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"", :count=>8}
+        // );
+        // OverallGapFitField.setData("");
 
         // Create the custom overall intensity FIT data field we want to record
         OverallIntensityFitField = createField(
@@ -238,21 +238,21 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
 
         lap_if_acc = 0;
         lap_re_acc = 0;
-        lap_gap_acc = 0;
+        // lap_gap_acc = 0;
     }
 
-    function reset_overall_data() {
+    function set_overall_data() {
         overall_counter = 0;
 
         overall_if_acc = 0;
         overall_re_acc = 0;
-        overall_gap_acc = 0;
+        // overall_gap_acc = 0;
     }
 
     function onTimerStart() {
         reset_queues();
         reset_lap_data();
-        reset_overall_data();
+        set_overall_data();
     }
 
     function onTimerResume() {
@@ -294,15 +294,15 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
     var lap_counter;
     var lap_if_acc;
     var lap_re_acc;
-    var lap_gap_acc;
-    var lap_gap_pace;
+    // var lap_gap_acc;
+    // var lap_gap_pace;
 
     // Overall variable
     var overall_counter;
     var overall_if_acc;
     var overall_re_acc;
-    var overall_gap_acc;
-    var overall_gap_pace;
+    // var overall_gap_acc;
+    // var overall_gap_pace;
 
     // The given info object contains all the current workout
     // information. Calculate a value and return it in this method.
@@ -337,10 +337,10 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             n_seconds = altitude.count_not_null();
 
             // Get distance estimate using enhanced speed (mps)
-            dist = speed.current(n_seconds) * n_seconds;
+            dist = speed.first(n_seconds) * n_seconds;
 
             // Compute instant grade (%) and clip to 40% to prevent abnormal values
-            grade = ((n_seconds >= 5) & (dist > 1)) ? 100 * (altitude.current(2) - altitude.last(2)) / dist : 0;
+            grade = ((n_seconds >= 5) & (dist > 1)) ? 100 * (altitude.first(2) - altitude.last(2)) / dist : 0;
             grade = (grade < 40) ? grade : 40;
             grade = (grade > -40) ? grade : -40;
 
@@ -349,14 +349,14 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
 
             // Compute grade adjusted pace (instant)
             // (makes sense because current speed is enhanced by Garmin, therefore also has a little lag)
-            instant_gap = speed.current(1) * grade_factor(grade);
+            instant_gap = speed.first(1) * grade_factor(grade);
             gap.update(instant_gap);
 
             // Compute rolling mean for GAP
             rolling_gp = gap.mean();
 
-            // Saving instant GAP to fit file
-            gapFitField.setData(instant_gap * 3.6);
+            // Saving rolling GAP to fit file (to smooth value)
+            gapFitField.setData(rolling_gp * 3.6);
 
             // Computing IF and saving to fit file
             if (metric_id == 0) {
@@ -369,7 +369,7 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             intensityFitField.setData(Math.round(intensity_factor).toNumber());
 
             // Computing running efficiency (intensity_factor is already a rolling avg)
-            efficiency = (intensity_factor != 0) ? (heart_rate.mean() / LTHR) / (intensity_factor / 100) : 0;
+            efficiency = (intensity_factor != 0) ? (heart_rate.mean() / LTHR) / (intensity_factor / 100) : 1;
             efficiencyFitField.setData(efficiency);
 
             // DISPLAY VALUE
@@ -415,9 +415,9 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             // LAP VALUES
             lap_counter++;
 
-            lap_gap_acc += instant_gap; // instant value
-            lap_gap_pace = to_pace(lap_gap_acc / lap_counter);
-            LapGapFitField.setData(Lang.format("$1$:$2$", [lap_gap_pace[0].format("%d"), lap_gap_pace[1].format("%02d")]));
+            // lap_gap_acc += instant_gap; // instant value
+            // lap_gap_pace = to_pace(lap_gap_acc / lap_counter);
+            // LapGapFitField.setData(Lang.format("$1$:$2$", [lap_gap_pace[0].format("%d"), lap_gap_pace[1].format("%02d")]));
 
             lap_if_acc += intensity_factor; // rolling value
             LapIntensityFitField.setData(lap_if_acc / lap_counter);
@@ -428,9 +428,9 @@ class IntensityfactorView extends WatchUi.SimpleDataField {
             // OVERALL VALUES
             overall_counter++;
 
-            overall_gap_acc += instant_gap; // instant value
-            overall_gap_pace = to_pace(overall_gap_acc / overall_counter);
-            OverallGapFitField.setData(Lang.format("$1$:$2$", [overall_gap_pace[0].format("%d"), overall_gap_pace[1].format("%02d")]));
+            // overall_gap_acc += instant_gap; // instant value
+            // overall_gap_pace = to_pace(overall_gap_acc / overall_counter);
+            // OverallGapFitField.setData(Lang.format("$1$:$2$", [overall_gap_pace[0].format("%d"), overall_gap_pace[1].format("%02d")]));
 
             overall_if_acc += intensity_factor; // rolling value
             OverallIntensityFitField.setData(overall_if_acc / overall_counter);

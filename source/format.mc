@@ -1,4 +1,4 @@
-using Toybox.Math;
+import Toybox.Math;
 
 var pace;
 var mins;
