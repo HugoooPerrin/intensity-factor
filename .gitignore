@@ -52,6 +52,5 @@ Mkfile.old
 dkms.conf
 
 # Monkey C & Connect IQ
-*.iq
-*.png
-*.jpeg
+bin/
+iq/
