@@ -1,23 +1,20 @@
 <resources>
 
     <properties>
-        <property id="VERSION_ID" type="string">2.2.0</property>
+        <property id="VERSION_ID" type="string">3.0.0</property>
         
-        <property id="METRIC_ID" type="number">2</property>
-        <property id="DATAFIELD_ID" type="number">3</property>
+        <property id="DATAFIELD_ID" type="number">2</property>
         
-        <property id="RFTP" type="number">465</property>
         <property id="RFTPa" type="float">4.44</property>
-        <property id="LTHR" type="number">185</property>
 
         <property id="WINDOW" type="number">30</property>
         <property id="WINDOW_GRADE" type="number">15</property>
         
         <property id="ZONE1" type="number">65</property>
         <property id="ZONE2" type="number">80</property>
-        <property id="ZONE3" type="number">95</property>
-        <property id="ZONE4" type="number">105</property>
-        <property id="ZONE5" type="number">120</property>
+        <property id="ZONE3" type="number">90</property>
+        <property id="ZONE4" type="number">100</property>
+        <property id="ZONE5" type="number">115</property>
         
         <property id="DEBUG" type="boolean">false</property>
 
@@ -25,12 +22,9 @@
 
     <strings>
         <string id="VERSION_ID_TITLE">App version</string>
-        <string id="METRIC_ID_TITLE">Base metric for intensity factor and running economy</string>
-        <string id="DATAFIELD_ID_TITLE">Value to display in datafield</string>
+        <string id="DATAFIELD_ID_TITLE">Value to display</string>
 
-        <string id="RFTP_TITLE">Running FTP (watts)</string>
         <string id="RFTPa_TITLE">Running FTPa (m/sec)</string>
-        <string id="LTHR_TITLE">Threshold heart rate (bpm)</string>
 
         <string id="WINDOW_TITLE">Rolling window duration (seconds)</string>
         <string id="WINDOW_GRADE_TITLE">Rolling window duration for grade computation only (must be less than rolling duration)</string>
@@ -41,30 +35,23 @@
         <string id="ZONE4_TITLE">Zone 4 (%ftp)</string>
         <string id="ZONE5_TITLE">Zone 5 (%ftp)</string>
 
-        <string id="DEBUG_TITLE">Run in debug mode (garmin API saved in Fit for analysis)</string>
+        <string id="DEBUG_TITLE">Run in debug mode</string>
 
+        <string id="gap">GAP</string>
         <string id="intensity">Intensity factor</string>
         <string id="zones">Intensity zone</string>
 
-        <string id="gap">GAP</string>
-        <string id="pace">Pace</string>
-        <string id="power">Power</string>
-
         <string id="chart_label_gap">GAP</string>
         <string id="chart_units_gap">km/h</string>
-        <string id="chart_units_gap_p">min/km</string>
 
         <string id="chart_label_if">Intensity factor</string>
-        <string id="chart_units_if">%FTP</string>
-
-        <string id="chart_label_re">Running efficiency</string>
-        <string id="chart_units_re">%THR/%FTP</string>
+        <string id="chart_units_if">%</string>
 
         <string id="chart_label_grade">Grade</string>
         <string id="chart_units_grade">%</string>
 
-        <string id="chart_label_power">Power API</string>
-        <string id="chart_units_power">w</string>
+        <string id="chart_label_vspeed">Vertical speed</string>
+        <string id="chart_units_vspeed">m</string>
 
         <string id="chart_label_speed">Speed API</string>
         <string id="chart_units_speed">km/h</string>
@@ -78,30 +65,15 @@
         <setting propertyKey="@Properties.VERSION_ID" title="@Strings.VERSION_ID_TITLE">
             <settingConfig type="alphaNumeric" readonly="true" />
         </setting>
-        <setting propertyKey="@Properties.METRIC_ID" title="@Strings.METRIC_ID_TITLE">
-            <settingConfig type="list" >
-                <listEntry value="0">@Strings.power</listEntry>
-                <listEntry value="1">@Strings.pace</listEntry>
-                <listEntry value="2">@Strings.gap</listEntry>
-            </settingConfig>
-        </setting>
         <setting propertyKey="@Properties.DATAFIELD_ID" title="@Strings.DATAFIELD_ID_TITLE">
             <settingConfig type="list" >
-                <listEntry value="0">@Strings.power</listEntry>
-                <listEntry value="1">@Strings.pace</listEntry>
-                <listEntry value="2">@Strings.gap</listEntry>
-                <listEntry value="3">@Strings.intensity</listEntry>
-                <listEntry value="4">@Strings.zones</listEntry>
+                <listEntry value="0">@Strings.gap</listEntry>
+                <listEntry value="1">@Strings.intensity</listEntry>
+                <listEntry value="2">@Strings.zones</listEntry>
             </settingConfig>
         </setting>
 
-        <setting propertyKey="@Properties.RFTP" title="@Strings.RFTP_TITLE">
-            <settingConfig type="numeric" min="1" />
-        </setting>
         <setting propertyKey="@Properties.RFTPa" title="@Strings.RFTPa_TITLE">
-            <settingConfig type="numeric" min="1" />
-        </setting>
-        <setting propertyKey="@Properties.LTHR" title="@Strings.LTHR_TITLE">
             <settingConfig type="numeric" min="1" />
         </setting>
 
@@ -144,28 +116,11 @@
         <fitField id="3" displayInActivitySummary="false" displayInChart="true" sortOrder="2" precision="1"
         chartTitle="@Strings.chart_label_grade" dataLabel="@Strings.chart_label_grade"
         unitLabel="@Strings.chart_units_grade" fillColor="#6abb35" />
-        <fitField id="2" displayInActivitySummary="false" displayInChart="true" sortOrder="3" precision="2"
-        chartTitle="@Strings.chart_label_re" dataLabel="@Strings.chart_label_re"
-        unitLabel="@Strings.chart_units_re" fillColor="#ff2653" />
+        <fitField id="4" displayInActivitySummary="false" displayInChart="true" sortOrder="3" precision="0"
+        chartTitle="@Strings.chart_label_vspeed" dataLabel="@Strings.chart_label_vspeed"
+        unitLabel="@Strings.chart_units_vspeed" fillColor="#d33abf" />
 
-        <!-- <fitField id="4" displayInActivitySummary="false" displayInChart="false" displayInActivityLaps="true" sortOrder="4"
-        dataLabel="@Strings.chart_label_gap" unitLabel="@Strings.chart_units_gap_p" /> -->
-        <fitField id="5" displayInActivitySummary="false" displayInChart="false" displayInActivityLaps="true" sortOrder="5" precision="0"
-        dataLabel="@Strings.chart_label_if" unitLabel="@Strings.chart_units_if" />
-        <fitField id="6" displayInActivitySummary="false" displayInChart="false" displayInActivityLaps="true" sortOrder="6" precision="2"
-        dataLabel="@Strings.chart_label_re" unitLabel="@Strings.chart_units_re" />
-
-        <!-- <fitField id="11" displayInActivitySummary="true" displayInChart="false" displayInActivityLaps="false" sortOrder="7"
-        dataLabel="@Strings.chart_label_gap" unitLabel="@Strings.chart_units_gap_p" /> -->
-        <fitField id="12" displayInActivitySummary="true" displayInChart="false" displayInActivityLaps="false" sortOrder="8" precision="0"
-        dataLabel="@Strings.chart_label_if" unitLabel="@Strings.chart_units_if" />
-        <fitField id="13" displayInActivitySummary="true" displayInChart="false" displayInActivityLaps="false" sortOrder="9" precision="2"
-        dataLabel="@Strings.chart_label_re" unitLabel="@Strings.chart_units_re" />
-
-        <fitField id="8" displayInActivitySummary="false" displayInChart="true" sortOrder="10" precision="0"
-        chartTitle="@Strings.chart_label_power" dataLabel="@Strings.chart_label_power"
-        unitLabel="@Strings.chart_units_power" fillColor="#d33abf" />
-        <fitField id="9" displayInActivitySummary="false" displayInChart="true" sortOrder="11" precision="2"
+        <fitField id="9" displayInActivitySummary="false" displayInChart="true" sortOrder="11" precision="1"
         chartTitle="@Strings.chart_label_speed" dataLabel="@Strings.chart_label_speed"
         unitLabel="@Strings.chart_units_speed" fillColor="#34b5ef" />
         <fitField id="10" displayInActivitySummary="false" displayInChart="true" sortOrder="12" precision="0"

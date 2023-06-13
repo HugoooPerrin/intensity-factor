@@ -23,7 +23,6 @@ module Rez {
 
     module Strings {
         (:initialized) var DEBUG_TITLE as Symbol;
-        (:initialized) var chart_label_power as Symbol;
         (:initialized) var chart_units_if as Symbol;
         (:initialized) var chart_label_if as Symbol;
         (:initialized) var chart_label_gap as Symbol;
@@ -31,31 +30,24 @@ module Rez {
         (:initialized) var AppName as Symbol;
         (:initialized) var WINDOW_GRADE_TITLE as Symbol;
         (:initialized) var WINDOW_TITLE as Symbol;
-        (:initialized) var chart_label_re as Symbol;
         (:initialized) var gap as Symbol;
         (:initialized) var ZONE3_TITLE as Symbol;
-        (:initialized) var RFTP_TITLE as Symbol;
-        (:initialized) var power as Symbol;
         (:initialized) var chart_units_grade as Symbol;
         (:initialized) var VERSION_ID_TITLE as Symbol;
         (:initialized) var chart_label_speed as Symbol;
         (:initialized) var chart_units_altitude as Symbol;
         (:initialized) var DATAFIELD_ID_TITLE as Symbol;
-        (:initialized) var chart_units_gap_p as Symbol;
         (:initialized) var chart_units_gap as Symbol;
         (:initialized) var ZONE5_TITLE as Symbol;
-        (:initialized) var pace as Symbol;
         (:initialized) var RFTPa_TITLE as Symbol;
-        (:initialized) var chart_units_re as Symbol;
         (:initialized) var zones as Symbol;
-        (:initialized) var chart_units_power as Symbol;
+        (:initialized) var chart_label_vspeed as Symbol;
         (:initialized) var intensity as Symbol;
         (:initialized) var chart_label_grade as Symbol;
         (:initialized) var chart_units_speed as Symbol;
         (:initialized) var ZONE1_TITLE as Symbol;
+        (:initialized) var chart_units_vspeed as Symbol;
         (:initialized) var chart_label_altitude as Symbol;
-        (:initialized) var METRIC_ID_TITLE as Symbol;
-        (:initialized) var LTHR_TITLE as Symbol;
         (:initialized) var ZONE4_TITLE as Symbol;
     } // Strings
 
